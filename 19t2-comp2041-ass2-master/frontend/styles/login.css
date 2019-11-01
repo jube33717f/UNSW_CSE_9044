@@ -1,0 +1,154 @@
+/**
+ * Written by z5190529 Chen Ziyan
+ *
+ * COMP9044 ass2
+ */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: #f1f1f7;
+}
+
+body {
+  background: #f1f1f7;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+.logo {
+    color: white;
+    font-size: var(--body-text-size);
+    width: 65px;
+    height: 65px;
+    background-color: var(--reddit-orange);
+    border-radius: 50%;
+    margin: 10 10 0px 0;
+    padding: 20px 0px;
+    font-size: 17px;
+    color:#fff;
+}
+
+.login-form-wrap {
+  display: none;
+  /*z-index: 	2147483584;*/
+  background: #ffffff;
+  position: fixed;
+  text-align: center;
+  /*position: fixed;*/
+  background: -moz-radial-gradient(center, ellipse cover, #FFDACB 0%, #FFA55D 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #FFA55D), color-stop(100%, #355493));
+  background: -webkit-radial-gradient(center, ellipse cover,#FFDACB 0%, #FFA55D 100%);
+  background: -o-radial-gradient(center, ellipse cover, #FFDACB 0%, #FFA55D 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #FFDACB 0%, #FFA55D 100%);
+  background: radial-gradient(ellipse at center, #FFDACB 0%, #FFA55D 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFDACB', endColorstr='#FFA55D',GradientType=1 );
+  border: 1px solid #FFA55D;
+  box-shadow: 0 1px #FFA55D inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: relative;
+  width: 750px;
+  height: 550px;
+  margin: 10px  auto;
+  padding: 50px 30px 0 30px;
+  text-align: center;
+}
+.login-form-wrap .close {
+  /*background: url(http://i.imgur.com/0vLxyVB.png);*/
+  display: block;
+  content: '✘';
+  width: 25px;
+  height: 25px;
+  color:#D73B33;
+  opacity:0.9;
+  font-size:20px;
+  top: 10px;
+  right: 10px;
+  background-color: #F95042;
+  border-radius: 50%;
+  margin: 10px 10px;
+  padding: 0px ;
+  position: absolute;
+}
+.login-form-wrap > h1 {
+  margin: 10 10 0px 0;
+  padding: 20px 0px;
+  font-size: 17px;
+  color:#fff;
+}
+.login-form-wrap > h3 {
+  margin: 0 0 0px 0;
+
+  font-size: 20px;
+  color: #fff;
+}
+.login-form-wrap > h5 {
+  margin-top: 40px;
+}
+.login-form-wrap > h5 > a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.login-form input[type="username"], .login-form input[type="password"] {
+  width: 70%;
+
+  border: 1px solid #F09500;
+  outline: none;
+  margin-top: 20px;
+  padding: 12px 50px;
+  color: #000;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+}
+.login-form input[type="username"] {
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  padding-bottom: 13px;
+  box-shadow: 0 -1px 0 #e0e0e0 inset, 0 1px 2px rgba(0, 0, 0, 0.23) inset;
+}
+.login-form input[type="password"] {
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.23) inset, 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+.login-form .submit {
+  font-family: 'Lato', sans-serif;
+  width: 70%;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 400;
+  background: #e0e0e0;
+  background: -moz-linear-gradient(top, #e0e0e0 0%, #cecece 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0e0e0), color-stop(100%, #cecece));
+  background: -webkit-linear-gradient(top, #e0e0e0 0%, #cecece 100%);
+  background: -o-linear-gradient(top, #e0e0e0 0%, #cecece 100%);
+  background: -ms-linear-gradient(top, #e0e0e0 0%, #cecece 100%);
+  background: linear-gradient(to bottom, #e0e0e0 0%, #cecece 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0e0e0', endColorstr='#cecece',GradientType=0 );
+  display: block;
+  margin: 50px 100px 0px;
+  /*padding:40px 40px 40px 40px;*/
+  border: none;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 17px;
+  color: #636363;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+  font-weight: 700;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+}
+.login-form .submit:hover {
+  background: #DDD;
+}
+.login-form .submit:active {
+  padding-top: 9px;
+  padding-bottom: 7px;
+  background: #C9C9C9;
+}

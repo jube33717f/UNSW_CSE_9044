@@ -1,0 +1,52 @@
+#！/usr/bin/perl -w
+
+
+my $DIR_PATH=".";
+opendir dir,${DIR_PATH} or die "CANNOT OPEN\n";
+@files = readdir DIR;
+
+foreach $file(@files){
+    open(F1,'<',"$file");
+    @linesc=<F1>;
+    colse(F1);
+    if(-e ".legit/repo/$files[$i]"){
+        if(-e ".legit/$ARGV[0]/$files[$i]){
+            open(F2,'<',".legit/repo/$file");
+            @linesr=<F2>;
+            colse(F2);
+            open(F3,'<',".legit/$ARGV[0]/$file");
+            @linest=<F3>;
+            colse(F3);
+            for my $i(0 .. $#linesc){
+                if($linesc[$i] eq $$linesr[$i]){
+                    if($linesc[$i] ne $linest[$i]){
+                        $linesc[$i]=$linest[$i]；
+                    }
+                }else{
+                    if($linesc[$i] eq $linest[$i]){
+                        $linesc[$i]=$linesr[$i];
+                    }else{
+                        print "legit-merge:error: These files can not be merged:\n$files[$i]";
+                        break;
+                    }
+                }
+            }
+
+        }else{
+            print "legit-merge:error: These files can not be merged:\n$files[$i]";
+            break;
+        }
+    }else{
+        print "legit-merge:error: These files can not be merged:\n$files[$i]";
+        break;
+    }
+    open(F1,'>',"./$file");
+    print F1 @linesc;
+    colse(F1);
+    print "Auto-merging $file";
+}
+
+
+
+
+

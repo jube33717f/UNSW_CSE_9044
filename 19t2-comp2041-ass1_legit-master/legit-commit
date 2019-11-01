@@ -1,0 +1,126 @@
+#!/bin/dash
+
+if test -e ".legit/text.txt"
+then
+	text_branch=`cat ".legit/text.txt"`;	
+fi
+
+
+text=$@
+#echo "$text"
+te=`echo "$text"|sed 's/[-]m/+/g'|cut -d'+' -f2`
+#echo $te
+
+if test -e ".legit/record.txt"
+then
+	i=`cat ".legit/record.txt"|wc -l|sed 's/[ ]//g'`
+	echo "$i$te">>".legit/record.txt"
+else
+	i=0;
+	echo "$i$te">".legit/record.txt"
+fi
+
+if ! test -e ".legit/$i"
+then
+    mkdir ".legit/$i"
+fi
+
+s=`echo "$@"|grep -o '[-]a'`
+if ! test -z $s
+then
+	for file in *
+	do
+		if test -e ".legit/index/$file"
+		then
+			cp "$file" ".legit/index/$file"
+		fi
+	done	
+fi
+
+row=`ls ".legit/index"|wc -l`
+cd ".legit/index"
+#xy=`pwd`
+#echo $xy
+flag=0
+if [ "$row" -ne 0 ]
+then
+	for file in *
+	do
+    	#echo ${PWD##*/}
+		if [ "$i" -gt 0 ]
+		then
+			j=`expr $i - 1`
+			#$diff=
+			#x=`cmp -s "$file" "../$j/$file"`
+			#echo $x
+			if ! cmp -s "$file" "../$j/$file"
+			then
+				#echo "$file"			
+				cp "$file" "../$i/$file"
+				#cp "$file" "../../repository/$file"
+				if test -e "../text.txt"
+				then
+					cp "$file" "../branch/$text_branch/$file"
+					#rm "../../$file"
+					rm "$file"
+				else
+					cp "$file" "../repo/$file"            #here
+				fi
+				flag=1	
+			else
+				cp "$file" "../$i/$file"
+			fi
+		else
+    		cp "$file" "../$i/$file"
+			#·cp "$file" "../../repository/$file"
+			if test -e "../text.txt"
+			then
+				cp "$file" "../branch/$text_branch/$file"
+				#rm "../../$file"
+				#rm "$file"
+			else
+				cp "$file" "../repo/$file"
+			fi
+			#cp "$file" "../repo/$file"                #here
+			flag=1		
+		fi
+	done
+fi
+
+cd ".."
+cd "repo"
+#xy=`pwd`
+#echo $xy
+#y=`ls .|wc -l`
+#echo $y
+if test `ls .|wc -l` -ne 0 
+then
+	for file in *
+	do 
+		if ! test -e "../index/$file"
+		then
+			rm "$file"
+			flag=1
+		fi
+	done
+fi
+
+
+
+
+#cd "../.."
+if [ "$flag" -eq 1 ]
+then
+	echo Committed as commit "$i";
+else
+	sed -ie '$d' "../record.txt"
+	echo "nothing to commit"
+fi
+
+
+
+#here
+#if test -e ".legit/text.txt"
+#then
+#	rm ".legit/text.txt"
+#fi

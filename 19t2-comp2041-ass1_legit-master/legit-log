@@ -1,0 +1,3 @@
+#!/bin/dash
+tac ".legit/record.txt"
+#text=·sed -n '1!G;h;$d' .legit/record.txt·

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 05 Tutorial Sample Answers
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 05 Tutorial Sample Answers_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 05 Tutorial Sample Answers_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 05 Tutorial Sample Answers_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 05 Tutorial Sample Answers_files/popper.min.js"></script>
+<script src="./COMP2041 Week 05 Tutorial Sample Answers_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 05 Tutorial Sample Answers_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 05 Tutorial Sample Answers_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 05 Tutorial Sample Answers_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 05 Tutorial Sample Answers_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 05 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tutorial <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Answers <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/questions">Questions</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Sample Answers</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<li>
+
+The assignment specification doesn't fully explain the assignment - what can I do?
+
+<div class="answer">
+A big part of the assignment is understanding what git does.
+<p>
+You'll spend more time doing this than implementing subset 0.
+</p><p>
+On line tutorials can help with this.
+</p><p>
+You can also use the the reference implementation <b>2041 legit</b> to discover what your program is supposed to do in any situation.
+
+</p></div>
+
+</li><li>
+
+How hard are the subsets?
+
+<div class="answer">
+Once you understand what you have to dom subset 0 is not that hard.
+<p>
+Subset 1 is hard.
+</p><p>
+Subset 2 really hard.
+</p><p>
+But note the marking scheme recognizes the difficulty of subsets 0 &amp; 1.
+
+</p></div>
+
+</li><li>
+What is <code>gitlab.cse.unsw.edu.au</code> and how do I want use it for ass1?
+<p>
+</p><div class="answer">
+Its a server  run by CSE to host git repositories of student programs for some CSE courses.
+<p>
+As assignment 1 is to implement a version control system similar to git, it is too confusing to ask you to use git
+for the assignment.
+</p><p>
+Instead <b>give</b> will maintain a git repository for the assignment for you.
+</p><p>
+Every you run give for the assignment, it will create a commit in a git repository and it will
+push the commit to https://gitlab.cse.unsw.edu.au/ when you can access it.
+</p><p>
+Everytime you work on the assignment you should run give when you finish.
+</p><p>
+This ensures you have a complete backup of all work on your program
+and can return to its state at any stage.
+
+</p><p>
+It will also allow your tutor to check you are progressing on the lab as they can access your gitlab repository
+
+</p></div>
+
+</li><li>
+What  does <b>git init</b> do?
+<p>
+How does this differ from <b>legit-init</b>
+
+</p><div class="answer">
+<code> git init</code> creates an empty repository as does <b> legit-init</b>
+<p>
+git uses the sub-directory <b>.git</b> (by default.
+</p><p>
+<b>legit-init</b> uses the sub-directory <b>.legit</b>
+
+</p></div>
+
+</li><li>
+What do <b>git add <i>file</i></b> and <b>legit-add <i>file</i></b> do?
+
+<div class="answer">
+Adds a copy of <i>file</i> to the repository's <b>index</b>.
+</div>
+
+
+</li><li>
+What is the index in <b>legit</b> (and <b>git</b>), and where does it get stored?
+
+<div class="answer">
+Files get added to the repositoy via the index so its somethimes called a staging area.
+<p>
+It must be stored in <b>.legit</b>.  exactly how you store it is up to you.
+</p><p>
+You might create a directory <b>.legit/index/</b> and store the files there.
+</p></div>
+
+
+</li><li>
+What is a commit in <b>legit</b> (and <b>git</b>), and where does it get stored?
+
+<div class="answer">
+A commit preserves the state of all files in the index.
+<p>
+It must be stored in <b>.legit</b>.  exactly how you store it is up to you.
+</p><p>
+You might create a directory <b>.legit/<i>commit-number</i></b> and store the files there.
+</p></div>
+
+</li><li>
+
+Discuss what <b>./legit-status</b> prints below?
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./legit-init</kbd>
+Initialized empty legit repository in .legit
+<kbd class="shell">touch a b c d e f g h</kbd>
+<kbd class="shell">./legit-add a b c d e f</kbd>
+<kbd class="shell">./legit-commit -m 'first commit'</kbd>
+Commited as commit 0
+<kbd class="shell">echo hello &gt;a</kbd>
+<kbd class="shell">echo hello &gt;b</kbd>
+<kbd class="shell">echo hello &gt;c</kbd>
+<kbd class="shell">./legit-add a b</kbd>
+<kbd class="shell">echo world &gt;a</kbd>
+<kbd class="shell">rm d</kbd>
+<kbd class="shell">./legit-rm e</kbd>
+<kbd class="shell">./legit-add g</kbd>
+<kbd class="shell">./legit-status</kbd>
+</pre>
+
+<div class="answer">
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./legit-status</kbd>
+a - file changed, different changes staged for commit
+b - file changed, changes staged for commit
+c - file changed, changes not staged for commit
+d - file deleted
+e - deleted
+f - same as repo
+g - added to index
+h - untracked
+legit-- untracked
+</pre>
+</div>
+
+</li><li>
+Write a Perl function which takes an integer argument <b>n</b>
+and reads the next <b>n</b> lines of input and returns them
+as a string.
+
+<div class="answer">
+
+Two sample solutions with extra code to run the function:
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+$n <span class="token operator">=</span> shift @ARGV or die <span class="token string">"Usage: $0 &lt;n-lines&gt;\n"</span><span class="token punctuation">;</span>
+
+sub n_lines0 <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$n<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+    my $text <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$n<span class="token operator">--</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $text <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> $text<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+sub n_lines1 <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$n<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+    my $text <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    $text <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span> foreach <span class="token punctuation">(</span><span class="token number">1.</span><span class="token punctuation">.</span>$n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> $text<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+print <span class="token function">n_lines1</span><span class="token punctuation">(</span>$n<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+</div>
+</li><li>
+Write a Perl program which given the name of a C function
+searches the C source files (*.c) in the current directory
+for calls of the function, declarations &amp; definitons of the function
+and prints a summary indicating the file and line number, in the format below.
+<p>
+You can assume functions are defined with the type, name and paramaters on a single
+non-indented line.  You can assume function bodies are always indented.
+</p><p>
+You don't have to handle multi line comments.
+Try to avoid matching the function name in strings or single line comments.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat half.c</kbd>
+double half(double x) {
+    return  x/2;
+}
+<kbd class="shell">cat main.c</kbd>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+double half(double x);
+
+int main(int argc, char *argv[]) {
+    return  half(atoi(argv[1]));
+}
+<kbd class="shell">./print_function_uses.pl half</kbd>
+a.c:1 function half defined
+half.c:1 function half defined
+main.c:4 function half declared
+main.c:7 function half used
+</pre>
+
+<div class="answer">
+
+Perl sample solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+$<span class="token keyword">function</span> <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> or die <span class="token string">"Usage: $0 &lt;function-name&gt;\n"</span><span class="token punctuation">;</span>
+
+foreach $c_file <span class="token punctuation">(</span>glob <span class="token string">"*.c"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    open my $cf<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $c_file or die <span class="token string">"$0: can not open $c_file: $!\n"</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$cf<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        # remove single<span class="token operator">-</span>line comments <span class="token operator">&amp;</span> strings <span class="token punctuation">(</span>breaks <span class="token keyword">if</span> strings contain "<span class="token punctuation">)</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>\<span class="token operator">/</span>\<span class="token operator">/</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token comment">//;</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>\<span class="token operator">/</span>\<span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">?</span>\<span class="token operator">*</span>\<span class="token operator">/</span><span class="token comment">//;</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span><span class="token string">".*?"</span><span class="token comment">//;</span>
+        # note use of \b <span class="token punctuation">(</span>word boundary<span class="token punctuation">)</span> to match <span class="token keyword">function</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span>\b$<span class="token keyword">function</span>\s<span class="token operator">*</span>\<span class="token punctuation">(</span><span class="token operator">/</span> or next<span class="token punctuation">;</span>
+        print <span class="token string">"$c_file:$. function $function "</span><span class="token punctuation">;</span>
+        # <span class="token keyword">if</span> line is indented it should be a call to the <span class="token keyword">function</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span>\s<span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            print <span class="token string">"used\n"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> elsif <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token punctuation">;</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            print <span class="token string">"declared\n"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            print <span class="token string">"defined\n"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    close $cf<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+git checkout $w sample solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>python
+import glob<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> re
+
+<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">:</span>
+    sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"Usage: %s &lt;function-name&gt;\n\n"</span> <span class="token operator">%</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    sys<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> c_file <span class="token keyword">in</span> glob<span class="token punctuation">.</span><span class="token function">glob</span><span class="token punctuation">(</span><span class="token string">"*.c"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    with <span class="token function">open</span><span class="token punctuation">(</span>c_file<span class="token punctuation">)</span> as cf<span class="token punctuation">:</span>
+        # note use of \b <span class="token punctuation">(</span>word boundary<span class="token punctuation">)</span> to match <span class="token keyword">function</span>
+        function_regex <span class="token operator">=</span> r<span class="token string">'\b%s\s*\('</span> <span class="token operator">%</span> <span class="token keyword">function</span>
+        line_number <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> line <span class="token keyword">in</span> cf<span class="token punctuation">:</span>
+            line_number <span class="token operator">=</span> line_number <span class="token operator">+</span> <span class="token number">1</span>
+            # remove single<span class="token operator">-</span>line comments <span class="token operator">&amp;</span> strings <span class="token punctuation">(</span>breaks <span class="token keyword">if</span> strings contain "<span class="token punctuation">)</span>
+            line <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token function">sub</span><span class="token punctuation">(</span>r<span class="token string">'\/\/.*'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span>
+            line <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token function">sub</span><span class="token punctuation">(</span>r<span class="token string">'".*?"'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> not re<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>function_regex<span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+            # <span class="token keyword">if</span> line is indented it should be a call to the <span class="token keyword">function</span>
+            <span class="token keyword">if</span> re<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>r<span class="token string">'^\s'</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                which <span class="token operator">=</span> <span class="token string">"used"</span>
+            elif re<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>r<span class="token string">';'</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                which <span class="token operator">=</span> <span class="token string">"declared"</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                which <span class="token operator">=</span> <span class="token string">"defined"</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"%s:%d function %s %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>c_file<span class="token punctuation">,</span> line_number<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">,</span>  which<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+</div>
+
+</li><li>
+
+Write a Perl program which  given a  C program as input
+finds the definitions of single parameter functions and prints
+separately the function's type, name and the parameters name &amp; type.
+Assume all these occur on a single non-indented line in the C source code.
+You can assume function bodies are always indented.
+Allow for white space occuring anywhere in the function header.
+You can assume that types in the program don't contain square or round brackets.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat a.c</kbd>
+double half(int *x) {
+    return  *x/2.0;
+}
+<kbd class="shell">./print_function_types.pl a.c</kbd>
+function type='double'
+function name='half'
+parameter type='int *'
+parameter name='x'
+</pre>
+
+<div class="answer">
+Perl sample solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token operator">-</span>zA<span class="token operator">-</span>Z_<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span>\<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span>\<span class="token punctuation">)</span><span class="token operator">/</span> or next<span class="token punctuation">;</span>
+    $function_start <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+    $parameter <span class="token operator">=</span> $<span class="token number">2</span><span class="token punctuation">;</span>
+    $function_type <span class="token operator">=</span> $function_start<span class="token punctuation">;</span>
+    $function_type <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>\s<span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token operator">-</span>zA<span class="token operator">-</span>Z_<span class="token punctuation">]</span>\w<span class="token operator">*</span><span class="token punctuation">)</span>\s<span class="token operator">*</span>$<span class="token comment">// or next;</span>
+    $function_name <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+    $parameter_type <span class="token operator">=</span> $parameter<span class="token punctuation">;</span>
+    $parameter_type <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>\s<span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token operator">-</span>zA<span class="token operator">-</span>Z_<span class="token punctuation">]</span>\w<span class="token operator">*</span><span class="token punctuation">)</span>\s<span class="token operator">*</span>$<span class="token comment">// or next;</span>
+    $parameter_name <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+    print <span class="token string">"function type='$function_type'\n"</span><span class="token punctuation">;</span>
+    print <span class="token string">"function name='$function_name'\n"</span><span class="token punctuation">;</span>
+    print <span class="token string">"parameter type='$parameter_type'\n"</span><span class="token punctuation">;</span>
+    print <span class="token string">"parameter name='$parameter_name'\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+</div>
+</li><li>
+Write a Perl script C_include.pl which given the name of a C source file
+prints the file replacing any '#include' lines with the contents
+of the included file, if the included file itself contains
+a #include line these should also be processed.
+<p>
+Assume the source files contain only quoted ("") include directives
+which contain the files's actual path name. For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat f.c</kbd>
+#include "true.h"
+
+int main(int argc, char *argv[]) {
+    return  TRUE || FALSE;
+}
+<kbd class="shell">cat true.h</kbd>
+#define TRUE 1
+#include "false.h"
+<kbd class="shell">cat false.h</kbd>
+#define FALSE 0
+<kbd class="shell">./C_include.pl f.c</kbd>
+#define TRUE 1
+#define FALSE 0
+
+int main(int argc, char *argv[]) {
+    return  TRUE || FALSE;
+}
+</pre>
+
+<div class="answer">
+
+Perl sample solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+# Given C source files interpolate #include <span class="token string">"FILE"</span> directives recursively<span class="token punctuation">.</span>
+sub <span class="token function">include_file</span><span class="token punctuation">(</span>$<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+sub <span class="token function">include_file</span><span class="token punctuation">(</span>$<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$file<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+    # this <span class="token keyword">function</span> is recursive so a local filehandle is essential
+    open my $f<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $file or die <span class="token string">"$0: can not open $file: $!"</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span>#\s<span class="token operator">*</span>include\s<span class="token operator">*</span><span class="token string">"([^"</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">)</span>"<span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">include_file</span><span class="token punctuation">(</span>$<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            print $line<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    close $f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+foreach $file <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">include_file</span><span class="token punctuation">(</span>$file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+</div>
+
+</li><li>
+Modify C_include.pl so that it handles both <code>""</code> and <code>&lt;&gt;</code> directives.
+It should search the directories <code>/usr/include/</code>, <code>/usr/local/include</code>
+and /<code>usr/include/x86_64-linux-gnu</code> for include files specified in <code>&lt;&gt;</code> directives
+and for files specified in <code>""</code> directives which do not exist locally. For example:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat g.c</kbd>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char *argv[]) {
+    printf("hello world\n");
+    exit(0);
+}
+<kbd class="shell">./C_include.pl g.c|head</kbd>
+./C_include.pl: can not find: bits/libc-header-start.h
+/* Define ISO C stdio on top of C++ iostreams.
+   Copyright (C) 1991-2018 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+</pre>
+
+
+<div class="answer">
+
+Perl sample solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+# Given C source files interpolate #include <span class="token string">"FILE"</span> and #include <span class="token operator">&lt;</span>FILE<span class="token operator">&gt;</span>
+# directives recursively<span class="token punctuation">.</span>
+# The recursion <span class="token keyword">in</span> this script may not terminate on stdio<span class="token punctuation">.</span>h etc
+# because #ifdef directive are not handled
+
+@include_dirs <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'/usr/include/'</span><span class="token punctuation">,</span><span class="token string">'/usr/local/include'</span><span class="token punctuation">,</span><span class="token string">'/usr/include/x86_64-linux-gnu'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+sub <span class="token function">include_file</span><span class="token punctuation">(</span>$@<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+sub <span class="token function">include_file</span><span class="token punctuation">(</span>$@<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$file<span class="token punctuation">,</span>@prefixes<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+    foreach $prefix <span class="token punctuation">(</span>@prefixes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        # this <span class="token keyword">function</span> is recursive so a local filehandle is essential
+        my $path <span class="token operator">=</span> <span class="token string">"$prefix$file"</span><span class="token punctuation">;</span>
+        next <span class="token keyword">if</span> <span class="token operator">!</span><span class="token operator">-</span>r $path<span class="token punctuation">;</span>
+        open my $f<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $path or die <span class="token string">"$0: can not open $path: $!"</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span>#\s<span class="token operator">*</span>include\s<span class="token operator">*</span><span class="token string">"(.*?)"</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">include_file</span><span class="token punctuation">(</span>$<span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span>@include_dirs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> elsif <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span>#\s<span class="token operator">*</span>include\s<span class="token operator">*</span><span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">include_file</span><span class="token punctuation">(</span>$<span class="token number">1</span><span class="token punctuation">,</span> @include_dirs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                print $line<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        close $f<span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    die <span class="token string">"$0: can not find: $file\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+foreach $file <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">include_file</span><span class="token punctuation">(</span>$file<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+</div>
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+
+
+</p></li><li>
+
+Write a Perl program <code>source_count.pl</code> which prints the number of lines of C source code
+in the current directory.  In other words, this Perl program should
+behave similarly to <code>wc -l *.[ch]</code>.  (Note: you are not
+allowed to use <code>wc</code> or other Unix programs from within the
+Perl script). For example:
+<p>
+</p><pre class="command_line"><kbd class="shell">./source_count.pl</kbd>
+    383 cyclorana.c
+    280 cyclorana.h
+     15 enum.c
+    194 frequency.c
+    624 model.c
+    293 parse.c
+    115 random.c
+     51 smooth.c
+    132 util.c
+     16 util.h
+    410 waveform.c
+   2513 total
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+# written by andrewt@cse<span class="token punctuation">.</span>unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au <span class="token keyword">for</span> COMP2041
+# count lines of C source code
+$total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+foreach $file <span class="token punctuation">(</span><span class="token function">glob</span><span class="token punctuation">(</span><span class="token string">"*.[ch]"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    open my $f<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $file or die <span class="token string">"Can not open $file: $!"</span><span class="token punctuation">;</span>
+    @lines <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    $n_lines <span class="token operator">=</span> @lines<span class="token punctuation">;</span>
+    # Why wouldn't   $n_lines <span class="token operator">=</span> <span class="token operator">&lt;</span>FILE<span class="token operator">&gt;</span><span class="token punctuation">;</span>   work<span class="token operator">?</span>
+
+    printf <span class="token string">"%7d %s\n"</span><span class="token punctuation">,</span> $n_lines<span class="token punctuation">,</span> $file<span class="token punctuation">;</span>
+    $total <span class="token operator">+</span><span class="token operator">=</span> $n_lines<span class="token punctuation">;</span>
+    close $f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+printf <span class="token string">"%7d total\n"</span><span class="token punctuation">,</span> $total<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+Sample Python solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>python
+# written by andrewt@cse<span class="token punctuation">.</span>unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au <span class="token keyword">for</span> COMP2041
+# count lines of C source code
+import glob
+total <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> filename <span class="token keyword">in</span> glob<span class="token punctuation">.</span><span class="token function">glob</span><span class="token punctuation">(</span><span class="token string">"*.[ch]"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    with <span class="token function">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span> as f<span class="token punctuation">:</span>
+        lines <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">readlines</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        n_lines <span class="token operator">=</span> <span class="token function">len</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"%7d %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>n_lines<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        total <span class="token operator">+</span><span class="token operator">=</span> n_lines
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"%7d total"</span><span class="token operator">%</span>total<span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+</div>
+</li><li>
+
+Write a Perl program, <code>cut.pl</code> which takes three arguments, <i>n</i>, <i>m</i> and a file name.
+It should print characters <i>n</i>-<i>m</i> of each line of the file.
+For example:
+
+<pre class="command_line"><kbd class="shell">./cut.pl 1 8 file</kbd>
+</pre>
+
+should print the 8 characters of every line in <code>file</code>.
+<p>
+Implement a version of the program which invokes <code>/usr/bin/cut</code>
+and a version which performs the operations directly in Perl.
+
+</p><div class="answer">
+Sample Perl solution calling /usr/bin/cut
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+system <span class="token string">"cut -c$ARGV[0]-$ARGV[1] $ARGV[2]"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+Sample solution in Perl itself
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+die <span class="token string">"Usage: $0 &lt;n&gt; &lt;m&gt; &lt;file"</span> <span class="token keyword">if</span> @ARGV <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+open my $f<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $ARGV<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> or die <span class="token string">"$0: can not open $ARGV[2]: $!"</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    chomp $line<span class="token punctuation">;</span>
+    @chars <span class="token operator">=</span> split <span class="token comment">//, $line;</span>
+    print @chars<span class="token punctuation">[</span>$ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1.</span><span class="token punctuation">.</span>$ARGV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+Sample solution implementing more of cut in Perl
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+$delim <span class="token operator">=</span> <span class="token string">"\t"</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>$ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">-</span>d<span class="token punctuation">.</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>$delim <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span><span class="token operator">-</span>d<span class="token comment">//;</span>
+    shift<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>$ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">-</span>f<span class="token operator">*</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>$flist <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span><span class="token operator">-</span>f<span class="token comment">//;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$flist eq <span class="token string">""</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span> shift<span class="token punctuation">;</span> $flist <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    @fields <span class="token operator">=</span> <span class="token function">split</span><span class="token punctuation">(</span><span class="token operator">/</span><span class="token punctuation">,</span><span class="token operator">/</span><span class="token punctuation">,</span>$flist<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    shift<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    chomp<span class="token punctuation">;</span>
+    @words <span class="token operator">=</span> split <span class="token operator">/</span>$delim<span class="token operator">/</span><span class="token punctuation">;</span>
+    @outs <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    $nf <span class="token operator">=</span> $#words<span class="token punctuation">;</span>
+    foreach $f <span class="token punctuation">(</span>@fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        push @outs<span class="token punctuation">,</span> $words<span class="token punctuation">[</span>$f<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>$f <span class="token operator">&lt;=</span> $nf<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    print <span class="token function">join</span><span class="token punctuation">(</span>$delim<span class="token punctuation">,</span>@outs<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+Python solution calling /usr/bin/cut
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>python
+import subprocess<span class="token punctuation">,</span> sys
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+subprocess<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"cut"</span><span class="token punctuation">,</span><span class="token string">"-c%s-%s"</span><span class="token operator">%</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+Sample solution in Python
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>python
+
+import sys
+
+<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">4</span><span class="token punctuation">:</span>
+    sys<span class="token punctuation">.</span>stderr<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"Usage: %s &lt;n&gt; &lt;m&gt; &lt;file&gt;\n"</span> <span class="token operator">%</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    sys<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token function">open</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    line <span class="token operator">=</span> line<span class="token punctuation">.</span><span class="token function">rstrip</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token function">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token function">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+</div>
+</li><li>
+
+Implement a Perl script to solve the marks-to-grades problem that
+was solved as a shell script in a previous tutorial.
+Reminder: the script reads a sequence
+of (studentID,mark) pairs from its standard input and writes
+(studentID,grade) pairs to its standard output.
+The input pairs are written on a single line, separated by spaces,
+and the output should use a similar format.
+The script should also check whether the second value on each line
+looks like a valid grade, and output an appropriate message if it
+doesn't.
+The script can ignore any extra data occuring after the mark on each line.
+<p>
+Consider the following input and corresponding output to the
+program:
+
+
+</p><table cellpadding="10">
+<tbody><tr> <th>Input </th><th>Output
+</th></tr><tr>
+<td>
+<pre class="command_line">2212345 65
+2198765 74
+2199999 48
+2234567 50 ok
+2265432 99
+2121212 hello
+2222111 120
+2524232 -1
+</pre>
+
+</td><td>
+<pre class="command_line">2212345 CR
+2198765 CR
+2199999 FL
+2234567 PS
+2265432 HD
+2121212 ?? (hello)
+2222111 ?? (120)
+2524232 ?? (-1)
+</pre>
+
+</td></tr></tbody></table>
+
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    chomp<span class="token punctuation">;</span>
+    <span class="token punctuation">(</span>$sid<span class="token punctuation">,</span>$mark<span class="token punctuation">)</span> <span class="token operator">=</span> split<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$mark <span class="token operator">!</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span>\d<span class="token operator">+</span>$<span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $grade <span class="token operator">=</span> <span class="token string">"??"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        $grade <span class="token operator">=</span> <span class="token string">"FL"</span> <span class="token keyword">if</span> $mark <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> $mark <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">;</span>
+        $grade <span class="token operator">=</span> <span class="token string">"PS"</span> <span class="token keyword">if</span> $mark <span class="token operator">&gt;=</span> <span class="token number">50</span> <span class="token operator">&amp;&amp;</span> $mark <span class="token operator">&lt;</span> <span class="token number">65</span><span class="token punctuation">;</span>
+        $grade <span class="token operator">=</span> <span class="token string">"CR"</span> <span class="token keyword">if</span> $mark <span class="token operator">&gt;=</span> <span class="token number">65</span> <span class="token operator">&amp;&amp;</span> $mark <span class="token operator">&lt;</span> <span class="token number">75</span><span class="token punctuation">;</span>
+        $grade <span class="token operator">=</span> <span class="token string">"DN"</span> <span class="token keyword">if</span> $mark <span class="token operator">&gt;=</span> <span class="token number">75</span> <span class="token operator">&amp;&amp;</span> $mark <span class="token operator">&lt;</span> <span class="token number">85</span><span class="token punctuation">;</span>
+        $grade <span class="token operator">=</span> <span class="token string">"HD"</span> <span class="token keyword">if</span> $mark <span class="token operator">&gt;=</span> <span class="token number">85</span> <span class="token operator">&amp;&amp;</span> $mark <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+        $grade <span class="token operator">=</span> <span class="token string">"??"</span> <span class="token keyword">if</span> $mark <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> $mark <span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    $err <span class="token operator">=</span> <span class="token punctuation">(</span>$grade ne <span class="token string">"??"</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">""</span> <span class="token punctuation">:</span> <span class="token string">" ($mark)"</span><span class="token punctuation">;</span>
+    print <span class="token string">"$sid $grade$err\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+</div>
+</li><li>
+
+Write a program <code>addressbook.pl</code> that reads two files <code>people.txt</code> and <code>phones.txt</code> containing data in CSV
+(comma-separated values) format and uses this data to print
+an address book in the format below:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat people.txt</kbd>
+andrew,Andrew Taylor,42 Railway St,Petersham
+arun,Arun Sharma,94 Leafy Close,Brisbane
+gernot,Gernot Heiser,64 Trendy Tce,Newtown
+jas,John Shepherd,16/256 Busy Rd,Alexandria
+<kbd class="shell">cat phones.txt</kbd>
+jas,home,9665 6432
+arun,work,9385 5518
+jas,work,9385 6494
+arun,home,(07) 9314 6543
+andrew,work,9385 4321
+arun,mobile,0803 123 432
+<kbd class="shell">./addressbook.pl</kbd>
+Andrew Taylor
+42 Railway St, Petersham
+Phones: 9385 4321 (work)
+
+Arun Sharma
+94 Leafy Close, Brisbane
+Phones: 0803 123 432 (mobile), (07) 9314 6543 (home), 9385 5518 (work)
+
+Gernot Heiser
+64 Trendy Tce, Newtown
+Phones: ?
+
+John Shepherd
+16/256 Busy Rd, Alexandria
+Phones: 9665 6432 (home), 9385 6494 (work)
+
+</pre>
+
+<p>
+Assume that there are only three types of phone (mobile, home and work)
+and we always display them in that order.
+</p>
+<p>
+<i>Hint:</i> because the phone types are fixed, login name and phone type
+together can be the key used to look up a number.
+In this situation some suitable separator is used to create
+a composite, unambiguous key for the hash.
+
+</p><div class="answer">
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# Build hash table of phone numbers<span class="token punctuation">,</span> where keys
+# are <span class="token string">"person:phone-type"</span> strings
+
+open my $phones<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">"phones.txt"</span> or die <span class="token string">"Can not open phones.txt:$!\n"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$phones<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    chomp $line<span class="token punctuation">;</span>
+    my <span class="token punctuation">(</span>$id<span class="token punctuation">,</span>$type<span class="token punctuation">,</span>$number<span class="token punctuation">)</span> <span class="token operator">=</span> split <span class="token operator">/</span><span class="token punctuation">,</span><span class="token operator">/</span><span class="token punctuation">,</span> $line<span class="token punctuation">;</span>
+    $phones<span class="token punctuation">{</span><span class="token string">"$id:$type"</span><span class="token punctuation">}</span> <span class="token operator">=</span> $number<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+close $phones<span class="token punctuation">;</span>
+
+# Iterate through People<span class="token punctuation">,</span> displaying values
+open my $people<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">"people.txt"</span> or die <span class="token string">"Can not open people.txt:$!\n"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$people<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    chomp $line<span class="token punctuation">;</span>
+    my <span class="token punctuation">(</span>$id<span class="token punctuation">,</span>$name<span class="token punctuation">,</span>$street<span class="token punctuation">,</span>$suburb<span class="token punctuation">)</span> <span class="token operator">=</span> split <span class="token operator">/</span><span class="token punctuation">,</span><span class="token operator">/</span><span class="token punctuation">,</span> $line<span class="token punctuation">;</span>
+    print <span class="token string">"$name\n$street, $suburb\nPhones: "</span><span class="token punctuation">;</span>
+    my $nphones <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    foreach $type <span class="token punctuation">(</span><span class="token string">'mobile'</span><span class="token punctuation">,</span> <span class="token string">'home'</span><span class="token punctuation">,</span> <span class="token string">'work'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $key <span class="token operator">=</span> <span class="token string">"$id:$type"</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">defined</span><span class="token punctuation">(</span>$phones<span class="token punctuation">{</span>$key<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            $num <span class="token operator">=</span> $phones<span class="token punctuation">{</span>$key<span class="token punctuation">}</span><span class="token punctuation">;</span>
+            print <span class="token string">", "</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>$nphones<span class="token operator">++</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            print <span class="token string">"$num ($type)"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    print <span class="token string">"?"</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>$nphones <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    print <span class="token string">"\n\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+close $people<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+</div>
+
+</li></ol>
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

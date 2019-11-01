@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 03 Laboratory Sample Solutions
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 03 Laboratory Sample Solutions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 03 Laboratory Sample Solutions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 03 Laboratory Sample Solutions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 03 Laboratory Sample Solutions_files/popper.min.js"></script>
+<script src="./COMP2041 Week 03 Laboratory Sample Solutions_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 03 Laboratory Sample Solutions_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 03 Laboratory Sample Solutions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 03 Laboratory Sample Solutions_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 03 Laboratory Sample Solutions_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 03 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laboratory <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/03/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Solutions <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/questions">Exercises</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Sample Solutions</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Objectives
+            </h3>
+        </div>
+        <div class="card-body">
+
+<ul>
+
+<li>Practice writing shell scripts for real tasks.</li>
+
+<li>Practice processing collections of files with shell scripts.</li>
+
+</ul>
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Preparation
+            </h3>
+        </div>
+        <div class="card-body">
+
+Before the lab you should re-read the relevant lecture slides and their accompanying examples.
+
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Getting Started
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+Create a new directory for this lab called <code>lab03</code> and change to this directory with these comamnds:
+
+<pre class="command_line"><kbd class="shell">mkdir lab03</kbd>
+<kbd class="shell">cd lab03</kbd>
+</pre>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Converting Images from JPG to PNG
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write a shell script <code>jpg2png.sh</code> which converts all images in <a href="http://en.wikipedia.org/wiki/JPEG">JPEG</a> format
+in the current directory to <a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a> format.
+<p>
+You can assume that JPEG files and only JPEG files have the suffix <code>jpg</code>.
+</p><p>
+If the conversion is succesful the JPEG file should be removed.
+</p><p>
+Your script should stop with the error message shown below and exit status 1 if the PNG file already exists.
+
+</p><pre class="command_line"><kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/jpg2png/images.zip</kbd>
+<kbd class="shell">unzip images.zip</kbd>
+Archive:  images.zip
+  inflating: Johannes Vermeer - The Girl With The Pearl Earring.jpg
+  inflating: nautilus.jpg
+  inflating: panic.jpg
+  inflating: penguins.jpg
+  inflating: shell.jpg
+  inflating: stingray.jpg
+  inflating: treefrog.jpg
+<kbd class="shell">./jpg2png.sh</kbd>
+<kbd class="shell">ls</kbd>
+'Johannes Vermeer - The Girl With The Pearl Earring.png'   jpg2png.sh     panic.png  shell.png      treefrog.png
+ images.zip                        nautilus.png   penguins.png   stingray.png
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/jpg2png//penguins.jpg</kbd>
+<kbd class="shell">ls</kbd>
+'Johannes Vermeer - The Girl With The Pearl Earring.png'   jpg2png.sh     panic.png  penguins.png   stingray.png
+ images.zip                        nautilus.png   penguins.jpg   shell.png      treefrog.png
+<kbd class="shell">./jpg2png.sh</kbd>
+penguins.png already exists
+</pre>
+
+<h4>Hints</h4>
+<p>
+You may find sed and back quotes useful.
+</p><p>
+The tool <code>convert</code> will convert between many image formats, for example:
+
+</p><pre class="command_line"><kbd class="shell">convert penguins.jpg penguins.png</kbd>
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest jpg2png</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab03_jpg2png jpg2png.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>jpg2png.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+<span class="token keyword">for</span> jpg_file <span class="token keyword">in</span> <span class="token operator">*</span><span class="token punctuation">.</span>jpg
+<span class="token keyword">do</span>
+    png_file<span class="token operator">=</span>`echo <span class="token string">"$jpg_file"</span><span class="token operator">|</span>sed <span class="token string">'s/jpg$/png/'</span>`
+    <span class="token keyword">if</span> test <span class="token operator">-</span>e <span class="token string">"$png_file"</span>
+    then
+        echo <span class="token string">"$png_file"</span> already exists
+        exit <span class="token number">1</span>
+    fi
+    convert <span class="token string">"$jpg_file"</span> <span class="token string">"$png_file"</span> <span class="token operator">&amp;&amp;</span> rm <span class="token string">"$jpg_file"</span>
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Email that Image?
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write a shell script <code>email_image.sh</code> which given a list of image
+files as arguments  displays them one-by-one.  After the user has viewed each image
+the script should prompt the user for an e-mail address.
+If the user does enter an email address, the script should prompt the user for a message to
+accompany the image and then send the image to
+the specified e-mail address.
+<pre class="command_line"><kbd class="shell">./email_image.sh penguins.png treefrog.png </kbd>
+Address to e-mail this image to? <kbd>andrewt@cse.unsw.edu.au</kbd>
+Message to accompany image? <kbd>Penguins are cool.</kbd>
+penguins.png sent to andrewt@cse.unsw.edu.au
+Address to e-mail this image to? <kbd>andrewt@cse.unsw.edu.au</kbd>
+Message to accompany image? <kbd>This is a White-lipped Tree Frog</kbd>
+treefrog.png sent to andrewt@cse.unsw.edu.au
+</pre>
+<p>
+</p><h4>Hints</h4>
+<p>
+The program <code>display</code> can be used to view image files
+</p><p>
+The program  <code>mutt</code> can be used to send mail from the command line including attachments, for example:
+</p><p>
+</p><pre class="command_line"><kbd class="shell">echo 'Penguins are cool.'|mutt -s 'penguins!' -e 'set copy=no' -a penguins.png -- nobody@nowhere.com</kbd>
+</pre>
+
+<div class="answer">
+
+For comparison to the Shell a Python solution
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>python3
+
+import smtplib<span class="token punctuation">,</span> subprocess<span class="token punctuation">,</span> sys
+from email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text import MIMEText
+from email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>multipart import MIMEMultipart
+
+from_address <span class="token operator">=</span> <span class="token string">"andrewt@unsw.edu.au"</span>
+<span class="token keyword">for</span> png_file <span class="token keyword">in</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    subprocess<span class="token punctuation">.</span><span class="token function">check_output</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'display'</span><span class="token punctuation">,</span> png_file<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"Address to e-mail this image to? "</span><span class="token punctuation">)</span>
+    sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    to_address <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span><span class="token function">readline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">strip</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> to_address<span class="token punctuation">:</span>
+        sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"Message to accompany image? "</span><span class="token punctuation">)</span>
+        sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        message <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span><span class="token function">readline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">strip</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        msg <span class="token operator">=</span> <span class="token function">MIMEMultipart</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+        msg<span class="token punctuation">[</span><span class="token string">'Subject'</span><span class="token punctuation">]</span> <span class="token operator">=</span> png_file
+        msg<span class="token punctuation">[</span><span class="token string">'From'</span><span class="token punctuation">]</span> <span class="token operator">=</span> from_address
+        msg<span class="token punctuation">[</span><span class="token string">'To'</span><span class="token punctuation">]</span> <span class="token operator">=</span> to_address
+        with <span class="token function">open</span><span class="token punctuation">(</span>png_file<span class="token punctuation">)</span> as f<span class="token punctuation">:</span>
+            attachment <span class="token operator">=</span> <span class="token function">MIMEText</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            attachment<span class="token punctuation">.</span><span class="token function">add_header</span><span class="token punctuation">(</span><span class="token string">'Content-Disposition'</span><span class="token punctuation">,</span> <span class="token string">'attachment'</span><span class="token punctuation">,</span> filename<span class="token operator">=</span>png_file<span class="token punctuation">)</span>
+            msg<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span>attachment<span class="token punctuation">)</span>
+        s <span class="token operator">=</span> smtplib<span class="token punctuation">.</span><span class="token function">SMTP</span><span class="token punctuation">(</span><span class="token string">'smtp.cse.unsw.edu.au'</span><span class="token punctuation">)</span>
+        s<span class="token punctuation">.</span><span class="token function">sendmail</span><span class="token punctuation">(</span>from_address<span class="token punctuation">,</span> <span class="token punctuation">[</span>to_address<span class="token punctuation">]</span><span class="token punctuation">,</span> msg<span class="token punctuation">.</span><span class="token function">as_string</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        s<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"No email sent"</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab03_email_image/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 25 June 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab03_email_image email_image.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>email_image.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+<span class="token keyword">for</span> png_file <span class="token keyword">in</span> <span class="token string">"$@"</span>
+<span class="token keyword">do</span>
+    display <span class="token string">"$png_file"</span>
+    echo <span class="token operator">-</span>n <span class="token string">"Address to e-mail this image to? "</span>
+    read address
+    <span class="token keyword">if</span> test <span class="token operator">-</span>n <span class="token string">"$address"</span>
+    then
+        echo <span class="token operator">-</span>n <span class="token string">"Message to accompany image? "</span>
+        read message
+        echo <span class="token string">"$message"</span><span class="token operator">|</span> mutt <span class="token operator">-</span>s <span class="token string">'image'</span> <span class="token operator">-</span>a <span class="token string">"$png_file"</span> <span class="token operator">-</span>e <span class="token string">'set copy=no'</span> <span class="token operator">--</span> <span class="token string">"$address"</span>
+        echo <span class="token string">"$png_file sent to $address"</span>
+    <span class="token keyword">else</span>
+        echo <span class="token string">"No email sent"</span>
+    fi
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Date A Penguin?
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write a shell script <code>date_image.sh</code> which, given a list of image
+files as arguments, changes each file so it has a label added to the image
+indicating the time it was taken.
+You can assume the last-modification time of the image file
+is the time it was taken.
+<p>
+So for example if we run these commands:
+
+</p><pre class="command_line"><kbd class="shell">cp -p /web/cs2041/19T2/activities/date_image/penguins.jpg  .</kbd>
+<kbd class="shell">ls -l penguins.jpg </kbd>
+-rw-r--r-- 1 andrewt andrewt 58092 Mar 16 16:08 penguins.jpg
+<kbd class="shell">./date_image.sh penguins.jpg</kbd>
+<kbd class="shell">display  penguins.jpg </kbd>
+</pre>
+
+Then <code>penguins.jpg</code> should have been be modified to look like this:
+<p>
+<img alt="http://en.wikipedia.org/wiki/File:Emperor_penguins.jpg" src="./COMP2041 Week 03 Laboratory Sample Solutions_files/labelled_penguins.jpg">
+</p><h4>Hints</h4>
+<p>
+The program <code>convert</code> can be used to label an image like this:
+
+</p><pre class="command_line"><kbd class="shell"> convert -gravity south -pointsize 36 -draw "text 0,10 'Andrew rocks'" penguins.jpg temporary_file.jpg</kbd>
+</pre>
+
+<b>Hint:</b> <code>sed</code> and/or <code>cut</code> may be useful to extract the date &amp; time from ls's output.
+<p>
+<b>Hint:</b> <code>convert</code> produce confusing messages if you don't get its option syntax exactly right
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+</p><p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab03_date_image/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 25 June 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab03_date_image date_image.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>date_image.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+<span class="token keyword">for</span> image_file <span class="token keyword">in</span> <span class="token string">"$@"</span>
+<span class="token keyword">do</span>
+    last_modify_time<span class="token operator">=</span>`ls <span class="token operator">-</span>l <span class="token string">"$image_file"</span><span class="token operator">|</span>cut <span class="token operator">-</span>d\  <span class="token operator">-</span>f5<span class="token operator">-</span><span class="token operator">|</span>sed <span class="token string">'s/^ *//'</span><span class="token operator">|</span>cut <span class="token operator">-</span>d\  <span class="token operator">-</span>f2<span class="token operator">-</span><span class="token number">4</span>`
+    temporary_file<span class="token operator">=</span><span class="token string">"$image_file.tmp.$$"</span>
+    <span class="token keyword">if</span> test <span class="token operator">-</span>e <span class="token string">"$temporary_file"</span>
+    then
+        echo <span class="token string">"$temporary_file"</span> already exists
+        exit <span class="token number">1</span>
+    fi
+    convert <span class="token operator">-</span>gravity south <span class="token operator">-</span>pointsize <span class="token number">36</span> <span class="token operator">-</span>draw <span class="token string">"text 0,10 '$last_modify_time'"</span> <span class="token string">"$image_file"</span> <span class="token string">"$temporary_file"</span> <span class="token operator">&amp;&amp;</span>
+    touch <span class="token operator">-</span>r <span class="token string">"$image_file"</span> <span class="token string">"$temporary_file"</span> <span class="token operator">&amp;&amp;</span>  # preserve modification time <span class="token punctuation">(</span>challenge question<span class="token punctuation">)</span>
+    mv <span class="token string">"$temporary_file"</span> <span class="token string">"$image_file"</span>
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Tagging a Collection of Music
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+Andrew regularly spends time far from the internet and streaming music services such as Spotify,
+so he has a <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/tag_music/music.zip">large collection</a> of <a href="https://en.wikipedia.org/wiki/MP3">MP3</a> files containing music.
+<p>
+Andrew has a problem - the <a href="https://en.wikipedia.org/wiki/ID3">ID3</a> tags in the <a href="https://en.wikipedia.org/wiki/MP3">MP3</a> files in his music collection are incorrect.
+Unfortunately Andrew's favourite  player software organizes music using the information from these <a href="https://en.wikipedia.org/wiki/ID3">ID3</a> tags.  Your task it to fix Andrew's problem by set the <a href="https://en.wikipedia.org/wiki/ID3">ID3</a> tags to the correct values.  Fortunately the correct value for the tags can be retrieved from the file names and the names of the directories the files are in.
+</p><p>
+Your task is to write a shell script <code>tag_music.sh</code> which sets the ID3 tags of MP3 files using the information from  file names and directory names.
+</p><p>
+You'll first need to make a copy of Andrew's music collection.
+</p><p>
+
+
+
+Download music.zip <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/tag_music/music.zip">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/tag_music/music.zip .</kbd>
+</pre>
+
+
+<p>
+You assume the names of files and directories follow a standard format.  You can determine this
+format by look at ethe files in Andrew's music collection.
+
+
+</p><pre class="command_line"><kbd class="shell">unzip music.zip</kbd>
+Archive:  music.zip
+   creating: music/
+   creating: music/Triple J Hottest 100, 2007/
+  inflating: music/Triple J Hottest 100, 2007/2 - Straight Lines - Silverchair.mp3
+  inflating: music/Triple J Hottest 100, 2007/10 - Don't Fight It - The Panics.mp3
+ <i>...</i>
+</pre>
+
+The command <code>id3</code> can be used to list the value of ID3 tags in an MP3 file, for example:
+
+<pre class="command_line"><kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3'</kbd>
+music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+</pre>
+
+As you can see the ID3 tags of this music file have been accidentally over-written. The ID3 tags  should be:
+
+<pre class="command_line"><kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3'</kbd>
+music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3:
+Title  : Riptide                         Artist: Vance Joy
+Album  : Triple J Hottest 100, 2013      Year: 2013, Genre: Unknown (255)
+Comment:                                 Track: 1
+</pre>
+
+Fortunately all the information needed to fix the ID3 tags is available in
+the name of the file and the name of the directory it is in.
+<p>
+You will write a shell script <code>tag_music.sh</code> which takes the name of 1 or more directories
+as arguments and fixes the ID3 tags of the all MP3 files in that directory.
+For example:
+
+</p><pre class="command_line"><kbd class="shell">./tag_music.sh 'music/Triple J Hottest 100, 2015'</kbd>
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2015/4 - The Less I Know the Better - Tame Impala.mp3'</kbd>
+music/Triple J Hottest 100, 2015/4 - The Less I Know the Better - Tame Impala.mp3:
+Title  : The Less I Know the Better      Artist: Tame Impala
+Album  : Triple J Hottest 100, 2015      Year: 2015, Genre: Unknown (255)
+Comment:                                 Track: 4
+<kbd class="shell">./tag_music.sh music/*</kbd>
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 1995/10 - Greg! The Stop Sign!! - TISM.mp3'</kbd>
+music/Triple J Hottest 100, 1995/10 - Greg! The Stop Sign!! - TISM.mp3:
+Title  : Greg! The Stop Sign!!           Artist: TISM
+Album  : Triple J Hottest 100, 1995      Year: 1995, Genre: Unknown (255)
+Comment:                                 Track: 10
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 1999/1 - These Days - Powderfinger.mp3'</kbd>
+music/Triple J Hottest 100, 1999/1 - These Days - Powderfinger.mp3:
+Title  : These Days                      Artist: Powderfinger
+Album  : Triple J Hottest 100, 1999      Year: 1999, Genre: Unknown (255)
+Comment:                                 Track: 1
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2012/2 - Little Talks - Of Monsters and Men.mp3'</kbd>
+music/Triple J Hottest 100, 2012/2 - Little Talks - Of Monsters and Men.mp3:
+Title  : Little Talks                    Artist: Of Monsters and Men
+Album  : Triple J Hottest 100, 2012      Year: 2012, Genre: Unknown (255)
+Comment:                                 Track: 2
+</pre>
+
+Your script should not change the <i>Genre</i> or <i>Comment</i> fields.
+<p>
+Your script should determine <i>Title</i>, <i>Artist</i>, <i>Track</i>, <i>Album</i> &amp; <i>Year</i> from the directory &amp; filename.
+
+</p><h4>Hints</h4>
+
+<pre class="command_line"><kbd class="shell">man id3</kbd>
+<i>...</i>
+</pre>
+
+<code>cut</code> almost works for extracting  <i>Title</i> and <i>Album</i>  from the filename.
+<p>
+Handling the few MP3 files correctly where using <code>cut</code> doesn't work will be considered a <b>challenge exercise</b>.
+</p><p>
+It can be difficult debugging your script on Andrew's music collection.
+In cases like these it usually worth creating a smaller data set
+for initial debugging.
+Such a tiny data set is available in  <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/tag_music/tiny_music.zip">tiny_music.zip</a> if you want to use it
+for debugging.  This dataset is used in the first autotests.
+
+
+
+Download tiny_music.zip <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/tag_music/tiny_music.zip">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/tag_music/tiny_music.zip .</kbd>
+</pre>
+
+
+
+<pre class="command_line"><kbd class="shell">unzip tiny_music.zip</kbd>
+Archive:  tiny_music.zip
+   creating: tiny_music/
+   creating: tiny_music/Album1, 2015/
+  inflating: tiny_music/Album1, 2015/2 - Little Talks - Of Monsters and Men.mp3
+  inflating: tiny_music/Album1, 2015/1 - Riptide - Vance Joy.mp3
+   creating: tiny_music/Album2, 2016/
+  inflating: tiny_music/Album2, 2016/2 - Royals - Lorde.mp3
+  inflating: tiny_music/Album2, 2016/1 - Hoops - The Rubens.mp3
+<kbd class="shell">id3 -l tiny_music/*/*.mp3</kbd>
+tiny_music/Album1, 2015/1 - Riptide - Vance Joy.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+tiny_music/Album1, 2015/2 - Little Talks - Of Monsters and Men.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+tiny_music/Album2, 2016/1 - Hoops - The Rubens.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+tiny_music/Album2, 2016/2 - Royals - Lorde.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+<kbd class="shell">./tag_music.sh tiny_music/*</kbd>
+<kbd class="shell">id3 -l tiny_music/*/*.mp3</kbd>
+tiny_music/Album1, 2015/1 - Riptide - Vance Joy.mp3:
+Title  : Riptide                         Artist: Vance Joy
+Album  : Album1, 2015                    Year: 2015, Genre: Unknown (255)
+Comment:                                 Track: 1
+tiny_music/Album1, 2015/2 - Little Talks - Of Monsters and Men.mp3:
+Title  : Little Talks                    Artist: Of Monsters and Men
+Album  : Album1, 2015                    Year: 2015, Genre: Unknown (255)
+Comment:                                 Track: 2
+tiny_music/Album2, 2016/1 - Hoops - The Rubens.mp3:
+Title  : Hoops                           Artist: The Rubens
+Album  : Album2, 2016                    Year: 2016, Genre: Unknown (255)
+Comment:                                 Track: 1
+tiny_music/Album2, 2016/2 - Royals - Lorde.mp3:
+Title  : Royals                          Artist: Lorde
+Album  : Album2, 2016                    Year: 2016, Genre: Unknown (255)
+Comment:                                 Track: 2
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest tag_music</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab03_tag_music tag_music.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>tag_music.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+<span class="token keyword">for</span> album_pathname <span class="token keyword">in</span> <span class="token string">"$@"</span>
+<span class="token keyword">do</span>
+    album<span class="token operator">=</span>`basename <span class="token string">"$album_pathname"</span>`
+    year<span class="token operator">=</span>`echo <span class="token string">"$album"</span><span class="token operator">|</span>sed <span class="token string">'s/.* //'</span>`
+
+    <span class="token keyword">for</span> mp3_pathname <span class="token keyword">in</span> <span class="token string">"$album_pathname"</span><span class="token comment">/*.mp3
+    do
+        mp3_filename=`basename "$mp3_pathname" .mp3`
+        # assume ' - ' doesn't occur in artist or album
+        track=`echo "$mp3_filename"|sed 's/ - .*/</span><span class="token operator">/</span>'`
+        title<span class="token operator">=</span>`echo <span class="token string">"$mp3_filename"</span><span class="token operator">|</span>sed <span class="token string">'s/^[0-9]* - //;s/ - .*//'</span>`
+        artist<span class="token operator">=</span>`echo <span class="token string">"$mp3_filename"</span><span class="token operator">|</span>sed <span class="token string">'s/.* - //'</span>`
+        id3 <span class="token operator">-</span>t <span class="token string">"$title"</span> <span class="token operator">-</span>T <span class="token string">"$track"</span> <span class="token operator">-</span>a <span class="token string">"$artist"</span> <span class="token operator">-</span>A <span class="token string">"$album"</span> <span class="token operator">-</span>y <span class="token string">"$year"</span> <span class="token string">"$mp3_pathname"</span> <span class="token operator">&gt;</span><span class="token operator">/</span>dev<span class="token operator">/</span><span class="token keyword">null</span>
+    done
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Challenge Exercise: Creating A Fake Music Collection
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+The test data for the previous question is not really Andrew's music collection.
+All the mp3 files contain identical contents.
+The directories and filenames  were created from the source of this  <a href="https://en.wikipedia.org/wiki/Triple_J_Hottest_100">web page</a>.
+<p>
+Write a shell script <code>create_music.sh</code> which uses the above webpage to create exactly the same directories and files as
+in the test data set supplied above.
+</p><p>
+Your script should take 2 arguments: the name of an MP3 file to use as the contents of the MP3 files you create and
+the directory in which to create the test data.
+For example:
+
+</p><pre class="command_line"><kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/create_music/sample.mp3</kbd>
+<kbd class="shell">mkdir my_fake_music</kbd>
+<kbd class="shell">ls my_fake_music</kbd>
+<kbd class="shell">./create_music.sh sample.mp3 my_fake_music</kbd>
+<kbd class="shell">ls my_fake_music</kbd>
+'Triple J Hottest 100, 1993'  'Triple J Hottest 100, 1998'  'Triple J Hottest 100, 2003'  'Triple J Hottest 100, 2008'  'Triple J Hottest 100, 2013'
+'Triple J Hottest 100, 1994'  'Triple J Hottest 100, 1999'  'Triple J Hottest 100, 2004'  'Triple J Hottest 100, 2009'  'Triple J Hottest 100, 2014'
+'Triple J Hottest 100, 1995'  'Triple J Hottest 100, 2000'  'Triple J Hottest 100, 2005'  'Triple J Hottest 100, 2010'  'Triple J Hottest 100, 2015'
+'Triple J Hottest 100, 1996'  'Triple J Hottest 100, 2001'  'Triple J Hottest 100, 2006'  'Triple J Hottest 100, 2011'  'Triple J Hottest 100, 2016'
+'Triple J Hottest 100, 1997'  'Triple J Hottest 100, 2002'  'Triple J Hottest 100, 2007'  'Triple J Hottest 100, 2012'  'Triple J Hottest 100, 2017'
+<kbd class="shell">ls 'my_fake_music/Triple J Hottest 100, 2017'</kbd>
+'1 - Humble - Kendrick Lamar.mp3'                '5 - The Deepest Sighs, the Frankest Shadows - Gang of Youths.mp3'
+'10 - What Can I Do If the Fire Goes Out? - Gang of Youths.mp3'  '6 - Green Light - Lorde.mp3'
+'2 - Let Me Down Easy - Gang of Youths.mp3'          '7 - Go Bang - Pnau.mp3'
+'3 - Chateau - Angus &amp; Julia Stone.mp3'              '8 - Sally - Thundamentals featuring Mataya.mp3'
+'4 - Ubu - Methyl Ethel.mp3'                     '9 - Lay It on Me - Vance Joy.mp3'
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/create_music/music.zip</kbd>
+<kbd class="shell">unzip music.zip</kbd>
+...
+<kbd class="shell">diff -r music my_fake_music</kbd>
+<kbd class="shell"></kbd>
+</pre>
+
+
+<h4>Hints</h4>
+
+<pre class="command_line"><kbd class="shell">wget -q -O- 'https://en.wikipedia.org/wiki/Triple_J_Hottest_100?action=raw'</kbd>
+<i>...</i>
+</pre>
+<p>
+You may find <a href="https://r12a.github.io/app-conversion/">this web page</a>
+useful for dealing with unicode characters such as <a href="https://en.wikipedia.org/wiki/Dash"><i>en dash</i></a>.
+</p>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest create_music</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab03_create_music create_music.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>create_music.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+mp3_file<span class="token operator">=</span><span class="token string">"$1"</span>
+base_dir<span class="token operator">=</span><span class="token string">"$2"</span>
+
+wget <span class="token operator">-</span>q <span class="token operator">-</span>O<span class="token operator">-</span> <span class="token string">'https://en.wikipedia.org/wiki/Triple_J_Hottest_100?action=raw'</span><span class="token operator">|</span>
+<span class="token keyword">while</span> read line
+<span class="token keyword">do</span>
+    # look <span class="token keyword">for</span> line which is start of Hottest <span class="token number">100</span> list <span class="token keyword">for</span> a year
+
+    case <span class="token string">"$line"</span> <span class="token keyword">in</span>
+    <span class="token operator">*</span><span class="token string">'[[Triple J'</span><span class="token operator">*</span><span class="token string">'|'</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token string">']]'</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    esac
+
+    # create a directory <span class="token keyword">for</span> a Hottest <span class="token number">100</span> year
+    album<span class="token operator">=</span>`echo <span class="token string">"$line"</span><span class="token operator">|</span>sed <span class="token string">'s/.*\[\[//;s/|.*//'</span>`
+    year<span class="token operator">=</span>`echo <span class="token string">"$album"</span><span class="token operator">|</span>sed <span class="token string">'s/.*\ //'</span>`
+    dir<span class="token operator">=</span><span class="token string">"$base_dir/Triple J Hottest 100, $year"</span>
+    mkdir <span class="token operator">-</span>p <span class="token operator">-</span>m <span class="token number">755</span> <span class="token string">"$dir"</span>
+
+    # read top <span class="token number">10</span> songs <span class="token keyword">for</span> year
+    track<span class="token operator">=</span><span class="token number">1</span>
+    <span class="token keyword">while</span> read line <span class="token operator">&amp;&amp;</span> test $track <span class="token operator">-</span>le <span class="token number">10</span>
+    <span class="token keyword">do</span>
+        case <span class="token string">"$line"</span> <span class="token keyword">in</span>
+        <span class="token string">'#'</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+        esac
+
+        # remove links to wikipedia pages
+        line<span class="token operator">=</span>`echo <span class="token string">"$line"</span><span class="token operator">|</span>sed <span class="token string">'s/[^[]*|//g'</span>`
+
+        # change slashes to hyphens <span class="token operator">-</span> because can't have <span class="token operator">/</span> <span class="token keyword">in</span> a filename
+        line<span class="token operator">=</span>`echo <span class="token string">"$line"</span><span class="token operator">|</span>sed <span class="token string">'s/\//-/g'</span>`
+
+        # remove some formating characters
+        line<span class="token operator">=</span>`echo <span class="token string">"$line"</span><span class="token operator">|</span>tr <span class="token operator">-</span>d <span class="token string">'[]"#'</span>`
+
+        #<span class="token keyword">break</span> line <span class="token keyword">in</span> two at en dash byte codes
+        artist<span class="token operator">=</span>`echo <span class="token string">"$line"</span><span class="token operator">|</span>sed <span class="token string">'s/\xe2\x80\x93.*//'</span>`
+        title<span class="token operator">=</span>`echo <span class="token string">"$line"</span><span class="token operator">|</span>sed <span class="token string">'s/.*\xe2\x80\x93//'</span>`
+
+        #trim leading spaces
+        artist<span class="token operator">=</span>`echo <span class="token string">"$artist"</span><span class="token operator">|</span>sed <span class="token string">'s/^ *//'</span>`
+        title<span class="token operator">=</span>`echo <span class="token string">"$title"</span><span class="token operator">|</span>sed <span class="token string">'s/^ *//'</span>`
+
+        #trim trailing spaces
+        artist<span class="token operator">=</span>`echo <span class="token string">"$artist"</span><span class="token operator">|</span>sed <span class="token string">'s/ *$//'</span>`
+        title<span class="token operator">=</span>`echo <span class="token string">"$title"</span><span class="token operator">|</span>sed <span class="token string">'s/ *$//'</span>`
+
+        file<span class="token operator">=</span><span class="token string">"$dir/$track - $title - $artist.mp3"</span>
+        cp <span class="token operator">-</span>p <span class="token string">"$mp3_file"</span> <span class="token string">"$file"</span>
+        track<span class="token operator">=</span>$<span class="token punctuation">(</span><span class="token punctuation">(</span>track <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    done
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercises make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Tuesday 25 June 17:59:59</b>
+
+
+to submit your work.
+</p><p>
+You cannot obtain marks by e-mailing lab work to tutors or lecturers.
+</p><p>
+You check the files you have submitted <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">here</a>
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+</p><h4>Lab Marks</h4>
+<p>
+When all components of a lab  are automarked you should be able to view the
+the marks <a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre class="command_line"><kbd class="shell">2041 classrun -sturec</kbd>
+</pre>
+<p>
+The lab exercises for each week are worth in total 1.2 marks.
+</p><p>
+Usually each lab exercise will be worth the same - for example if there are 5 lab exercises each will be worth 0.4 marks.
+</p><p>
+Except challenge exercises (see below) will never total more than 20% of each week's lab mark.
+</p><p>
+All of your lab marks for weeks 1-10, will be summed to give you a mark out of 12.
+</p><p>
+If their sum exceeds 9 - your total mark will be capped at 9.
+
+</p><h4>Running Autotests On your Own Computer</h4>
+
+An experimental version of autotest exists which may allow you to run autotest on your own computer.
+<p>
+If you are running Linux,  Windows Subsystem for Linux or OSX.  These commands might let you run autotests at home.
+
+</p><pre class="command_line"><kbd class="shell">sudo wget https://cgi.cse.unsw.edu.au/~cs2041/19T2/resources/home_autotest -O/usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">sudo chmod 755 /usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">2041_autotest shell_snapshot</kbd>
+</pre>
+
+Autotest itself needs Python 3.6 (or later) installed.
+<p>
+Particular autotests may require other software install, e.g.  autotests of perl programs require Perl installed (of course).
+</p><p>
+The legit autotests need  python3.7, git &amp; binfmt-support installed.
+</p><p>
+The program embeds the autotests themselves, so you'll need to re-download if autotests are changed, added, fixed, ...
+</p><p>
+If it breaks on your computer post on the class forum  and we'll fix if we can, but this is very definitely experimental.
+
+</p></div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

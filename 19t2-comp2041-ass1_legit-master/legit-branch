@@ -1,0 +1,41 @@
+#!/usr/bin/perl -w
+if(! -d ".legit/branch"){
+    mkdir ".legit/branch";
+    mkdir ".legit/branch/master"
+}
+my $num = scalar(@ARGV);
+my @dir_files=<".legit/repo/*">;
+#print @dir_files;
+if( @dir_files ){
+    if($num == 2){
+        if($ARGV[0] eq "-d"){
+            if($ARGV[1] eq "master"){
+                print "legit-branch: error: can not delete branch 'master'\n"
+            }else{
+                if(-d ".legit/branch/$ARGV[1]"){
+                    unlink glob ".legit/branch/$ARGV[1]/*";
+                    rmdir ".legit/branch/$ARGV[1]";
+                    print "Deleted branch '$ARGV[1]'\n";
+                }else{
+                    print "legit-branch: error: branch '$ARGV[1]' does not exist\n"
+                }
+
+                                
+            }
+        }
+    }elsif($num == 1){
+        if($ARGV[0] eq "master"){
+            print "legit-branch: error: branch 'master' already exists\n"
+        }else{
+            mkdir ".legit/branch/$ARGV[0]";
+
+        }              
+    }else{
+        foreach $file(glob ".legit/branch/*"){
+            $file =~ s/.legit\/branch\///g;
+            print "$file\n";
+        }     
+    }
+}else{
+    print  "legit-branch: error: your repository does not have any commits yet\n";
+}

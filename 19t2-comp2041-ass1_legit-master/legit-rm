@@ -1,0 +1,227 @@
+#!/bin/dash
+
+if test -e ".legit/record.txt"
+then
+	i=`cat ".legit/record.txt"|wc -l|sed 's/[ ]//g'`
+else
+	i=0;
+fi
+j=`expr $i - 1`
+k=`expr $j - 1`
+#echo "$i"
+flag1=`echo "$@"|grep -o '[-][-]force'`
+flag2=`echo "$@"|grep -o '[-][-]cached'`
+#echo $flag1
+#echo $flag2
+
+flagrepo=1
+flagindex=1
+flagdir=1
+
+for file in $@
+do 
+    #echo $file
+    tem=`echo "$file"|grep -o '[-][-]force'`
+    #echo $tem here1
+    if test -z `echo "$file"|grep -o '[-][-]force'`
+    then
+        tem=`echo "$file"|grep -o '[-][-]cached'`
+        #echo $tem here2
+        if test -z `echo "$file"|grep -o '[-][-]cached'`
+        then
+            #echo $file
+            if ! test -z $flag1
+            #1.--force
+            then
+                #echo 3
+                if test -e ".legit/index/$file"  && test -e ".legit/repo/$file"
+                then
+
+                    rm ".legit/index/$file"
+
+                    if test -z $flag2
+                    then
+                        rm "$file"
+                    fi
+                else
+                    if cmp -s ".legit/index/$file" ".legit/repo/$file" || cmp -s ".legit/index/$file" "$file"
+                    then
+                        rm ".legit/index/$file"
+
+                        if test -z $flag2
+                        then
+                            rm "$file"
+                        fi
+                    else
+                        if test -e ".legit/index/$file"  && test -e "$file"
+                        then
+
+                                rm ".legit/index/$file"
+
+                                if test -z $flag2
+                                then
+                                    rm "$file"
+                                fi
+                        else
+                            echo "legit-rm: error: '$file' is not in the legit repository"
+                        fi
+                    fi
+                fi
+                
+            else
+            #2.no force
+                #echo 5
+                
+                if test -e ".legit/index/$file"
+                then  
+                                
+                    if cmp -s ".legit/index/$file" ".legit/repo/$file"  #r : i = 1
+                    then
+                        if cmp -s ".legit/index/$file" "$file"  #i : c = 1
+                        then
+                            if cmp -s ".legit/repo/$file" "$file"  #r : c = 1 （111）1
+                            then                              
+                                rm ".legit/index/$file"
+                            else  #repo：cur=0 （101）2
+                                #echo 2
+                                if test -z $flag2
+                                then
+                                    echo "legit-rm: error: '$file' in repository is different to working file"
+                                break
+                                else
+                                    rm ".legit/index/$file"
+                                fi
+                            fi
+                        else  #r：i=1 index : cur = 0;  
+                            if cmp -s "$file" ".legit/repo/$file"  #r：c=1 i：r=1 ！index：cur=0（110）3
+                            then
+                                #echo 3
+                                echo "legit-rm: error: '$file' in index is different to working file"
+                                break
+                            else #i：r=1 ！cur：repo=0 ！index：cur=0 （100）4
+                                #echo 4
+                                #rm ".legit/index/$file"
+                                if test -z $flag2
+                                then
+                                    
+                                    echo "legit-rm: error: '$file' in repository is different to working file"
+                                    break
+                                else
+                                    rm ".legit/index/$file"
+                                fi
+                            fi
+                        fi
+                    else #repo：index=0
+                        if cmp -s ".legit/index/$file" "$file"  #i ： c = 1
+                        then
+                            if cmp -s "$file" ".legit/repo/$file"    #r：c=1 i：c=1 repo：index=0（011）5
+                            then
+                                #echo 5
+                                echo "legit-rm: error: '$file' has changes staged in the index"
+                                break
+                            else        #r：c=0（001）6 repo：cur=0 repo：index=0
+                                #echo 6
+                                if test -z $flag2
+                                then
+                                    echo  "legit-rm: error: '$file' has changes staged in the index"
+                                    break
+                                else
+                                    #echo "legit-rm: error: '$file' is not in the legit repository"
+                                    rm ".legit/index/$file"
+                                fi
+                            fi
+                        else #index：cur=0
+                            if cmp -s "$file" ".legit/repo/$file"    #r：c=1 repo：index=0 index：cur=0（001）7
+                            then
+                                #echo 7
+                                echo "legit-rm: error: '$file' in index is different to both working file and repository"                 
+                                #break
+                            else     #repo：index=0 repo：curr=0 index：curr=0（000）8---
+                                #echo 8
+                                #if test -z $flag2
+                                #then
+                                echo "legit-rm: error: '$file' in index is different to both working file and repository"
+                                break
+                                #else
+                                   # echo "legit-rm: error: '$file' is not in the legit repository"
+                                #fi
+                            fi
+                        fi
+                            
+                    fi
+                else
+                    if ! test -z $flag2
+                    then
+                        if ! test -e ".legit/repo/$file"
+                        then
+                            echo "legit-rm: error: '$file' is not in the legit repository"
+                        fi
+                    fi
+                fi
+                
+                if test -z $flag2
+                #2-2no cashed
+                then            
+                    if test -e ".legit/repo/$file"
+                    then
+                        if cmp -s ".legit/index/$file" ".legit/repo/$file"   #r : i = 1
+                        then
+                            if cmp -s ".legit/index/$file" "$file"    #i : c = 1
+                            then
+                                if cmp -s ".legit/repo/$file" "$file"    #r : c = 1 （111）1
+                                then
+                                    
+                                    rm "$file"
+                                else    #repo：cur=0 （101）2
+                                    #echo 22
+                                    echo "legit-rm: error: '$file' in repository is different to working file"
+                                    break
+                                fi
+                            else    #r：i=1 index : cur = 0;  
+                                if cmp -s "$file" ".legit/repo/$file"    #r：c=1 i：r=1 ！index：cur=0（110）3
+                                then
+                                    #echo 33
+                                    echo "legit-rm: error: '$file' in index is different to working file"
+                                    break
+                                else   #i：r=1 ！cur：repo=0 ！index：cur=0 （100）4
+                                    #echo 44
+                                    echo "legit-rm: error: '$file' in repository is different to working file"
+                                    break
+                                fi
+                            fi
+                        else     #repo：index=0
+                            
+                            if cmp -s ".legit/index/$file" "$file"    #i ： c = 1
+                            then
+                                if cmp -s "$file" ".legit/repo/$file"    #r：c=1 i：c=1 repo：index=0（011）5
+                                then
+                                    #echo 55
+                                    echo "legit-rm: error: '$file' has changes staged in the index"
+                                    break
+                                else      #r：c=0（001）6 repo：cur=0 repo：index=0
+                                    #echo 66
+                                    echo  "legit-rm: error: '$file' has changes staged in the index"
+                                fi
+                            else #index：cur=0
+                                #echo 666
+                                if cmp -s "$file" ".legit/repo/$file"    #r：c=1 repo：index=0 index：cur=0（001）7
+                                then
+                                    #echo 77
+                                    rm "$file"                             
+                                else       #repo：index=0 repo：curr=0 index：curr=0（000）8
+                                    #echo 88
+                                    echo "legit-rm: error: '$file' in repository is different to both working file and repository"
+                                    break
+                                fi
+                            fi                           
+                        fi
+                    else
+                        echo "legit-rm: error: '$file' is not in the legit repository"
+                        break
+                    fi
+                fi
+            fi
+        fi
+    fi
+done
+

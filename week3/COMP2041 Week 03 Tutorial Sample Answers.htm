@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 03 Tutorial Sample Answers
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 03 Tutorial Sample Answers_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 03 Tutorial Sample Answers_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 03 Tutorial Sample Answers_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 03 Tutorial Sample Answers_files/popper.min.js"></script>
+<script src="./COMP2041 Week 03 Tutorial Sample Answers_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 03 Tutorial Sample Answers_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 03 Tutorial Sample Answers_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 03 Tutorial Sample Answers_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 03 Tutorial Sample Answers_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 03 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tutorial <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/03/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Answers <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/questions">Questions</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers">Sample Answers</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student Nelson wrote this script named <b>start_lab03.sh</b> to run before the Week 3 lab.
+
+<pre class="command_line">#!/bin/sh
+cd ~/labs/03
+ex1=jpg2png
+ex2=email_image
+ex3=date_image
+ex4=tag_music
+</pre>
+
+But when he ran his script, it didn't seem to work:
+
+<pre class="command_line"><kbd class="shell">pwd</kbd>
+/home/z1234567
+<kbd class="shell">./start_lab03.sh</kbd>
+<kbd class="shell">pwd</kbd>
+/home/z1234567
+<kbd class="shell">echo $ex1 $ex2 $ex3 $ex4</kbd>
+
+</pre>
+
+Why not, and can you fix the shell script?
+
+<div class="answer">
+A shell script is executed by a separate shell so
+changes to its working directory affect only it.
+Similarly changes to variables in it, affect only it.
+<p>
+You can indicate that the commands in a file are
+to be run by a shell rather than executed as a separate program like this.
+
+</p><pre class="command_line answer"><kbd class="shell">. ./start_lab03.sh</kbd>
+<kbd class="shell">pwd</kbd>
+/home/z1234567/labs/03
+<kbd class="shell">echo $ex1 $ex2 $ex3 $ex4</kbd>
+jpg2png email_image date_image tag_music
+</pre>
+
+</div>
+
+</li><li>
+The course code for COMP2041 has been changed to COMP2042 and
+the course code for COMP9044 has been changed to COMP9042.
+Write a shell script, <code>update_course_code.sh</code> which
+appropriately changes the course_code in all the files it is given as arguments.
+
+<div class="answer">
+Sample solution for update_course_code.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+<span class="token keyword">for</span> file <span class="token keyword">in</span> <span class="token string">"$@"</span>
+<span class="token keyword">do</span>
+    temporary_file<span class="token operator">=</span><span class="token string">"$file.tmp.$$"</span>
+    <span class="token keyword">if</span> test <span class="token operator">-</span>e <span class="token string">"$temporary_file"</span>
+    then
+        echo <span class="token string">"$temporary_file"</span> already exists
+        exit <span class="token number">1</span>
+    fi
+    sed <span class="token string">'s/COMP2041/COMP2042/g;s/COMP9044/COMP9042/g'</span> $file <span class="token operator">&gt;</span>$temporary_file <span class="token operator">&amp;&amp;</span>
+    mv $temporary_file $file
+done</code></pre>
+
+
+
+
+
+Alternatively a single line solution using sed's -i (--inplace) option which
+widely but not universely supported.  Perl has a similar option:
+
+<pre class="command_line"><kbd class="shell">sed -i 's/COMP2041/COMP2042/g;s/COMP9044/COMP9042/g'</kbd> <i>file1 file2 ...</i>
+</pre>
+
+</div>
+
+</li><li>
+Modify  <code>update_course_code.sh</code> so if given a directory as
+argument it updates the course codes in files found in that directory and  its sub-directories.
+
+<div class="answer">
+
+Sample solution for update_course_code.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+# doesn't handle pathnames containing white space
+<span class="token keyword">for</span> file <span class="token keyword">in</span> `find <span class="token string">"$@"</span> <span class="token operator">-</span>type f`
+<span class="token keyword">do</span>
+    temporary_file<span class="token operator">=</span><span class="token string">"$file.tmp.$$"</span>
+    <span class="token keyword">if</span> test <span class="token operator">-</span>e <span class="token string">"$temporary_file"</span>
+    then
+        echo <span class="token string">"$temporary_file"</span> already exists
+        exit <span class="token number">1</span>
+    fi
+    sed <span class="token string">'s/COMP2041/COMP2042/g;s/COMP9044/COMP9042/g'</span> <span class="token string">"$file"</span> <span class="token operator">&gt;</span><span class="token string">"$temporary_file"</span> <span class="token operator">&amp;&amp;</span>
+    mv <span class="token operator">--</span> <span class="token string">"$temporary_file"</span> <span class="token string">"$file"</span>
+done</code></pre>
+
+
+
+
+
+Sample solution for update_course_code.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# doesn't hande pathnames containing <span class="token keyword">new</span> <span class="token class-name">lines</span>
+find <span class="token string">"$@"</span> <span class="token operator">-</span>type f<span class="token operator">|</span>
+<span class="token keyword">while</span> read file
+<span class="token keyword">do</span>
+    temporary_file<span class="token operator">=</span><span class="token string">"$file.tmp.$$"</span>
+    <span class="token keyword">if</span> test <span class="token operator">-</span>e <span class="token string">"$temporary_file"</span>
+    then
+        echo <span class="token string">"$temporary_file"</span> already exists
+        exit <span class="token number">1</span>
+    fi
+    sed <span class="token string">'s/COMP2041/COMP2042/g;s/COMP9044/COMP9042/g'</span> <span class="token string">"$file"</span> <span class="token operator">&gt;</span><span class="token string">"$temporary_file"</span> <span class="token operator">&amp;&amp;</span>
+    # not use of <span class="token operator">--</span> to stop mv interpreting filename beginning with <span class="token operator">-</span> as option
+    mv <span class="token operator">--</span> <span class="token string">"$temporary_file"</span> <span class="token string">"$file"</span>
+done</code></pre>
+
+
+
+
+
+Recursive sample solution for update_course_code.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+# solution by alex linker <span class="token number">2018</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">17</span>
+
+<span class="token keyword">for</span> arg <span class="token keyword">in</span> <span class="token string">"$@"</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">-</span>d $arg <span class="token punctuation">]</span> # <span class="token keyword">if</span> it's a directory
+    then
+        $<span class="token number">0</span> <span class="token string">"$arg"</span><span class="token comment">/* # call self with everything in the given directory
+    else
+        sed -i 's/COMP2041/COMP2042/g;s/COMP9044/COMP9042/g' "$arg"
+        # note that sed's -i option does it inplace but this option is not universally supported.
+    fi
+done</span></code></pre>
+
+
+
+
+
+Minimalist sample solution for update_course_code.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+# solution by Costa Paraskevopoulos
+# a minimalist solution <span class="token keyword">in</span> shell using the `find' filter
+# <span class="token keyword">in</span> conjunction with its `<span class="token operator">-</span>exec' option
+# this is a very common pattern when using `find<span class="token string">', see `man find'</span>
+# `sed <span class="token operator">-</span>i' is used as a convenience here
+
+find <span class="token string">"$@"</span> <span class="token operator">-</span>type f <span class="token operator">-</span>exec sed <span class="token operator">-</span>i <span class="token string">'s/COMP2041/COMP2042/g;s/COMP9044/COMP9042/g'</span> <span class="token string">'{}'</span> \<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+</div>
+
+</li><li>
+Write a shell script, <code>is_business_hours</code> which exits with a status of 0
+if the current time is between 9am &amp; 5pm, and otherwise  exits with a status of 1.
+<p>
+Hint: the date command prints the current time in a format like this:
+</p><pre class="command_line"><kbd class="shell">date</kbd>
+Sun Mar 18 12:57:08 EST 2012
+</pre>
+<div class="answer">
+Sample solution for is_business_hours.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# exits with a status of <span class="token number">0</span>  <span class="token keyword">if</span> the current time is between <span class="token number">9</span>am <span class="token operator">&amp;</span> <span class="token number">5</span>pm
+# otherwise exit with a status <span class="token number">1</span>
+#
+# date format looks like this Sun Mar <span class="token number">18</span> <span class="token number">12</span><span class="token punctuation">:</span><span class="token number">57</span><span class="token punctuation">:</span><span class="token number">08</span> EST <span class="token number">2012</span>
+
+current_hour<span class="token operator">=</span>`date<span class="token operator">|</span>cut <span class="token operator">-</span>d\  <span class="token operator">-</span>f4<span class="token operator">|</span>cut <span class="token operator">-</span>d<span class="token punctuation">:</span> <span class="token operator">-</span>f1`
+<span class="token keyword">if</span> test $current_hour <span class="token operator">-</span>ge <span class="token number">9</span> <span class="token operator">-</span>a $current_hour <span class="token operator">-</span>lt <span class="token number">17</span>
+then
+    exit <span class="token number">0</span>
+<span class="token keyword">else</span>
+    exit <span class="token number">1</span>
+fi</code></pre>
+
+
+
+
+
+Another sample solution for is_business_hours.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# exits with a status of <span class="token number">0</span>  <span class="token keyword">if</span> the current time is between <span class="token number">9</span>am <span class="token operator">&amp;</span> <span class="token number">5</span>pm
+# otherwise exit with a status <span class="token number">1</span>
+# date output looks like this <span class="token string">'Sun Mar 18 12:57:08 EST 2012'</span>
+# relies on the exit status being the exit status of last command
+# when there isn't an explicit exit
+
+current_hour<span class="token operator">=</span>`date<span class="token operator">|</span>cut <span class="token operator">-</span>d\  <span class="token operator">-</span>f4<span class="token operator">|</span>cut <span class="token operator">-</span>d<span class="token punctuation">:</span> <span class="token operator">-</span>f1`
+test $current_hour <span class="token operator">-</span>ge <span class="token number">9</span> <span class="token operator">-</span>a $current_hour <span class="token operator">-</span>lt <span class="token number">17</span></code></pre>
+
+
+
+
+
+Yet another sample solution for is_business_hours.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# the previous solutions assume the output of the date format
+# is consistent<span class="token operator">/</span>known<span class="token operator">/</span>predictable <span class="token operator">-</span> this is a very bad assumption
+# locale settings<span class="token operator">/</span>environment variables make this an unreliable method
+
+# this solution uses formatting options provided by the date command
+# to extract the hour reliably <span class="token operator">-</span> see `man date'
+
+current_hour<span class="token operator">=</span>`date <span class="token operator">+</span><span class="token operator">%</span>H`
+test $current_hour <span class="token operator">-</span>ge <span class="token number">9</span> <span class="token operator">-</span>a $current_hour <span class="token operator">-</span>lt <span class="token number">17</span></code></pre>
+
+
+
+
+</div>
+
+<!-- Questions below courtesy Michael Zhou -->
+</li><li>
+CSE systems have a command, <code>mlalias</code>, which
+prints information about a specified mail alias.  For example:
+<p>
+</p><pre class="command_line"><kbd class="shell">mlalias COMP2041-list</kbd>
+        alias: COMP2041-list
+  description: Udb alias list
+    addresses:
+               z5000000
+               z5000001
+               .......
+               z5555555
+               andrewt
+       owners: udb, cs2041
+authorised posters: @Employee, @Subject_Utility, @Wheel
+    Moderator: udb
+       Status: system, closed, moderated, virtual, and public
+</pre>
+Convert the output of the mlalias command into a new line separated list
+of CSE usernames, like this:
+<p>
+</p><pre class="command_line">z5000000
+z5000001
+.......
+z5555555
+andrewt
+</pre>
+
+<pre class="answer">mlalias COMP2041-list|egrep -v :|sed 's/^ *//'
+</pre>
+
+</li><li>
+CSE system have a command, <code>acc</code>, which
+prints information about a specified user.  For example:
+
+<pre class="command_line"><kbd class="shell">acc z5555555</kbd>
+            User Name : z5555555              Aliases :
+                  Uid : 25068
+               Groups :
+              Expires : 31 Dec 2019
+         User classes : 3978_Student, COMP2041_Student[15dec2019]
+                      : COMP2121_Student[15dec2019], COMP2511_Student[15dec2019]
+                      : COMP1511_Tutor[16dec2019], COMP3900_Student[15dec2019]
+                 Name : Michael Yang Zhou
+Password last changed : 2019/03/02.21:23:19
+       Home Directory : /import/adams/1/mzhou
+                Name : Mr Zhou, Michael Yang (Michael Yang Zhou)
+            Position : UGRD (Faculty of Engineering)
+         UNSW Number : 5555555
+           UNSW Mail : z5555555@unsw.edu.au
+           UNSW Home : //INFPWFS219.ad.unsw.edu.au/Student038$/z5555555
+            CSE Home : /import/kamen/3/z5555555
+</pre>
+
+Write a pipeline which converts the output of acc into a new line separated list of
+courses the person is enrolled in, like this:
+
+<pre class="command_line">COMP2041
+COMP2121
+COMP2511
+COMP3900
+</pre>
+
+Make sure you don't include COMP1511 which Michael tutors.
+
+<pre class="answer command_line"><kbd class="shell">acc z5555555 |cut -d: -f2</kbd>
+ z5555555              Aliases
+ 25068
+
+ 31 Dec 2019
+ 3978_Student, COMP2041_Student[15dec2019]
+ COMP2121_Student[15dec2019], COMP2511_Student[15dec2019]
+ COMP1511_Tutor[16dec2019], COMP3900_Student[15dec2019]
+ Michael Yang Zhou
+ 2019/03/02.21
+ /import/adams/1/mzhou
+ Mr Zhou, Michael Yang (Michael Yang Zhou)
+ UGRD (Faculty of Engineering)
+ 5555555
+ z5555555@unsw.edu.au
+ //INFPWFS219.ad.unsw.edu.au/Student038$/z5555555
+ /import/kamen/3/z5555555
+<kbd class="shell">acc z5555555 |cut -d: -f2|tr , '\n'</kbd>
+ z5555555              Aliases
+ 25068
+
+ 31 Dec 2019
+ 3978_Student
+ COMP2041_Student[15dec2019]
+ COMP2121_Student[15dec2019]
+ COMP2511_Student[15dec2019]
+ COMP1511_Tutor[16dec2019]
+ COMP3900_Student[15dec2019]
+ Michael Yang Zhou
+ 2019/03/02.21
+ /import/adams/1/mzhou
+ Mr Zhou
+ Michael Yang (Michael Yang Zhou)
+ UGRD (Faculty of Engineering)
+ 5555555
+ z5555555@unsw.edu.au
+ //INFPWFS219.ad.unsw.edu.au/Student038$/z5555555
+ /import/kamen/3/z5555555
+<kbd class="shell">acc z5555555 |cut -d: -f2|tr , '\n'|egrep _Student</kbd>
+ 3978_Student
+ COMP2041_Student[15dec2019]
+ COMP2121_Student[15dec2019]
+ COMP2511_Student[15dec2019]
+ COMP3900_Student[15dec2019]
+<kbd class="shell">acc z5555555 |cut -d: -f2|tr , '\n'|egrep _Student|cut -c2-9</kbd>
+3978_Stu
+COMP2041
+COMP2121
+COMP2511
+COMP3900
+<kbd class="shell">acc z5555555 |cut -d: -f2|tr , '\n'|egrep _Student|cut -c2-9|egrep '[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]'</kbd>
+COMP2041
+COMP2121
+COMP2511
+COMP3900
+<kbd class="shell">acc z5555555 | tr , "\n" | sed -nE 's/^.*([A-Z]{4}[0-9]{4})_Student.*/\1/p' #Option 2
+</kbd>
+COMP2041
+COMP2121
+COMP2511
+COMP3900
+</pre>
+
+
+</li><li><p>
+Use the pipeines from the above 2 questions to write shell commands which
+print a list of courses taken by COMP2041 students with counts of how
+many COMP2041 students take each, like this:
+
+</p><pre class="command_line">     55 COMP2911
+     37 COMP2121
+     17 COMP3311
+     10 COMP2111
+      9 COMP3331
+      ..........
+</pre>
+
+<pre class="answer">mlalias COMP2041-list|
+egrep -v :|
+sed 's/^ *//'|
+while read zid
+do
+    acc $zid|
+    cut -d: -f2|
+    tr , '\n'|
+    egrep _Student|
+    cut -c2-9|
+    egrep '[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]'
+done|
+sort|
+uniq -c|sort -rn
+</pre>
+
+</li><li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student Shruti has a 'friends' subdirectory in her home directory
+that contains images of her many friends.  Shruti likes to view these images
+often and would like to have them appear in other directories within
+her CSE account so she has written a shell script to symbolically link
+them to the current directory:
+<p>
+</p><pre class="command_line">for image_file in `ls ~/friends`
+do
+    ln -s "~/friends/$image_file" .
+done
+</pre>
+<p>
+The links created by Shruti's script are broken.
+Why? How can she fix her script?
+</p><p>
+
+</p><div class="answer">
+The shell does not replace tilde (~) with the user's home directory
+inside double-quotes, and does not handle spaces in filenames correctly. For example:
+
+<pre class="command_line answer"><kbd class="shell">echo ~</kbd>
+/home/shruti
+<kbd class="shell">echo "~"</kbd>
+~
+<kbd class="shell">touch a\ b</kbd>
+<kbd class="shell">for f in `ls`; do echo $f; done</kbd>
+a
+b
+</pre>
+
+<p>
+This should work for Shruti:
+</p><p>
+</p><pre class="command_line answer">for image_file in ~/friends/*
+do
+    ln -s "$image_file" .
+done
+</pre>
+</div>
+
+</li><li>
+Write a shell script named <code>is_prime.sh</code>
+which given an integer as argment, tests whether
+it is prime and prints a suitable message:
+<pre class="command_line"><kbd class="shell">is_prime.sh 42</kbd>
+42 is not prime
+<kbd class="shell">is_prime.sh 113</kbd>
+113 is prime
+</pre>
+Your script should  exit with a non-zero exit status if its
+argument is not prime.
+<p>
+Write a second script named <code>primes.sh</code> which uses the first
+script to print all primes less than a specified value, e.g:
+</p><p>
+</p><pre class="command_line"><kbd class="shell">primes.sh 100</kbd>
+2
+3
+5
+7
+11
+13
+17
+...
+79
+83
+89
+97
+</pre>
+<div class="answer">
+Sample solution for is_prime.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# test whether the specified integer is prime
+
+<span class="token keyword">if</span> test $# <span class="token operator">-</span>ne <span class="token number">1</span>
+then
+    echo <span class="token string">"Usage: $0 &lt;number&gt;"</span>
+    exit <span class="token number">1</span>
+fi
+
+n<span class="token operator">=</span>$<span class="token number">1</span>
+
+i<span class="token operator">=</span><span class="token number">2</span>
+<span class="token keyword">while</span> test $i <span class="token operator">-</span>lt $n
+<span class="token keyword">do</span>
+    <span class="token keyword">if</span> test `expr $n <span class="token operator">%</span> $i` <span class="token operator">-</span>eq <span class="token number">0</span>
+    then
+        echo <span class="token string">"$n is not prime"</span>
+        exit <span class="token number">1</span>
+    fi
+    i<span class="token operator">=</span>`expr $i <span class="token operator">+</span> <span class="token number">1</span>`
+done
+echo <span class="token string">"$n is prime"</span></code></pre>
+
+
+
+
+
+Another solution for is_prime.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# test whether the specified integer is prime
+# written by Han Zhao
+
+<span class="token keyword">if</span> test $# <span class="token operator">-</span>ne <span class="token number">1</span>
+then
+    echo <span class="token string">"Usage: $0 &lt;number&gt;"</span>
+    exit <span class="token number">1</span>
+fi
+
+n<span class="token operator">=</span>$<span class="token number">1</span>
+<span class="token keyword">if</span> test $<span class="token number">1</span> <span class="token operator">-</span>eq <span class="token number">1</span>
+then
+    echo <span class="token string">"$n is not prime"</span>
+    exit <span class="token number">1</span>
+fi
+
+i<span class="token operator">=</span><span class="token number">2</span>
+<span class="token keyword">while</span> test $<span class="token punctuation">(</span>expr $i \<span class="token operator">*</span> $i<span class="token punctuation">)</span> <span class="token operator">-</span>le $n
+<span class="token keyword">do</span>
+    <span class="token keyword">if</span> test `expr $n <span class="token operator">%</span> $i` <span class="token operator">-</span>eq <span class="token number">0</span>
+    then
+        echo <span class="token string">"$n is not prime"</span>
+        exit <span class="token number">1</span>
+    fi
+    i<span class="token operator">=</span>`expr $i <span class="token operator">+</span> <span class="token number">1</span>`
+done
+echo <span class="token string">"$n is prime"</span>
+exit <span class="token number">0</span></code></pre>
+
+
+
+
+
+Sample solution for primes.sh
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+# print the prime numbers less than the specified argument
+
+case $# <span class="token keyword">in</span>
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token operator">*</span><span class="token punctuation">)</span> echo <span class="token string">"Usage: $0 &lt;number&gt;"</span><span class="token punctuation">;</span> exit <span class="token number">1</span>
+esac
+limit<span class="token operator">=</span>$<span class="token number">1</span>
+
+p<span class="token operator">=</span><span class="token number">2</span>
+<span class="token keyword">while</span> test $p <span class="token operator">-</span>lt $limit
+<span class="token keyword">do</span>
+    <span class="token keyword">if</span> is_prime<span class="token punctuation">.</span>sh $p <span class="token operator">&gt;</span> <span class="token operator">/</span>dev<span class="token operator">/</span><span class="token keyword">null</span>
+    then
+        echo $p
+    fi
+    p<span class="token operator">=</span>`expr $p <span class="token operator">+</span> <span class="token number">1</span>`
+done
+exit <span class="token number">0</span></code></pre>
+
+
+
+
+</div>
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+
+
+</p></li><li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student  Big Bad Barry tries to impress a girl
+at a party by betting her she can't work out what this shell script:
+<p>
+</p><pre class="command_line">#!/bin/sh
+IFS=abc
+echo "$*"
+</pre>
+<p>
+prints when run like this:
+</p><pre class="command_line"><kbd class="shell">./script.sh mount inside</kbd>
+</pre><p>
+What does the script print?
+</p><p>
+Will the girl go out with  Big Bad Barry?
+</p><p>
+</p><div class="answer">
+The script will do this:
+
+<pre class="command_line answer"><kbd class="shell">./script.sh mount inside</kbd>
+mountainside
+</pre>
+
+This is because <code>IFS</code> is a special internal shell variable which
+indicates the argument separators.  The first character from IFS is uses to separate
+the argument when expanding $*.
+<p>
+Big Bad Barry won't get a date.  No one is impressed by knowledge of hacky&amp;obscure
+shell features.  Good programmers avoid quirky little-known language features.
+</p><p>
+</p></div>
+
+</li></ol>
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

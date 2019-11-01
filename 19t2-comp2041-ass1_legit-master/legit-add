@@ -1,0 +1,28 @@
+#!/bin/dash
+if test -e ".legit"
+then
+  if ! test -e ".legit/index"
+  then
+      mkdir ".legit/index"
+  fi
+  for file in $@
+  do
+    if echo $file |grep -qE "[a-zA-Z0-9][a-zA-Z0-9._\-]*"
+    then
+      if test -e "$file"
+      then
+  	      cp "$file" ".legit/index/$file"
+      else
+          if test -e ".legit/index/$file"
+          then
+            rm ".legit/index/$file"
+          else
+            echo "legit-add: error: can not open '$file'"
+          fi
+      fi
+    fi
+  done
+else 
+  echo legit-add: error: no .legit directory containing legit repository exists
+fi
+

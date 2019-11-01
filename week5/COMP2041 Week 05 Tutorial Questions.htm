@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/questions -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<title>
+
+COMP2041 Week 05 Tutorial Questions
+
+</title>
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link crossorigin="anonymous" href="./COMP2041 Week 05 Tutorial Questions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+<link href="./COMP2041 Week 05 Tutorial Questions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+<script src="./COMP2041 Week 05 Tutorial Questions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 05 Tutorial Questions_files/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="./COMP2041 Week 05 Tutorial Questions_files/bootstrap.min.js"></script>
+<script src="./COMP2041 Week 05 Tutorial Questions_files/course.js" type="text/javascript"></script>
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 05 Tutorial Questions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script defer="" src="./COMP2041 Week 05 Tutorial Questions_files/prism.js" type="text/javascript"></script>
+<script async="" src="./COMP2041 Week 05 Tutorial Questions_files/ei.js"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" rel="canonical">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+<div class="row" id="heading">
+<div class="col-3 text-left">
+<a class="heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" id="left_heading_link" target="_blank">COMP(2041|9044) 19T2</a>
+</div>
+<div class="col-6 text-center">
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="week-selector" type="button">
+        Week 05 <span class="caret"></span>
+</button>
+<div aria-labelledby="week-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/01/questions">Week 01</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/02/questions">Week 02</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/questions">Week 03</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/04/questions">Week 04</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/questions">Week 05</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/06/questions">Week 06</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/questions">Week 07</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/questions">Week 08</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/questions">Week 09</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/10/questions">Week 10</a>
+</div>
+</span>
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="tlb-selector" type="button">
+        Tutorial <span class="caret"></span>
+</button>
+<div aria-labelledby="tlb-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/questions">Tutorial</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/questions">Laboratory</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/questions">Weekly Test</a>
+</div>
+</span>
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="qa-selector" type="button">
+        Questions <span class="caret"></span>
+</button>
+<div aria-labelledby="qa-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/questions">Questions</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Sample Answers</a>
+</div>
+</span>
+</div>
+<div class="col-3 text-right">
+<a class="heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" id="right_heading_link" target="_blank">COMP(2041|9044) 19T2</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<li>
+
+The assignment specification doesn't fully explain the assignment - what can I do?
+
+<div></div>
+</li><li>
+
+How hard are the subsets?
+
+<div></div>
+</li><li>
+What is <code>gitlab.cse.unsw.edu.au</code> and how do I want use it for ass1?
+<p>
+</p><div></div>
+</li><li>
+What  does <b>git init</b> do?
+<p>
+How does this differ from <b>legit-init</b>
+</p><div></div>
+</li><li>
+What do <b>git add <i>file</i></b> and <b>legit-add <i>file</i></b> do?
+
+<div></div>
+</li><li>
+What is the index in <b>legit</b> (and <b>git</b>), and where does it get stored?
+
+<div></div>
+</li><li>
+What is a commit in <b>legit</b> (and <b>git</b>), and where does it get stored?
+
+<div></div>
+</li><li>
+
+Discuss what <b>./legit-status</b> prints below?
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./legit-init</kbd>
+Initialized empty legit repository in .legit
+<kbd class="shell">touch a b c d e f g h</kbd>
+<kbd class="shell">./legit-add a b c d e f</kbd>
+<kbd class="shell">./legit-commit -m 'first commit'</kbd>
+Commited as commit 0
+<kbd class="shell">echo hello &gt;a</kbd>
+<kbd class="shell">echo hello &gt;b</kbd>
+<kbd class="shell">echo hello &gt;c</kbd>
+<kbd class="shell">./legit-add a b</kbd>
+<kbd class="shell">echo world &gt;a</kbd>
+<kbd class="shell">rm d</kbd>
+<kbd class="shell">./legit-rm e</kbd>
+<kbd class="shell">./legit-add g</kbd>
+<kbd class="shell">./legit-status</kbd>
+</pre>
+<div></div>
+</li><li>
+Write a Perl function which takes an integer argument <b>n</b>
+and reads the next <b>n</b> lines of input and returns them
+as a string.
+
+<div></div>
+</li><li>
+Write a Perl program which given the name of a C function
+searches the C source files (*.c) in the current directory
+for calls of the function, declarations &amp; definitons of the function
+and prints a summary indicating the file and line number, in the format below.
+<p>
+You can assume functions are defined with the type, name and paramaters on a single
+non-indented line.  You can assume function bodies are always indented.
+</p><p>
+You don't have to handle multi line comments.
+Try to avoid matching the function name in strings or single line comments.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat half.c</kbd>
+double half(double x) {
+    return  x/2;
+}
+<kbd class="shell">cat main.c</kbd>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+double half(double x);
+
+int main(int argc, char *argv[]) {
+    return  half(atoi(argv[1]));
+}
+<kbd class="shell">./print_function_uses.pl half</kbd>
+a.c:1 function half defined
+half.c:1 function half defined
+main.c:4 function half declared
+main.c:7 function half used
+</pre>
+<div></div>
+</li><li>
+
+Write a Perl program which  given a  C program as input
+finds the definitions of single parameter functions and prints
+separately the function's type, name and the parameters name &amp; type.
+Assume all these occur on a single non-indented line in the C source code.
+You can assume function bodies are always indented.
+Allow for white space occuring anywhere in the function header.
+You can assume that types in the program don't contain square or round brackets.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat a.c</kbd>
+double half(int *x) {
+    return  *x/2.0;
+}
+<kbd class="shell">./print_function_types.pl a.c</kbd>
+function type='double'
+function name='half'
+parameter type='int *'
+parameter name='x'
+</pre>
+<div></div>
+</li><li>
+Write a Perl script C_include.pl which given the name of a C source file
+prints the file replacing any '#include' lines with the contents
+of the included file, if the included file itself contains
+a #include line these should also be processed.
+<p>
+Assume the source files contain only quoted ("") include directives
+which contain the files's actual path name. For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat f.c</kbd>
+#include "true.h"
+
+int main(int argc, char *argv[]) {
+    return  TRUE || FALSE;
+}
+<kbd class="shell">cat true.h</kbd>
+#define TRUE 1
+#include "false.h"
+<kbd class="shell">cat false.h</kbd>
+#define FALSE 0
+<kbd class="shell">./C_include.pl f.c</kbd>
+#define TRUE 1
+#define FALSE 0
+
+int main(int argc, char *argv[]) {
+    return  TRUE || FALSE;
+}
+</pre>
+<div></div>
+</li><li>
+Modify C_include.pl so that it handles both <code>""</code> and <code>&lt;&gt;</code> directives.
+It should search the directories <code>/usr/include/</code>, <code>/usr/local/include</code>
+and /<code>usr/include/x86_64-linux-gnu</code> for include files specified in <code>&lt;&gt;</code> directives
+and for files specified in <code>""</code> directives which do not exist locally. For example:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat g.c</kbd>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char *argv[]) {
+    printf("hello world\n");
+    exit(0);
+}
+<kbd class="shell">./C_include.pl g.c|head</kbd>
+./C_include.pl: can not find: bits/libc-header-start.h
+/* Define ISO C stdio on top of C++ iostreams.
+   Copyright (C) 1991-2018 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+</pre>
+<div></div>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+
+Write a Perl program <code>source_count.pl</code> which prints the number of lines of C source code
+in the current directory.  In other words, this Perl program should
+behave similarly to <code>wc -l *.[ch]</code>.  (Note: you are not
+allowed to use <code>wc</code> or other Unix programs from within the
+Perl script). For example:
+<p>
+</p><pre class="command_line"><kbd class="shell">./source_count.pl</kbd>
+    383 cyclorana.c
+    280 cyclorana.h
+     15 enum.c
+    194 frequency.c
+    624 model.c
+    293 parse.c
+    115 random.c
+     51 smooth.c
+    132 util.c
+     16 util.h
+    410 waveform.c
+   2513 total
+</pre>
+<div></div>
+</li><li>
+
+Write a Perl program, <code>cut.pl</code> which takes three arguments, <i>n</i>, <i>m</i> and a file name.
+It should print characters <i>n</i>-<i>m</i> of each line of the file.
+For example:
+
+<pre class="command_line"><kbd class="shell">./cut.pl 1 8 file</kbd>
+</pre>
+
+should print the 8 characters of every line in <code>file</code>.
+<p>
+Implement a version of the program which invokes <code>/usr/bin/cut</code>
+and a version which performs the operations directly in Perl.
+
+</p><div></div>
+</li><li>
+
+Implement a Perl script to solve the marks-to-grades problem that
+was solved as a shell script in a previous tutorial.
+Reminder: the script reads a sequence
+of (studentID,mark) pairs from its standard input and writes
+(studentID,grade) pairs to its standard output.
+The input pairs are written on a single line, separated by spaces,
+and the output should use a similar format.
+The script should also check whether the second value on each line
+looks like a valid grade, and output an appropriate message if it
+doesn't.
+The script can ignore any extra data occuring after the mark on each line.
+<p>
+Consider the following input and corresponding output to the
+program:
+
+
+</p><table cellpadding="10">
+<tbody><tr> <th>Input </th><th>Output
+</th></tr><tr>
+<td>
+<pre class="command_line">2212345 65
+2198765 74
+2199999 48
+2234567 50 ok
+2265432 99
+2121212 hello
+2222111 120
+2524232 -1
+</pre>
+</td><td>
+<pre class="command_line">2212345 CR
+2198765 CR
+2199999 FL
+2234567 PS
+2265432 HD
+2121212 ?? (hello)
+2222111 ?? (120)
+2524232 ?? (-1)
+</pre>
+</td></tr></tbody></table>
+<div></div>
+</li><li>
+
+Write a program <code>addressbook.pl</code> that reads two files <code>people.txt</code> and <code>phones.txt</code> containing data in CSV
+(comma-separated values) format and uses this data to print
+an address book in the format below:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat people.txt</kbd>
+andrew,Andrew Taylor,42 Railway St,Petersham
+arun,Arun Sharma,94 Leafy Close,Brisbane
+gernot,Gernot Heiser,64 Trendy Tce,Newtown
+jas,John Shepherd,16/256 Busy Rd,Alexandria
+<kbd class="shell">cat phones.txt</kbd>
+jas,home,9665 6432
+arun,work,9385 5518
+jas,work,9385 6494
+arun,home,(07) 9314 6543
+andrew,work,9385 4321
+arun,mobile,0803 123 432
+<kbd class="shell">./addressbook.pl</kbd>
+Andrew Taylor
+42 Railway St, Petersham
+Phones: 9385 4321 (work)
+
+Arun Sharma
+94 Leafy Close, Brisbane
+Phones: 0803 123 432 (mobile), (07) 9314 6543 (home), 9385 5518 (work)
+
+Gernot Heiser
+64 Trendy Tce, Newtown
+Phones: ?
+
+John Shepherd
+16/256 Busy Rd, Alexandria
+Phones: 9665 6432 (home), 9385 6494 (work)
+
+</pre>
+<p>
+Assume that there are only three types of phone (mobile, home and work)
+and we always display them in that order.
+</p>
+<p>
+<i>Hint:</i> because the phone types are fixed, login name and phone type
+together can be the key used to look up a number.
+In this situation some suitable separator is used to create
+a composite, unambiguous key for the hash.
+
+</p><div></div>
+</li></ol>
+</div>
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+<small>CRICOS Provider 00098G</small>
+</p>
+</footer>
+
+</body></html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 08 Tutorial Sample Answers
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 08 Tutorial Sample Answers_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 08 Tutorial Sample Answers_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 08 Tutorial Sample Answers_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 08 Tutorial Sample Answers_files/popper.min.js"></script>
+<script src="./COMP2041 Week 08 Tutorial Sample Answers_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 08 Tutorial Sample Answers_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 08 Tutorial Sample Answers_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 08 Tutorial Sample Answers_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 08 Tutorial Sample Answers_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 08 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tutorial <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/08/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Answers <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/questions">Questions</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/answers">Sample Answers</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+
+<li>
+    How is HTML parsed by the browser? What considerations are there for
+    the way we load scripts, images and other assets?
+
+    <div class="answer">
+        <p>
+            When an HTML document is first downloaded by the browser
+            it is parsed element by element in a depth first traversal.
+            Every time an external asset (src="some/asset") is parsed it must also be loaded via
+            a network request.
+            For scripts, the default behaviour is that they are also
+            executed once loaded. All of this slows down the load time of our
+            page.
+        </p>
+        <p>
+            Generally, we want to defer the execution, and parsing of non-critical
+            assets/scripts as they slow down our initial page load.
+            There are many strategies to achieve this. See the course material.
+        </p>
+    </div>
+</li>
+
+<li>
+    What is the DOM?
+
+    <div class="answer">
+        <p>
+            The DOM or Document Object Model is the abstraction layer
+            provided by the browser to interact with a web document.
+        </p>
+    </div>
+</li>
+
+<li>
+    Why do we generally put our &lt;script&gt; tags at the end
+    of our out HTML file? What does this do?
+
+    <div class="answer">
+        <p>
+            Scripts that interact with the DOM need the DOM to fully load
+            before they begin their manipulations. Scripts that are added
+            at the bottom of the body tag are deferred in execution until
+            the rest of the DOM has loaded.
+        </p>
+        <p>
+            Putting scripts at the bottom of the page does not
+            guarantee safe execution of scripts however. Consider the (likely) possibility that we may
+            have multiple scripts on our page.
+        </p>
+        <p>
+            In these instances we can hold off execution until <code>DOMContentLoaded</code> or window <code>load</code>
+            DOM events are fired. Thus ensuring we can safely interact with the DOM.
+        </p>
+    </div>
+</li>
+
+<li>
+    How do we query elements in the DOM? Can you name a few common
+    methods and how they work?
+
+    <div class="answer">
+            Some possibilities:
+            <pre class="program">document.querySelector();
+document.querySelectorAll();
+document.getElementsByTagName();
+document.getElementById();
+document.getElementsByClassName();
+document.getElementsByName();
+        </pre>
+    </div>
+</li>
+
+<li>
+    How do we manage events in the DOM via JavaScript?
+
+    <div class="answer">
+        <p>
+            JavaScript uses a callback/observable pattern
+            to manage events firing in the browser. That is, by using functions that
+            we attach to certain types of events; click, keydown, mousemove etc,
+            we can manage user behaviour. These functions are called
+            EventListeners.
+        </p>
+    </div>
+</li>
+
+<li>
+    <p>Write a short JavaScript program that renders the following shopping list as
+        &lt;li&gt; elements inside an &lt;ol&gt; parent.</p>
+
+<pre class="program">Apple
+Orange
+Strawberry
+Bananas
+Sausages
+</pre>
+
+   
+
+
+
+
+
+
+<div class="answer">
+Sample Solution
+</div>
+
+<div class="cp_embed_wrapper"><iframe name="cp_embed_1" src="./COMP2041 Week 08 Tutorial Sample Answers_files/saved_resource.html" scrolling="no" frameborder="0" height="600" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;"></iframe><form class="cp_embed_form" style="display: none;" method="post" action="https://codepen.io/embed/prefill/" target="cp_embed_1"><input type="hidden" name="height" value="600"><input type="hidden" name="theme-id" value="36294"><input type="hidden" name="default-tab" value="js,result"><input type="hidden" name="editable" value="true"><input type="hidden" name="user" value="anon"><input type="hidden" name="name" value="cp_embed_1"><input type="hidden" name="data" value="{&quot;title&quot;:&quot;COMP(2041|9044) Exercise &quot;,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:[],&quot;html_classes&quot;:[],&quot;stylesheets&quot;:[&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js&quot;],&quot;head&quot;:&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1&#39;&gt;&quot;,&quot;scripts&quot;:[],&quot;html&quot;:&quot;&quot;,&quot;js&quot;:&quot;const foods = [\&quot;Apple\&quot;, \&quot;Orange\&quot;, \&quot;Strawberry\&quot;, \&quot;Bananas\&quot;, \&quot;Sausages\&quot;];\nconst list = document.createElement(\&quot;ol\&quot;);\nfoods.forEach((food) =&gt; {\n    const item = document.createElement(\&quot;li\&quot;)\n    const text = document.createTextNode(food);\n    item.appendChild(text);\n    list.appendChild(item);\n});\ndocument.body.appendChild(list);&quot;}"></form></div>
+
+</li>
+
+<li>
+    <p>Write a short JavaScript program to handle a click event on the window
+    and append the x and y position of the click as text into the DOM.</p>
+
+   
+
+
+
+
+
+
+<div class="answer">
+Sample Solution
+</div>
+
+<div class="cp_embed_wrapper"><iframe name="cp_embed_2" src="./COMP2041 Week 08 Tutorial Sample Answers_files/saved_resource(1).html" scrolling="no" frameborder="0" height="600" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;"></iframe><form class="cp_embed_form" style="display: none;" method="post" action="https://codepen.io/embed/prefill/" target="cp_embed_2"><input type="hidden" name="height" value="600"><input type="hidden" name="theme-id" value="36294"><input type="hidden" name="default-tab" value="js,result"><input type="hidden" name="editable" value="true"><input type="hidden" name="user" value="anon"><input type="hidden" name="name" value="cp_embed_2"><input type="hidden" name="data" value="{&quot;title&quot;:&quot;COMP(2041|9044) Exercise &quot;,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:[],&quot;html_classes&quot;:[],&quot;stylesheets&quot;:[&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js&quot;],&quot;head&quot;:&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1&#39;&gt;&quot;,&quot;scripts&quot;:[],&quot;html&quot;:&quot;&quot;,&quot;js&quot;:&quot;window.addEventListener(\&quot;click\&quot;, (event) =&gt; {\n    const text = \&quot; X: \&quot; + event.clientX + \&quot;, Y: \&quot; + event.clientY;\n    const textNode = document.createTextNode(text);\n    document.body.appendChild(textNode);\n});&quot;}"></form></div>
+
+
+</li>
+
+<li>
+    Write a short JavaScript program that given the HTML below, when the form is submitted,
+    instead of submitting the form, uses alert to show the selected fruit
+
+    
+
+
+
+
+
+
+<div class="answer">
+Sample Solution
+</div>
+
+<div class="cp_embed_wrapper"><iframe name="cp_embed_3" src="./COMP2041 Week 08 Tutorial Sample Answers_files/saved_resource(2).html" scrolling="no" frameborder="0" height="600" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;"></iframe><form class="cp_embed_form" style="display: none;" method="post" action="https://codepen.io/embed/prefill/" target="cp_embed_3"><input type="hidden" name="height" value="600"><input type="hidden" name="theme-id" value="36294"><input type="hidden" name="default-tab" value="js,result"><input type="hidden" name="editable" value="true"><input type="hidden" name="user" value="anon"><input type="hidden" name="name" value="cp_embed_3"><input type="hidden" name="data" value="{&quot;title&quot;:&quot;COMP(2041|9044) Exercise &quot;,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:[],&quot;html_classes&quot;:[],&quot;stylesheets&quot;:[&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js&quot;],&quot;head&quot;:&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1&#39;&gt;&quot;,&quot;scripts&quot;:[],&quot;html&quot;:&quot;&lt;form name=\&quot;fruitForm\&quot;&gt;\n    &lt;select name=\&quot;fruit\&quot; id=\&quot;select\&quot;&gt;\n        &lt;option value=\&quot;apple\&quot;&gt;Apple&lt;/option&gt;\n        &lt;option value=\&quot;pear\&quot;&gt;Pear&lt;/option&gt;\n        &lt;option value=\&quot;banana\&quot;&gt;Banana&lt;/option&gt;\n    &lt;/select&gt;\n    &lt;input type=\&quot;submit\&quot; value=\&quot;Submit\&quot;&gt;\n&lt;/form&gt;&quot;,&quot;js&quot;:&quot;const form = document.forms.fruitForm;\n\nform.addEventListener(\&quot;submit\&quot;, (event) =&gt; {\n    // stop form being submitted\n    event.preventDefault();\n    alert(form.fruit.value);\n});&quot;}"></form></div>
+
+</li>
+
+<li>
+    <p>Extend the previous code to use localstorage to save the selected option,
+    so that the form is pre-filled with the last selected option next time the user opens the form.</p>
+
+    <div class="answer">
+        We can't demo this with codepen
+
+        <pre class="program">// Assign value to last selected value
+const lastSelectedItem = localStorage.getItem('fruit');
+if (lastSelectedItem) {
+    form.fruit.value = lastSelectedItem;
+}
+
+form.fruit.addEventListener('change', () =&gt; {
+    localStorage.setItem('fruit', form);
+});
+        </pre>
+    </div>
+</li>
+
+
+<li>
+
+   Write a short JavaScript program that given the HTML below, when the <b>lib-button</b> button is clicked:
+
+    <ul>
+        <li> retrieves the current values of the form input elements,  </li>
+        <li> make a funny sentence from them - e.g. "Pamela really likes purple hats." </li>
+        <li> displays the sentence in the <b>story</b> div </li>
+    </ul>
+
+    
+
+
+
+
+
+
+
+
+
+
+<div class="answer">
+Sample Solution
+</div>
+
+<div class="cp_embed_wrapper"><iframe name="cp_embed_4" src="./COMP2041 Week 08 Tutorial Sample Answers_files/saved_resource(3).html" scrolling="no" frameborder="0" height="600" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;"></iframe><form class="cp_embed_form" style="display: none;" method="post" action="https://codepen.io/embed/prefill/" target="cp_embed_4"><input type="hidden" name="height" value="600"><input type="hidden" name="theme-id" value="36294"><input type="hidden" name="default-tab" value="js,result"><input type="hidden" name="editable" value="true"><input type="hidden" name="user" value="anon"><input type="hidden" name="name" value="cp_embed_4"><input type="hidden" name="data" value="{&quot;title&quot;:&quot;COMP(2041|9044) Exercise solutions/mad_libs.js&quot;,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:[],&quot;html_classes&quot;:[],&quot;stylesheets&quot;:[&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js&quot;],&quot;head&quot;:&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1&#39;&gt;&quot;,&quot;scripts&quot;:[],&quot;html&quot;:&quot;&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n &lt;head&gt;\n  &lt;meta charset=\&quot;utf-8\&quot; /&gt;\n  &lt;title&gt;&lt;/title&gt;\n &lt;/head&gt;\n &lt;body&gt;\n\n &lt;h1&gt;Mad Libs&lt;/h1&gt;\n\n &lt;ul&gt;\n  &lt;li&gt;Noun: &lt;input type=\&quot;text\&quot; id=\&quot;noun\&quot;&gt;\n  &lt;li&gt;Adjective: &lt;input type=\&quot;text\&quot; id=\&quot;adjective\&quot;&gt;\n  &lt;li&gt;Someone&#39;s Name: &lt;input type=\&quot;text\&quot; id=\&quot;person\&quot;&gt;\n &lt;/ul&gt;\n\n &lt;button id=\&quot;lib-button\&quot;&gt;Lib it!&lt;/button&gt;\n &lt;div id=\&quot;story\&quot;&gt;&lt;/div&gt;\n\n &lt;/body&gt;\n&lt;/html&gt;&quot;,&quot;js&quot;:&quot;// source https://www.teaching-materials.org/jsweb/exercises/events \nfunction libIt() {\n  var storyDiv = document.getElementById(\&quot;story\&quot;);\n  var person = document.getElementById(\&quot;person\&quot;).value;\n  var adjective = document.getElementById(\&quot;adjective\&quot;).value;\n  var noun = document.getElementById(\&quot;noun\&quot;).value;\n  storyDiv.innerHTML = person + \&quot; married a \&quot; + adjective + \&quot; \&quot; + noun + \&quot;... So weird!\&quot;;\n}\n\nvar libButton = document.getElementById(&#39;lib-button&#39;);\nlibButton.addEventListener(&#39;click&#39;, libIt);&quot;}"></form></div>
+
+</li>
+
+<li>
+
+     Write a short JavaScript program that given the HTML below, when any button is clicked:
+
+    <ul>
+        <li> retrieves the current values of the form input elements,  </li>
+        <li> find the value of the appropriate input and does the appropriate calculation </li>
+        <li> displays the result in the <b>solutions</b> div </li>
+    </ul>
+
+    
+
+
+
+
+
+
+
+
+
+
+<div class="answer">
+Sample Solution
+</div>
+
+<div class="cp_embed_wrapper"><iframe name="cp_embed_5" src="./COMP2041 Week 08 Tutorial Sample Answers_files/saved_resource(4).html" scrolling="no" frameborder="0" height="600" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;"></iframe><form class="cp_embed_form" style="display: none;" method="post" action="https://codepen.io/embed/prefill/" target="cp_embed_5"><input type="hidden" name="height" value="600"><input type="hidden" name="theme-id" value="36294"><input type="hidden" name="default-tab" value="js,result"><input type="hidden" name="editable" value="true"><input type="hidden" name="user" value="anon"><input type="hidden" name="name" value="cp_embed_5"><input type="hidden" name="data" value="{&quot;title&quot;:&quot;COMP(2041|9044) Exercise solutions/calculator.js&quot;,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:[],&quot;html_classes&quot;:[],&quot;stylesheets&quot;:[&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js&quot;],&quot;head&quot;:&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1&#39;&gt;&quot;,&quot;scripts&quot;:[],&quot;html&quot;:&quot;&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta charset=utf-8 /&gt;\n&lt;title&gt;Calculator&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n  &lt;label&gt;Square this number:\n    &lt;input type=\&quot;number\&quot; id=\&quot;square-input\&quot; size=\&quot;2\&quot;&gt;\n  &lt;/label&gt;\n  &lt;button id=\&quot;square-button\&quot;&gt;Calculate&lt;/button&gt;\n  &lt;br&gt;&lt;br&gt;\n\n  &lt;label&gt;Half this number:\n    &lt;input type=\&quot;number\&quot; id=\&quot;half-input\&quot; size=\&quot;2\&quot;&gt;\n  &lt;/label&gt;\n  &lt;button id=\&quot;half-button\&quot;&gt;Calculate&lt;/button&gt;\n  &lt;br&gt;&lt;br&gt;\n\n  &lt;label&gt;\n    Fraction:\n    &lt;input type=\&quot;number\&quot; id=\&quot;percent1-input\&quot; size=\&quot;2\&quot;&gt;\n  &lt;/label&gt;\n  &lt;label&gt;\n    Whole:\n    &lt;input type=\&quot;number\&quot; id=\&quot;percent2-input\&quot; size=\&quot;2\&quot;&gt;\n  &lt;/label&gt;\n  &lt;button id=\&quot;percent-button\&quot;&gt;Calculate&lt;/button&gt;\n  &lt;br&gt;&lt;br&gt;\n\n  &lt;label&gt;Calculate area of circle with radius:\n    &lt;input type=\&quot;number\&quot; id=\&quot;area-input\&quot; size=\&quot;2\&quot;&gt;\n  &lt;/label&gt;\n  &lt;button id=\&quot;area-button\&quot;&gt;Calculate&lt;/button&gt;\n  &lt;br&gt;&lt;br&gt;\n  &lt;div id=\&quot;solution\&quot;&gt;&lt;/div&gt;\n\n\n&lt;/body&gt;\n&lt;/html&gt;&quot;,&quot;js&quot;:&quot;// source https://www.teaching-materials.org/jsweb/exercises/events \n\nvar squareButton = document.getElementById(\&quot;square-button\&quot;);\nsquareButton.addEventListener(\&quot;click\&quot;, function() {\n  var num = document.getElementById(\&quot;square-input\&quot;).value;\n  document.getElementById(\&quot;solution\&quot;).innerHTML = squareNumber(num);\n});\n    \nvar halfButton = document.getElementById(\&quot;half-button\&quot;);\nhalfButton.addEventListener(\&quot;click\&quot;, function() {\n  var num = document.getElementById(\&quot;half-input\&quot;).value;\n  document.getElementById(\&quot;solution\&quot;).innerHTML = halfOf(num);\n});\n\nvar percentButton = document.getElementById(\&quot;percent-button\&quot;);\npercentButton.addEventListener(\&quot;click\&quot;, function() {\n  var num1 = document.getElementById(\&quot;percent1-input\&quot;).value;\n  var num2 = document.getElementById(\&quot;percent2-input\&quot;).value;\n  document.getElementById(\&quot;solution\&quot;).innerHTML = percentOf(num1, num2);\n});\n    \n\nvar areaButton = document.getElementById(\&quot;area-button\&quot;);\nareaButton.addEventListener(\&quot;click\&quot;, function() {\n  var num = document.getElementById(\&quot;area-input\&quot;).value;\n  document.getElementById(\&quot;solution\&quot;).innerHTML = areaOfCircle(num);\n});\n\nfunction squareNumber(num) {\n    return num * num;\n}\n\nfunction halfOf(num) {\n    return num / 2;\n}\n\nfunction percentOf(num1, num2) {\n    return (num1/num2) * 100;\n}\n\nfunction areaOfCircle(radius) {\n    return Math.PI * squareNumber(radius);\n}&quot;}"></form></div>
+
+
+</li>
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+
+
+
+</p><li>
+    How can we create simple animations in the DOM with JS/CSS?
+
+    <div class="answer">
+        <p>
+            Lots of possible answers here, but a very simple way is to lean
+            on the CSS transition property and use our JavaScript
+            to 'toggle' a CSS class which triggers our animation.
+            See the Week 2 lecture example for more on this.
+        </p>
+    </div>
+</li>
+
+</ol>
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 09 Laboratory Sample Solutions
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 09 Laboratory Sample Solutions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 09 Laboratory Sample Solutions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 09 Laboratory Sample Solutions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 09 Laboratory Sample Solutions_files/popper.min.js"></script>
+<script src="./COMP2041 Week 09 Laboratory Sample Solutions_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 09 Laboratory Sample Solutions_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 09 Laboratory Sample Solutions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 09 Laboratory Sample Solutions_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 09 Laboratory Sample Solutions_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 09 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laboratory <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Solutions <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/questions">Exercises</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Sample Solutions</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Objectives
+            </h3>
+        </div>
+        <div class="card-body">
+
+<ul>
+
+<li>Return of Javascript</li>
+
+</ul>
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Preparation
+            </h3>
+        </div>
+        <div class="card-body">
+
+Before the lab you should re-read the relevant lecture slides and their accompanying examples.
+
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Getting Started
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+Create a new directory for this lab called <code>lab09</code> and change to this directory with these comamnds:
+
+<pre class="command_line"><kbd class="shell">mkdir lab09</kbd>
+<kbd class="shell">cd lab09</kbd>
+</pre>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: fetch_and_list
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_fetch_and_list/fetch_and_list.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_fetch_and_list/fetch_and_list.zip</kbd>
+</pre>
+
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_fetch_and_list/fetch_and_list.zip">fetch_and_list.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd fetch_and_list</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd fetch_and_list</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>fetch_and_list.js</b>.  You need to edit  <b>fetch_and_list.js</b>
+
+<pre class="command_line"><kbd class="shell">vi fetch_and_list.js</kbd>
+</pre>
+
+<p>Follow the instructions in the HTML provided. Your task is to modify the code in <b>fetch.js</b></p>
+<p>Remember to refresh the HTML page when you make a change to the JavaScript your page reflects your changes, good luck!</p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab09_js_fetch_and_list/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 06 August 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab09_js_fetch_and_list fetch.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>fetch.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">let output<span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">createUserDiv</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+
+  const h2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  h2<span class="token punctuation">.</span>innerText <span class="token operator">=</span> user<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+
+  const p <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  p<span class="token punctuation">.</span>innerText <span class="token operator">=</span> user<span class="token punctuation">.</span>company<span class="token punctuation">.</span>catchPhrase<span class="token punctuation">;</span>
+
+  div<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>h2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> div<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">append</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  output<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+export default <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  output <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://jsonplaceholder.typicode.com/users'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">&gt;</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>createUserDiv<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>elements <span class="token operator">=</span><span class="token operator">&gt;</span> elements<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>append<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: fetch_and_list_2
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_fetch_and_list_2/fetch_and_list_2.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_fetch_and_list_2/fetch_and_list_2.zip</kbd>
+</pre>
+
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_fetch_and_list_2/fetch_and_list_2.zip">fetch_and_list_2.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd fetch_and_list_2</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd fetch_and_list_2</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>fetch_and_list_2.js</b>.  You need to edit  <b>fetch_and_list_2.js</b>
+
+<pre class="command_line"><kbd class="shell">vi fetch_and_list_2.js</kbd>
+</pre>
+
+<p>Your task is to modify the code in <b>fetch.js</b>. Follow the instructions on the web page.</p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab09_js_fetch_and_list_2/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 06 August 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab09_js_fetch_and_list_2 fetch.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>fetch.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token keyword">function</span> <span class="token function">getJSON</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">append</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> parent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  parent<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+const mapAppend <span class="token operator">=</span> parent <span class="token operator">=</span><span class="token operator">&gt;</span> element <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">append</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">createUserDiv</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+
+  const h2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  h2<span class="token punctuation">.</span>innerText <span class="token operator">=</span> user<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+
+  const p <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  p<span class="token punctuation">.</span>innerText <span class="token operator">=</span> user<span class="token punctuation">.</span>company<span class="token punctuation">.</span>catchPhrase<span class="token punctuation">;</span>
+
+  div<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>h2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> div<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createPostsList</span><span class="token punctuation">(</span>posts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const ul <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ul<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'posts'</span><span class="token punctuation">;</span>
+
+  void posts<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>post <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    const li <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    li<span class="token punctuation">.</span>innerText <span class="token operator">=</span> post<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
+    li<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'post'</span><span class="token punctuation">;</span>
+    ul<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> li<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> ul<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+export default <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const output <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">'https://jsonplaceholder.typicode.com/users'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">'https://jsonplaceholder.typicode.com/posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">[</span>users<span class="token punctuation">,</span> posts<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      const postsMap <span class="token operator">=</span> posts<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>postsMap<span class="token punctuation">,</span> post<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>postsMap<span class="token punctuation">[</span>post<span class="token punctuation">.</span>userId<span class="token punctuation">]</span><span class="token punctuation">)</span> postsMap<span class="token punctuation">[</span>post<span class="token punctuation">.</span>userId<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        postsMap<span class="token punctuation">[</span>post<span class="token punctuation">.</span>userId<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> postsMap<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">return</span> users<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>user <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        user<span class="token punctuation">.</span>posts <span class="token operator">=</span> postsMap<span class="token punctuation">[</span>user<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>users <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> users<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>user <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        const userDiv <span class="token operator">=</span> <span class="token function">createUserDiv</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        userDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token function">createPostsList</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>posts<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> userDiv<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>elements <span class="token operator">=</span><span class="token operator">&gt;</span> elements<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token function">mapAppend</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: pretty_pictures
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_pretty_pictures/pretty_pictures.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_pretty_pictures/pretty_pictures.zip</kbd>
+</pre>
+
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_pretty_pictures/pretty_pictures.zip">pretty_pictures.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd pretty_pictures</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd pretty_pictures</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>pretty_pictures.js</b>.  You need to edit  <b>pretty_pictures.js</b>
+
+<pre class="command_line"><kbd class="shell">vi pretty_pictures.js</kbd>
+</pre>
+
+<p>Your task is to modify the code in <b>pretty_pictures.js</b>. Follow the instructions on the web page.</p>
+
+<p> <b>Optional Challange </b> Add a nice loading animation while the page waits for all the images to fetch. </p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab09_js_pretty_pictures/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 06 August 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab09_js_pretty_pictures fetch.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>fetch.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token keyword">function</span> <span class="token function">addPost</span><span class="token punctuation">(</span><span class="token punctuation">{</span> url <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const output <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  elem<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'img-post'</span><span class="token punctuation">;</span>
+  const img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  img<span class="token punctuation">.</span>src <span class="token operator">=</span> url<span class="token punctuation">;</span>
+  const t <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  t<span class="token punctuation">.</span>innerText <span class="token operator">=</span> `Fetched at $<span class="token punctuation">{</span>d<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">:</span>$<span class="token punctuation">{</span>d<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>`<span class="token punctuation">;</span>
+  elem<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  elem<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  output<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getMore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const output <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const loading <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'loading'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>let child of output<span class="token punctuation">.</span>childNodes<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>className <span class="token operator">===</span> <span class="token string">'img-post'</span><span class="token punctuation">)</span> children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>child <span class="token operator">=</span><span class="token operator">&gt;</span> output<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  let i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  const API_URL <span class="token operator">=</span> <span class="token string">'https://picsum.photos/300/300/?random'</span><span class="token punctuation">;</span>
+  const promises <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    promises<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span>API_URL<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  loading<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span>
+  Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>promises<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>responses <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    loading<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+    responses<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>addPost<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+export default <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document
+    <span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'more'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> getMore<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: tabs
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_tabs/tabs.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_tabs/tabs.zip</kbd>
+</pre>
+
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_tabs/tabs.zip">tabs.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd tabs</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd tabs</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>tabs.js</b>.  You need to edit  <b>tabs.js</b>
+
+<pre class="command_line"><kbd class="shell">vi tabs.js</kbd>
+</pre>
+
+<p>Your task is to modify the code in <b>tabs.js</b>. Follow the instructions on the web page.</p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab09_js_tabs/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 06 August 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab09_js_tabs tabs.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>tabs.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">let planets<span class="token punctuation">;</span>
+let info<span class="token punctuation">;</span>
+let mapping <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'tab-1'</span><span class="token punctuation">:</span> <span class="token string">'Saturn'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-2'</span><span class="token punctuation">:</span> <span class="token string">'Earth'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-3'</span><span class="token punctuation">:</span> <span class="token string">'Jupiter'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-4'</span><span class="token punctuation">:</span> <span class="token string">'Mercury'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-5'</span><span class="token punctuation">:</span> <span class="token string">'Uranus'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-6'</span><span class="token punctuation">:</span> <span class="token string">'Venus'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-7'</span><span class="token punctuation">:</span> <span class="token string">'Mars'</span><span class="token punctuation">,</span>
+  <span class="token string">'tab-8'</span><span class="token punctuation">:</span> <span class="token string">'Neptune'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">changeTab</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  let i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>`tab<span class="token operator">-</span>$<span class="token punctuation">{</span>i<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'active'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'active'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  let p <span class="token operator">=</span> mapping<span class="token punctuation">[</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  p <span class="token operator">=</span> planets<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">&gt;</span> x<span class="token punctuation">.</span>name <span class="token operator">==</span> p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  let heading <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  heading<span class="token punctuation">.</span>innerText <span class="token operator">=</span> p<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  let summary <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>let k of Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>summary<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// not the most elegant solution but easy</span>
+    summary<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span><span class="token operator">=</span> `<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>b<span class="token operator">&gt;</span>$<span class="token punctuation">{</span>k<span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">&gt;</span> $<span class="token punctuation">{</span>p<span class="token punctuation">.</span>summary<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>\n`<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  let details <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  details<span class="token punctuation">.</span>innerText <span class="token operator">=</span> p<span class="token punctuation">.</span>details<span class="token punctuation">;</span>
+  let ul <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'hr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  info<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>heading<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  info<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>ul<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  info<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>details<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  info<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>summary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+export default <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  info <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'information'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'planets.json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>r <span class="token operator">=</span><span class="token operator">&gt;</span> r<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>r <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>planets <span class="token operator">=</span> r<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  let i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>`tab<span class="token operator">-</span>$<span class="token punctuation">{</span>i<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> changeTab<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Challenge Exercise: webworker
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_webworker/webworker.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_webworker/webworker.zip</kbd>
+</pre>
+
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_webworker/webworker.zip">webworker.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd webworker</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd webworker</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>webworker.js</b>.  You need to edit  <b>webworker.js</b>
+
+<pre class="command_line"><kbd class="shell">vi webworker.js</kbd>
+</pre>
+
+<p>In this task you create a webworker to constantly get gifs of cats!</p>
+
+<p>You will need to modify main.js and worker.js</p>
+
+<p>Follow the instructions on the web page.</p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab09_js_webworker/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 06 August 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab09_js_webworker worker.js main.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>worker.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// your web worker goes here.</span>
+
+const API_URL <span class="token operator">=</span>
+  <span class="token string">'https://api.thecatapi.com/v1/images/search?&amp;mime_types=image/gif'</span><span class="token punctuation">;</span>
+
+const fetchImageMetaData <span class="token operator">=</span> url <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+const ready <span class="token operator">=</span> data <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  self<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">fetchImageMetaData</span><span class="token punctuation">(</span>API_URL<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> data<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>ready<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>main.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">export default <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token string">'worker.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const image <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">getImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    worker<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token string">'getImg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">postImage</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data<span class="token punctuation">:</span> <span class="token punctuation">{</span> url <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    image<span class="token punctuation">.</span>src <span class="token operator">=</span> url<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  worker<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> postImage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">setInterval</span><span class="token punctuation">(</span>getImage<span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercises make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Tuesday 06 August 17:59:59</b>
+
+
+to submit your work.
+</p><p>
+You cannot obtain marks by e-mailing lab work to tutors or lecturers.
+</p><p>
+You check the files you have submitted <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">here</a>
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+</p><h4>Lab Marks</h4>
+<p>
+When all components of a lab  are automarked you should be able to view the
+the marks <a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre class="command_line"><kbd class="shell">2041 classrun -sturec</kbd>
+</pre>
+<p>
+The lab exercises for each week are worth in total 1.2 marks.
+</p><p>
+Usually each lab exercise will be worth the same - for example if there are 5 lab exercises each will be worth 0.4 marks.
+</p><p>
+Except challenge exercises (see below) will never total more than 20% of each week's lab mark.
+</p><p>
+All of your lab marks for weeks 1-10, will be summed to give you a mark out of 12.
+</p><p>
+If their sum exceeds 9 - your total mark will be capped at 9.
+
+</p><h4>Running Autotests On your Own Computer</h4>
+
+An experimental version of autotest exists which may allow you to run autotest on your own computer.
+<p>
+If you are running Linux,  Windows Subsystem for Linux or OSX.  These commands might let you run autotests at home.
+
+</p><pre class="command_line"><kbd class="shell">sudo wget https://cgi.cse.unsw.edu.au/~cs2041/19T2/resources/home_autotest -O/usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">sudo chmod 755 /usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">2041_autotest shell_snapshot</kbd>
+</pre>
+
+Autotest itself needs Python 3.6 (or later) installed.
+<p>
+Particular autotests may require other software install, e.g.  autotests of perl programs require Perl installed (of course).
+</p><p>
+The legit autotests need  python3.7, git &amp; binfmt-support installed.
+</p><p>
+The program embeds the autotests themselves, so you'll need to re-download if autotests are changed, added, fixed, ...
+</p><p>
+If it breaks on your computer post on the class forum  and we'll fix if we can, but this is very definitely experimental.
+
+</p></div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

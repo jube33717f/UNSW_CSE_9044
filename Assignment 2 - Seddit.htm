@@ -1,0 +1,654 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<title>
+
+Assignment 2 - Seddit
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="/~cs2041/19T2/flask.cgi/static/course.css?93451564558387.0" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/course.js?16311559202174.0"></script>
+
+<!-- prism code-highligting -->
+<link href="/~cs2041/19T2/flask.cgi/static/prism.css?24291559202174.0" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/prism.js?97811559202174.0" defer></script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" />
+</head>
+<body class="container">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+Assignment 2 - Seddit
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Getting Started - gitlab.cse.unsw.edu.au</h2>
+
+You must store all  work on the assignment <b>as you complete it</b> in a repository at gitlab.cse.unsw.edu.au.
+<p>
+Don't panic this is easy to do and will ensure you have a complete backup of all work on
+your assignment and can return to its state at any stage.
+<p>
+And hopefully assignment 1 has left you familiar for git.
+<p>
+It will also allow your tutor to check you are progressing on the assignment as
+they can access your gitlab repository
+
+You need to add your CSE ssh key to your gitlab.cse.unsw.edu.au account.
+Here is how you do that:
+
+<ol class="separated_list">
+<li>
+First print your CSE ssh key. If you have one, this command should should work.
+
+<pre class="command_line">
+<kbd class="shell">cat ~/.ssh/id_rsa.pub</kbd>
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyNSzIDylSPAAGLzUXdw359UhO+tlN6wWprSBc9gu6t3IQ1rvHhPoD6wcRXnonY6ytb00GpS4XRFuhCghx2JNVkXFykJYt3XNr1xkPItMmXr/DRIYrtxTs5sn9el3hHZIgELY8jJZpgIo303kgnF0MsB7XpqCzg7Iv6JGkv7aEoYC/MNr07hXE8iQjYIHDMdO9HxGI80GyMqb1hF+RSpQTNvXQvH56juu9VXt5OwJjOqSVa4SfsEICqdn+3k9w8Z4EaD93Eeog3hz0RoTrme8h/sJenXydJ0w9ZOs0By4fjqKFYPsYEs1K6SHma+kPByZM9COgKHZwOZHH1m24HOITQ== z5555555@williams</pre>
+<li>
+
+If you couldn't print an ssh key with the above command, you need to generate a new ssh key.
+You can do it like this (just hit return for each question).
+
+<pre class="command_line">
+<kbd class="shell">ssh-keygen</kbd>
+Generating public/private rsa key pair.
+Enter file in which to save the key (/import/kamen/3/z5555555/.ssh/id_rsa):
+Created directory '/import/kamen/3/z5555555/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /import/kamen/3/z5555555/.ssh/id_rsa.
+Your public key has been saved in /import/kamen/3/z5555555/.ssh/id_rsa.pub.
+The key fingerprint is:
+b8:02:31:8b:bf:f5:56:fa:b0:1c:36:89:ad:e1:cb:ad z5555555@williams
+The key's randomart image is:
+...
+</pre>
+<li>
+Now add your ssh key to gitlab:
+
+<li>
+Go to <a href="https://gitlab.cse.unsw.edu.au/profile/keys/">https://gitlab.cse.unsw.edu.au/profile/keys/</a>
+<li>
+In the field labelled <b>UNSW Username</b> enter your zid (e.g. z5555555)
+<li>
+In the field labelled <b>Password</b> enter your zpass
+<li>
+Click on <span class="btn btn-success">Sign in</span>
+<li>
+Cut-and-paste your ssh-key (the entire 200+ character line printed by <code>cat ~/.ssh/id_rsa.pub</code>) into the "<b>Key</b>" field.
+<p>
+Don't cut-and paste z5555555's ssh key above - cut-and-paste your ssh-key!
+<li>
+At this point, your screen should look something like this:
+<p>
+<img src="Add_SSH_Keys_Settings.png" style="border:thin solid;border-radius:10px;"/>
+<p>
+<li>
+click the green <span class="btn btn-success">Add key</span> button
+</li></p></p></li></p></li></li></li></li></li></li></li></li></ol>
+<p>
+
+A repository has been created for your assignment on <code>gitlab.cse.unsw.edu.au</code>.
+<p>
+You need to add your CSE ssh key to your  <code>gitlab.cse.unsw.edu.au</code>.
+<p>
+After you have done that create a git repository for the assignment in your CSE account.
+<p>
+These commands will create a copy of the gitlab repository in your CSE account.
+<p>
+Make sure you replace <i>5555555</i> below by your student number!
+
+<h2>Getting Started - Cloning the Assignment Repo</h2>
+
+You should first clone your  gitlab.cse.unsw.edu.au repository for this assignment
+<pre class="command_line">
+<kbd class="shell">mkdir -m 700 -p ~/ass2</kbd>
+<kbd class="shell">cd ~/ass2</kbd>
+<kbd class="shell">git clone gitlab@gitlab.cse.unsw.EDU.AU:z5555555/19T2-comp2041-ass2 .</kbd>
+Cloning into '.'...
+....
+</pre>
+
+If the git clone above fails - redo the instructions above  for adding your
+ssh key to gitlab.
+<p>
+And if that fail try with a https url instead (again replacing 5555555 with your zid) -
+and supplying your zid/zpass when requested:
+
+<pre class="command_line">
+<kbd class="shell">git clone https://gitlab.cse.unsw.edu.au/z5555555/19T2-comp2041-ass2.git .</kbd>
+Username for 'https://gitlab.cse.unsw.edu.au': <kbd>z5555555</kbd>
+Password for 'https://z5555555@gitlab.cse.unsw.edu.au':
+</pre>
+<h3>Updating The Supplied Files</h3>
+
+Run this command to make sure you have the latest version of the supplied files:
+
+<pre class="command_line">
+<kbd class="shell">git remote add starting_files https://github.com/COMP2041UNSW/seddit</kbd>
+<kbd class="shell">git pull starting_files master</kbd>
+</pre>
+<h3>Pushing Your work to gitlab.cse.unsw.edu.au</h3>
+
+Every time you complete some work on the assignment you should commit to your
+git rep and push this to gitlab, for example:
+
+<pre class="command_line">
+<kbd class="shell">vi frontend/src/main.js</kbd>
+<kbd class="shell">git commit -a -m 'bugs in subset 0 fixed'</kbd>
+<kbd class="shell">git push</kbd>
+....
+<kbd class="shell">vi frontend/src/my.js</kbd>
+<kbd class="shell">git add frontend/src/my.js</kbd>
+<kbd class="shell">git commit -a -m 'initial version of subset 1'</kbd>
+<kbd class="shell">git push</kbd>
+</pre>
+
+
+<!--
+    DO NOT CHANGE THIS FILE - IT MAY BE UPDATED DURING THE ASSIGNMENT
+-->
+<h2 id="seddit---introduction">Seddit - Introduction</h2>
+<p>JavaScript is used increasingly to provide a native-like application experience in the web. One major avenue of this has been in the use of Single Page Applications or SPAs. SPAs are generated, rendered, and updated using JavaScript. Because SPAs don't require a user to navigate away from a page to do anything, they retain a degree of user and application state.</p>
+<p>There are millions of websites that utilise SPAs in part of, or all of their web applications.</p>
+<p>The assignment intends to teach students to build a simple SPA which can fetch dynamic data from a HTTP/S API. Your task will be to provide an implemention of a SPA that can provide a number of key features.</p>
+<p>Some of the skills/concepts this assignment aims to test (and build upon):</p>
+<ul>
+<li>Simple event handling (buttons)</li>
+<li>Advanced Mouse Events (Swipe)</li>
+<li>Fetching data from an API</li>
+<li>Infinite scroll</li>
+<li>CSS Animations</li>
+<li>Web Workers / Service Workers</li>
+<li>Push Notifications (Polling)</li>
+<li>Offline Support</li>
+<li>Routing (URL fragment based routing)</li>
+</ul>
+<h2 id="api">API</h2>
+<p>The backend server will be where you'll be getting your data. Don't touch the code in the backend; although we've provided the source, it's meant to be a black box. Final testing will be done with our own backend so don't <em>assume</em> any single piece of data will be there. Use the instructions provided in the backend/README.md to get it started.</p>
+<p>For the full docs on the API, start the backend server and navigate to the root (very likely to be <code>localhost:5000</code>, the exact url will be printed when you run the backend, see backend/README.md for more info). You'll see all the endpoints, descriptions and expected responses.</p>
+<h2 id="a-working-product">A Working Product</h2>
+<p>Your application should be compatible with 'modern' Chrome, Safari, and Mozilla browsers. We will assume your browser has JavaScript enabled, and supports ES6 syntax.</p>
+<h3 id="writing-html---restrictions">Writing HTML - Restrictions</h3>
+<p>You are not permitted to edit the HTML provided in <em>frontend/index.html</em> except you may change the <code>&lt;head&gt;&lt;/head&gt;</code> section to add your own styles and scripts.</p>
+<p>You are not permitted to add HTML files.</p>
+<p>You must create the HTML entirely via your JavaScript scripts. Your task is to manipulate and control your application <em>entirely</em> dynamically!</p>
+<p>Also please use <code>.innerHTML</code> sparingly. Using <code>.innerHTML</code> amounts to the same thing as hardcoding your HTML. You'll be penalised if you rely on this method. Ask in the forum if you require more information.</p>
+<p>You are not permitted to use Javascript written by other people.</p>
+<p>You are not permitted to use NPM to install packages.</p>
+<p>You are not permitted to use frameworks (React, Angular, Vue ...)</p>
+<p>You are permitted to use small snippets of general purpose code from external sources such as Stack Overflow with proper attribution.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Clone the repository provided. It has a whole bunch of code, documentation, and a whole working server you'll need for developing your frontend applicaiton.</p>
+<p>Please read the relevant docs for setup in the folders <code>/backend</code> and <code>/frontend</code> of the provided repository. Each folder outlines basic steps to get started. There are also some comments provided in the frontend source code.</p>
+<h2 id="milestones">Milestones</h2>
+<p>Level 0 focuses on the basic user interface and interaction with of the site. There is no need to implement any integration with the backend for this level. When demonstrating the functionality included in level 0, you are not required to prevent access to login-protected pages - all pages may be accessible by changing the URL.</p>
+<h3 id="level-0">Level 0</h3>
+<p><strong>Login</strong></p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="co">&lt;!-- </span>
+<span class="co">    Before seeing the login form, a &#39;Log In&#39; button</span>
+<span class="co">    should exist on the page. The button _must_</span>
+<span class="co">    have the following data attribute.</span>
+<span class="co">    This is important for autotests.</span>
+<span class="co">--&gt;</span>
+<span class="kw">&lt;button</span><span class="ot"> data-id-login</span><span class="kw">&gt;</span>Log In<span class="kw">&lt;/button&gt;</span></code></pre>
+<p>The site presents a login form where a user can present their credentials. Since we do not need to interact with the backend for level 0, all attempts to log in would fail. Thus, you should allow the site to inform the user that authentication has failed.</p>
+<p><strong>Registration</strong></p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="co">&lt;!-- </span>
+<span class="co">    Before seeing the form, a &#39;Sign Up&#39; button</span>
+<span class="co">    should exist on the page. The button _must_</span>
+<span class="co">    have the following data attribute.</span>
+<span class="co">    This is important for autotests.</span>
+<span class="co">--&gt;</span>
+<span class="kw">&lt;button</span><span class="ot"> data-id-signup</span><span class="kw">&gt;</span>Sign Up<span class="kw">&lt;/button&gt;</span></code></pre>
+<p>An option to register for &quot;Seddit&quot; should be presented on the home page. This option will allow the user to create an account by entering a set of credentials (username and password) which they can then use to sign up to &quot;Seddit&quot;. Again, since we are not required to interact with the backend for level 0, all attempts to create a new account will fail. You must perform basic input validation (think about the format of the user input you may receive) and handle cases where the input credentials should be rejected in the case of user error or (eventual) server rejection due to conflicting credential details.</p>
+<p><strong>Feed Interface</strong></p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="co">&lt;!-- </span>
+<span class="co">    The &#39;feed&#39; _must_</span>
+<span class="co">    have the following id attribute.</span>
+<span class="co">    This is important for autotests.</span>
+<span class="co">--&gt;</span>
+<span class="kw">&lt;ul</span><span class="ot"> id=</span><span class="st">&quot;feed&quot;</span><span class="kw">&gt;</span>...<span class="kw">&lt;/ul&gt;</span></code></pre>
+<p>The application should present a &quot;feed&quot; of user content on the home page derived from the sample feed.json provided. The posts should be displayed in reverse chronological order (most recent posts first). You can hardcode how this works for this milestone.</p>
+<p>Although this is not a graphic design exercise you should produce pages with a common and somewhat distinctive look-and-feel. You may find CSS useful for this.</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="co">&lt;!-- </span>
+<span class="co">    Each &#39;post&#39;  _must_</span>
+<span class="co">    have the following data attribute.</span>
+<span class="co">    This is important for autotests.</span>
+<span class="co">--&gt;</span>
+<span class="kw">&lt;li</span><span class="ot"> data-id-post</span><span class="kw">&gt;</span>...<span class="kw">&lt;/li&gt;</span></code></pre>
+<p>Each post must include: 1. who the post was made by (must include <code>data-id-author</code>) 2. when it was posted 3. The image itself, if there is one present 4. How many upvotes it has (or none) (must include <code>data-id-upvotes</code>) 5. The post title (must include <code>data-id-title</code>) 6. The post description text 7. How many comments the post has 8. What suseddit this was posted to i,e <code>/s/meme</code></p>
+<p>While completing these tasks for level 0, consider the future inclusion of HTTP requests when designing your code - this will be helpful for future levels.</p>
+<h2 id="level-1">Level 1</h2>
+<p>Level 1 focuses on fetching data from the API.</p>
+<p><strong>Login</strong> The login form now communicates with the backend (<code>POST /login</code>) after input validation to verify whether the provided credentials are valid for an existing user. Once the user has logged in, they should see their own news feed (the home page).</p>
+<p>NB. This is slightly different to what they will see as a non-logged in user. A non-logged in user should still see posts from <code>GET /post/public</code>.</p>
+<p><strong>Registration</strong> The option to register for &quot;Seddit&quot; (implemented in level 0) should now accept a set of credentials (a username / password pair). This user information is then POSTed to the backend to create the user in the database (<code>POST /signup</code>).</p>
+<p><strong>Feed Interface</strong> The content shown in the user's feed is sourced from the backend (<code>GET /user/feed</code>). Contrary to the existing popular system which &quot;Seddit&quot; is based off, there is only one location where all posts are to appear at this level of functionality. In the actual system called reddit posts are organised into similar groups called &quot;sub-reddits&quot; so all posts about plants are grouped under <code>r/plants</code> allowing plant lovers to only see those posts. seddit copies this by letting users specify the subseddit of a post when creating it so people can make posts under <code>s/plants</code> but the feed we are asking you to implement aggregates <strong>all</strong> posts regardless of which subseddit they were posted to.</p>
+<p>In level 4 you will implement multiple subseddits where posts are organised into groups much like reddit.</p>
+<h2 id="level-2">Level 2</h2>
+<p>Level 2 focuses on a richer UX and will require some further backend interaction.</p>
+<p><strong>Show Upvotes</strong> Allow an option for a logged in user to see a list of all users who have upvoted a post. Possibly a <a href="https://www.webopedia.com/TERM/M/modal_window.html">modal</a> but the design is up to you.</p>
+<p><strong>Show Comments</strong> Allow an option for a logged in user to see all the comments on a post. Same as above.</p>
+<p><strong>Upvote user generated content</strong> A logged in user can upvote a post on their feed and trigger a api request (<code>PUT /post/vote</code>) For now it's ok if the upvote doesn't show up until the page is refreshed.</p>
+<p>In addition the user can also retract their upvote, you can do this via <code>DELETE /post/vote</code></p>
+<p><strong>Post new content</strong> Logged in users can upload and post new content from a <a href="https://www.webopedia.com/TERM/M/modal_window.html">modal</a> or seperate page via (<code>POST /post</code>). The uploaded content can either be text or text and an image.</p>
+<p><strong>Pagination</strong> Logged in users can page between sets of results in the feed using the position token with (<code>GET /user/feed</code>). Note users can ignore this if they properly implement Level 3's Infinite Scroll.</p>
+<p><strong>Profile</strong> Logged in users can see their own profile information such as username, number of posts, number of upvotes across all posts. Get this information from (<code>GET /user</code>)</p>
+<h2 id="level-3">Level 3</h2>
+<p>Level 3 focuses on more advanced features that will take time to implement and will involve a more rigourously designed app to execute.</p>
+<p><strong>Infinite Scroll</strong> Instead of pagination, users an infinitely scroll through the &quot;subseddit&quot; they are viewing. For infinite scroll to be properly implemented you need to progressively load posts as you scroll.</p>
+<p><strong>Comments</strong> Logged in users can write comments on &quot;posts&quot; via (<code>PUT /post/comment</code>)</p>
+<p><strong>Live Update</strong> If a logged in user upvotes a post or comments on a post, the posts upvotes and comments should update without requiring a page reload/refresh.</p>
+<p><strong>Update Profile</strong> Users can update their personal profile via (<code>PUT /user</code>) E.g: * Update email address * Update password * etc.</p>
+<p><strong>User Pages</strong> Let a logged in user click on a user's name/picture from a post and see a page with the users name and other info. The user should also see on this page all posts made by that person across all &quot;subseddits&quot;. The user should be able to see their own page as well.</p>
+<p>This can be done as a <a href="https://www.webopedia.com/TERM/M/modal_window.html">modal</a> or as a separate page (url fragmentation can be implemented if wished.)</p>
+<p><strong>Follow</strong> Let a logged in user follow/unfollow another user too add/remove their posts to their feed via (<code>PUT user/follow</code>) Add a list of everyone a user follows in their profile page. Add just the count of followers / follows to everyones public user page</p>
+<p><strong>Delete/Update Post</strong> Let a logged in user update a post they made or delete it via (<code>DELETE /post</code>) or (<code>PUT /post</code>)</p>
+<p><strong>Search functionality</strong> Let a logged in user search for a post made by any user that they follow. You'll have to potentially combine a few different endpoint responses to allow this.</p>
+<h2 id="level-4">Level 4</h2>
+<p>This set of tasks is an extension beyond the previous levels and should only be attempted once the previous levels have been completed.</p>
+<p><strong>Multiple Subseddits</strong> As mentioned earlier, a subseddit is denoted by a &quot;s/&quot; in front of the subseddit name. Users should be able to make a post to a specific subseddit (which may or may not have been posted to before). A logged in user should also be able to view the posts made to a specific subseddit. You may choose to show this in the URL as <code>/s/:subseddit_name</code> if you wish. The original news feed - which presented the <code>s/all</code> subseddit - must still remain as the home page and must also show all posts made across all subseddits. Any post that is not posted to a specific subseddit must appear on <code>s/all</code>.</p>
+<p><strong>Slick UI</strong> The user interface looks good, is performant, makes logical sense, and is usable.</p>
+<p><strong>Push Notifications</strong> Users can receive push notifications when a user they follow posts an image. There is no endpoint or websocket provided, we expect you to figure out how to do this given the existing endpoints. Notice that since we do not give you a websocket (nor teach it in the course) we are happy for you to use polling ot achieve this, i.e check if there is anything to notify the user of every 5 or so seconds.</p>
+<p>The delay is up to you, but remember you want it to look semi live without overwhelming the event queue.</p>
+<p><strong>Offline Access</strong> Users can access the &quot;Seddit&quot; at all times by using Service Workers to cache the page (and previous content) locally. d <strong>Fragment based URL routing</strong> Users can access different pages using URL fragments:</p>
+<pre><code>/#profile=1
+/#feed
+/#profile=420</code></pre>
+<h1 id="faq">FAQ</h1>
+<ol style="list-style-type: decimal">
+<li>I get a 403 (invalid auth token) on all my api requests?</li>
+</ol>
+<p>Make sure you are authorized, remember you need to set your header with the token the login endpoing returned to you.</p>
+<pre class="js"><code>const options = {
+    headers: {
+        &#39;Authorization&#39; : `Token ${myToken}`
+    }
+} 
+fetch(&quot;/user&quot;, options)</code></pre>
+<p>Just for playing around you can use the <code>/dummy</code> endpoints which let you skip this step but do note you need working auth for most of the levels.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>How do i know what a endpoint takes in and what it returns?</li>
+</ol>
+<p>Run the backend server and navigate to the root, usualy 127.0.0.1:5000 or similar. There is a full set of docs which outlines every url you can hit, what method to use, a description, the paramaters it needs and the structure of the response it gives. It also outlines every possible error code it returns.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>I'm getting a '500' error</li>
+</ol>
+<p>That means that the server is crashing, this might mean your doing something really weird the backend wasn't ready to handle, in general check the forum in this case. We may have just made a oopsie.</p>
+
+<!--
+    DO NOT CHANGE THIS FILE - IT MAY BE UPDATED DURING THE ASSIGNMENT
+-->
+<h2 id="seddit---frontend">Seddit - Frontend</h2>
+<h2 id="recommended-steps-for-tackling-the-assignment">Recommended Steps for tackling the assignment</h2>
+<ol style="list-style-type: decimal">
+<li>Get something basic working with the data provided in <code>frontend/data</code></li>
+<li>Once you've got something basic working, start hitting the <code>/dummy/</code> API, which doesn't require authentication. See docs.</li>
+<li>Finally, once you've got that working, transition over to use the real API.</li>
+</ol>
+<h2 id="quickstart">Quickstart</h2>
+<p>To start up the frontend server which simply servers everything under the frontend folder:</p>
+<pre><code>python3 frontend_server.py</code></pre>
+<p>This will print out a username, password and launch up a static server at localhost:8080, if something else on your network is using 8080 it will start it on some other port.</p>
+<pre><code>Live at http://localhost:8080
+use username &#39;user&#39; and password &#39;8tv1oz&#39;</code></pre>
+<p>Use control-c to shut this server down.</p>
+<p>When you visit the link you will be prompted for a username and password, use the ones printed to the console. This is to prevent other students on the same network as you being able to see your code.</p>
+<p>In addition we've provided a basic project scaffold for you to build from. You can use everything we've given you, although there's no requirement to use anything.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># scaffold</span>
+<span class="kw">data</span>
+  <span class="kw">-</span> feed.json  <span class="co"># A sample feed data object</span>
+  <span class="kw">-</span> users.json <span class="co"># A sample list of user/profile objects</span>
+  <span class="kw">-</span> post.json  <span class="co"># A sample post object</span>
+
+<span class="kw">src</span>
+  <span class="kw">-</span> main.js   <span class="co"># The main entrypoint for your app</span>
+  <span class="kw">-</span> api.js    <span class="co"># Some example code for your api logic</span>
+
+<span class="kw">styles</span>
+  <span class="kw">-</span> post.css
+  <span class="kw">-</span> provided.css  <span class="co"># some sample css we&#39;ve provided (add more stylesheets as you please)</span></code></pre>
+<p>To make sure everything is working correctly we strongly suggest you read the instructions in both backend and frontend, and try to start both servers (frontend and backend).</p>
+
+<!--
+    DO NOT CHANGE THIS FILE - IT MAY BE UPDATED DURING THE ASSIGNMENT
+-->
+<h2 id="seddit-backend">Seddit Backend</h2>
+<p>You are given a backend server for seddit written in Python.</p>
+<p>Do not change any file in the backend directory.</p>
+<p>You only submit the seddit frontend.</p>
+<p>Any changes you make to the backend will be lost.</p>
+<p>If you depend on changes you make to the backend your code will break.</p>
+<h2 id="running-the-backend-cse">Running the Backend @ CSE</h2>
+<p>Running the backend on a CSE machine is simple:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">2041</span> ass2_backend</code></pre>
+<p>Visit the url it prints (e.g. http://127.0.0.1:5000/) to see the backend docs!</p>
+<p>Note if other students are running a sever on the same machine you will give a different URL (port).</p>
+<p>The backend server will print out a message telling you how to run the frontend server.</p>
+<p>This command ensures correct URL for the backend server is passed to your frontend Javascript.</p>
+<h2 id="running-the-backend-on-your-own-machine">Running the Backend on your Own Machine</h2>
+<p>You can use virtual env [recommended].</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> backend
+<span class="co"># create a sandbox for the backend </span>
+<span class="kw">virtualenv</span> -p /usr/local/bin/python3 env
+
+<span class="co"># enter sandbox</span>
+<span class="kw">source</span> env/bin/activate
+<span class="co"># set up sandbox</span>
+<span class="kw">pip</span> install -r requirements.txt
+<span class="co"># run backend! Will print out a bunch of info including a line like this:</span>
+<span class="co">#  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span>
+<span class="co"># visit the url on this line (e.g. http://127.0.0.1:5000/) to see the backend docs!</span>
+<span class="kw">python</span> backend_server.py</code></pre>
+<p>Once you are done working on the assignment run the following command to exit the sandbox</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">deactivate</span></code></pre>
+<p>This method creates a space in which the backend can run without clashing with any other python packages and issues on your local account. If you don't care you can run the backend in the global space as such.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> backend
+<span class="co"># on your local system this may just be pip and python not pip3 and python3</span>
+<span class="kw">pip3</span> install -r requirements.txt
+<span class="kw">python3</span> app.py</code></pre>
+<h1 id="user-data">User Data</h1>
+<p>in <code>backend/db/users.csv</code> there is a list of all users within the provided database, you can login as any of these users for testing or create your own account. Note that in the case that you put the database in a undesirable state such as accidently making too many accounts or comments on a post etc. simply delete the file <code>backend/db/test.sqlite3</code> and restart the backend server. The server will automatically detect the missing file and download a fresh copy.</p>
+
+
+<h2>Connecting to your A Server Running at CSE Using an SSH Tunnel</h2>
+
+You can use ssh to forward a port from on your local machine to a port on a CSE server.
+<p>
+You can use this to run your browser on your local machine and your frontend &amp; backend servers at CSE.
+<p>
+Alternatively you could run your backend server at CSE and your frontend server and your browser at CSE.
+
+<h3>SSH Tunnelling on Linux/Mac</h3>
+
+Its best if you can get your laptop or home machine setup so it  can run
+frontend and backend servers.
+<p>
+If you can't, it is possible to connect a server running at CSE to your local machine.
+<p>
+First ssh to a CSE login server such as weber  and start your backend:
+
+<pre class="command_line">
+<kbd class="shell">ssh weber.cse.unsw.edu.au</kbd>
+<kbd class="shell">2041 ass2_backend</kbd>
+<kbd class="shell">cd ass2/frontend</kbd>
+<kbd class="shell">2041 ass2_backend</kbd>
+....
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+....
+</pre>
+
+Then ssh to the same CSE login server in another window and start your frontend:
+
+<pre class="command_line">
+<kbd class="shell">ssh weber.cse.unsw.edu.au</kbd>
+<kbd class="shell">cd ass2/frontend</kbd>
+<kbd class="shell">python3 frontend_server.py http://127.0.0.1:5000</kbd>
+....
+Frontend server running at:  http://localhost:8080
+....
+</pre>
+
+Then in a third window create a ssh tunnel again to the same CSE login server - replace 8080 with the actual port your frontend server is running.
+
+<pre class="command_line">
+<kbd class="shell">ssh -L 2041:localhost:8080 weber.cse.unsw.edu.au</kbd>
+</pre>
+
+This connects port 2041 on your localmachine to port 8080 on the CSE login server.
+<p>
+You should now be able to access your frontend server at the URL  <b>http://localhost:2041</b> on your local machine.
+<p>
+Alternatively you could after starting the backend server run a command like this to connect port 5000 on your local machine to
+port 5000 on the CSE server, and then run the frontend server on your local machine.
+a
+<pre class="command_line">
+<kbd class="shell">ssh -L 5000:localhost:5000 weber.cse.unsw.edu.au</kbd>
+</pre>
+<h3>SSH Tunnelling on Windows</h3>
+
+This guide to <a href="http://evank.web.cse.unsw.edu.au/comp2041/port-forwarding/windows.html">creating ssh tunnels on Windows<a></a> written by a COMP2041 tutor
+should help you create a SSH tunnel from Windows, if you have <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a> installed.
+
+
+<h2>Assumptions/Clarifications</h2>
+
+It is a requirement of the assignment that when you work on the assignment for
+more than a few minutes you push the work to <code>gitlab.cse.unsw.edu</code> (see above).
+<p>
+You must implement this assignment in Javascript.
+<p>
+You may use small amounts (&lt; 10 lines) of general purpose code (not
+specific to the assignment) obtained from a site such as Stack Overflow or other publically available resources.
+You should attribute clearly the source of this code in a comment with it.
+<p>
+You can not otherwise use Javascript, CSS or HTML written by another person.
+<p>
+Do not use NPM to install packages.
+<p>
+You can not, for example, use Javascript frameworks such as <a href="https://angular.io/">Angular</a> or <a href="https://reactjs.org/">React</a>.
+<p>
+You are not permitted to use CSS from external sources, e.g. you are not permitted to use Bootstrap.
+
+This is an individual assignment. The work you submit must be your own work and only your
+work apart from the exception above.  Joint work is not permitted.
+<p>
+You should follow  discussion about the assignment in the
+<a href="https://piazza.com/class/jwbtmnlav8f1vi">course forum</a>.
+All questions about the assignment should be posted there unless they concern your private circumstances.
+This allows all students to see all answers to questions.
+
+
+
+<h2>Diary</h2>
+You must keep a record of your work on this assignment as you did for assignment in an ASCII file
+The entries should include date, starting &amp; finishing time, and a brief (one or two line) description of
+the work carried out.
+For example:
+
+<table class="table table-bordered">
+<tr><th>Date<th>Start<th>Stop<th>Activity<th>Comments
+<tr><td>15/10<td>16:00<td>17:30<td>coding<td>implemented creation of accounts
+<tr><td>20/10<td>20:00<td>10:30<td>debugging<td>found bug in handling of posts
+</td></td></td></td></td></tr></td></td></td></td></td></tr></th></th></th></th></th></tr></table>
+
+Include these notes in the files you submit as an ASCII file named diary.txt.
+<p>
+Some students choose to store this information in git commit messages
+and use a script to generate  <code>diary.txt</code> from <code>git log</code> before they submit.
+You are welcome to do this.
+</p></p></p></p></p></p></p></p></a></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p>
+
+
+
+
+
+
+
+
+
+
+<h2>Attribution of Work</h2>
+
+This is an individual assignment. The work you submit must be your own work and only your
+work apart from any exceptions explicitly included in the assignment specification above.
+<p>
+Joint work is not permitted.
+<p>
+You are only permitted to request help with the assignment
+in the course forum, help sessions or from course lecturers or tutors.
+<p>
+Do not provide or show your assignment work to any other person (including by posting it on the forum)
+apart from the teaching staff of COMP(2041|9044).
+
+<p>
+The work you submit must otherwise be entirely your own work.  Submission of work partially or completely derived
+from any other person or jointly written with any other person is not permitted.
+The penalties for such an offence may include negative marks,
+automatic failure of the course and possibly other academic discipline.
+Assignment submissions will be examined both automatically and manually
+for such submissions.
+<p>
+We are required to inform scholarship authorities if students holding scholarships
+are involved in an incident of plagiarism or other misconduct, and this may result in a loss of the scholarship.
+<p>
+Plagiarism or other misconduct can also result in loss of student visas.
+<p>
+If you knowingly provide or show your assignment work to another person for any
+reason, and work derived from it is submitted you may be penalized, even
+if the work was submitted without your knowledge or consent.  This may
+apply even if your work is submitted by a third party unknown to you.
+<p>
+Note, you will not be penalized if your work is
+taken without your consent or knowledge.
+
+
+
+<h2>Submission of Work</h2>
+
+<b>give</b> doesn't allow submission of a directory hierarchy, so you'll need to submit your
+work as a tar file.  You can do that like this:
+
+<pre class="command_line">
+<kbd class="shell">tar -Jcf frontend.tar frontend </kbd>
+<kbd class="shell">give cs2041 ass2_seddit diary.txt frontend.tar</kbd>
+</pre>
+
+You can't submit the backend because you are not permitted to change the backend.
+Your frontend will be run with the backend you have been given.
+<p>
+Unlike the last assignment you don't need to run give everytime you work on the assignment,
+you do need to run <b>git push</b> very time your work on the assignment, so your repo on <b>gitlab.cse.unsw.edu.au</b> is updated.
+<p>
+You may still run give multiple times, only the final submitted version of your assignment will be marked.
+
+
+
+
+<h2>Assessment</h2>
+
+Assignment 2 will contribute 15 marks to your final mark.
+<p>
+Assignment 2 marking occurs in peer assessment sessions.
+Details of the peer assessment sessions will be announced in week 10.
+Your must attend one  peer assessment sessions.
+<p>
+80% of the marks for assignment 2 will come from your code against a specified set of operations and assessed
+by fellow students.
+You will be present to assist in determining what features are and are not
+working, you will also be able to indicate any extra features you have implemented.
+<p>
+20% of the marks for assignment 2  will be awarded on the basis of clarity,
+commenting, elegance and style of your code.  In other words, your fellow students will assess how
+easy it is for a human to read and understand your program.
+<P>
+Here is an indicative marking scheme .
+<P>
+<table  class="table table-bordered table-striped">
+<tr><td>100%<td>Elegant Javascript with an excellent implementation of levels 0-4) features
+<tr><td>HD++%<td>Very well written Javascript which implements levels 0-3 successfully
+<tr><td>HD (85+)<td>Well written Javascript which implements most of levels 0-3 successfully
+<tr><td>DN (75+)<td>Readable Javascript which implements of levels 0-2 successfully
+<tr><td>CR (65+)<td>Reasonably readable code which implements level 0-1 successfully
+<tr><td>PS (55+)<td>Reasonably readable code which implements level 0 successfully
+<tr><td>45%<td>Major progress on the assignment with some things working/almost working
+<tr><td>-70%<td>Knowingly supplying  work to any other person which is subsequently submitted by another student.
+<tr><td>0 FL for COMP2041/9041<td>Submitting any other person's work with their consent.  This includes joint work.
+<tr><td>academic misconduct<td>Submitting another person's work without their consent.
+</table>
+<p>
+The lecturer may vary the assessment scheme after inspecting
+the assignment submissions but its likely to be broadly similar to the above.
+
+
+
+
+
+<h2>Due Date</h2>
+
+This assignment is due  Tuesday August 13 21:59
+<P>
+If your assignment is submitted after this date, each hour it is late reduces
+the maximum mark it can achieve by 4% per hour for 25 hours
+For example if an assignment worth 84% was submitted
+3 hours late, the late submission would have no effect.
+If the same assignment was submitted 6 hours late it would be awarded
+76%, the maximum mark it can achieve at that time.
+
+
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br />
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br />
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br />
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 10 Laboratory Sample Solutions
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 10 Laboratory Sample Solutions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 10 Laboratory Sample Solutions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 10 Laboratory Sample Solutions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 10 Laboratory Sample Solutions_files/popper.min.js"></script>
+<script src="./COMP2041 Week 10 Laboratory Sample Solutions_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 10 Laboratory Sample Solutions_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 10 Laboratory Sample Solutions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 10 Laboratory Sample Solutions_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 10 Laboratory Sample Solutions_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 10 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laboratory <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/10/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/10/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Solutions <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/questions">Exercises</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Sample Solutions</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Objectives
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+In this Lab, you will:
+
+ <ul>
+ <li class="itemize">Become familiar with the  environment used for the final exam
+ </li><li class="itemize">practice coding under exam conditions
+ </li></ul>
+
+
+</div>
+    </div>
+
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Getting Started
+            </h3>
+        </div>
+        <div class="card-body">
+
+The first 10 minutes  of the lab is set aside for you to complete the
+<a href="https://myexperience.unsw.edu.au/">myExperience survey</a> for COMP(2041|9044).
+Your tutors will leave the room to ensure your answers stay confidential.
+<p>
+This will also leave time for everyone to arrive and be ready to start the exam.
+
+
+</p><h3>Logging Into the Exam environment</h3>
+<p>
+Log out of your regular account after completing the myExperience survey.
+</p><p>
+Your tutors will log  your lab machine into the exam environment,
+</p><p>
+When all machines are logged into the exam environment tutors will give you further instructions.
+</p><p>
+At this stage turn off your phone, put it and laptops out of reach.
+
+</p><h3>Practice Exam</h3>
+<p>
+You will have 5 minutes reading time after that the exam runs 60 minutes.
+</p><p>
+Part 1 has to be submitted in the first 5 minutes and during
+that time you are not permitted to run xterms, shells, editors, etc.
+You can view online documentation.
+</p><p>
+You run "Enter Part 1 Answers" from the right mouse button menu
+to enter the answers to part 1.
+</p><p>
+In the final exam you will have 30 minutes to complete part 1.
+</p><p>
+You run "View Part 2 Questions" from the right mouse button menu to see part 2 questions.
+</p><p>
+Part 2 answers are entered into the file specified by each question
+and submitted using the "give" command.  The questions include submission instructions.
+The practice exam will be conducted under simulated exam conditions.
+which means you can't communicate with other people, can not use your phone/tablet/laptop, ...
+</p><p>
+You tutor can  clarify questions and fix any  problems with the exam environment.
+</p><p>
+They can not help you solve the tasks.
+</p><p>
+Some later lab sessions may have the same questions as yours.  Please don't tell people what questions you had.
+And equally don't try to find out beforehand what questions were used in other labs.
+You'll get most value, if this practice exam is as real as possible.
+
+</p><h3>Practice Exam Assessment</h3>
+<p>
+This work you submit in the exam environment will be automarked and
+used to calculate your last lab mark.
+</p><p>
+You can not submit answers outside the exam environment.
+</p><p>
+You can only submit answers during the hour of the exam.
+
+</p><h3>Assignment 2 Help</h3>
+There should be time after the exam if you need help with assignment 2.
+
+<h3>Question 1</h3>
+
+What does this Shell pipeline print?
+
+<pre class="command_line"><kbd class="shell">cat input</kbd>
+2nd 3rd
+4th 5th 6th
+7th 8th 9th 10th
+11th
+<kbd class="shell">cat input|sed 's/[a-j].*/ /g'|sort</kbd>
+</pre>
+
+
+<h3>Question 2</h3>
+
+What does q2.pl printwhen run as below?
+
+<pre class="command_line"><kbd class="shell">cat q2.pl</kbd>
+#!/usr/bin/perl
+
+while (&lt;&gt;) {
+    chomp;
+    @a = split;
+    $h{$a[0]} .= $a[1];
+}
+print $h{"a"}, "\n";
+<kbd class="shell">cat input</kbd>
+a 6
+b 5
+c 4
+a 3
+b 2
+c 1
+<kbd class="shell">./q2.pl &lt;input</kbd>
+</pre>
+
+
+<h3>Question 3</h3>
+
+What does q3.pl printwhen run as below?
+
+<pre class="command_line"><kbd class="shell">cat q3.pl</kbd>
+#!/usr/bin/perl
+
+@x = &lt;&gt;;
+print $#x+1, "\n";
+<kbd class="shell">cat input</kbd>
+First line of example text
+2nd line of example text
+Last line of example text
+<kbd class="shell">./q3.pl &lt;input</kbd>
+</pre>
+
+
+</div>
+    </div>
+
+
+
+
+
+
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: female_enrollments
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+We have student enrolment data in this familiar format:
+
+<pre class="command_line"><kbd class="shell">cat enrollments.txt</kbd>
+COMP1011|3360379|Costner, Kevin                   |3978/1|M
+COMP1011|3360582|Neeson, Liam                     |3711/1|M
+COMP2920|3860539|Spears, Brittney                 |3978/3|F
+COMP1021|3360582|Neeson, Liam                     |3711/1|M
+COMP3411|3860538|Klum, Heidi                      |3978/3|F
+COMP3141|3383025|Thorpe, Ian                      |3978/3|M
+COMP3891|3860544|Klum, Heidi                      |3978/3|F
+</pre>
+
+Write a shell pipeline that given input in this format
+outputs the student numbers of
+all female students.
+<p>
+The student numbers should be printed one per line and each student number should
+be printed once.  Only the student numbers should be printed.
+</p><p>
+The student numbers should be printed in sorted (increasing) order.
+</p><p>
+Place your answer to this question in a file named <code>female_enrollments.sh</code>
+</p><p>
+For example, given the above input your
+pipeline should output this:
+
+</p><pre class="command_line"><kbd class="shell">female_enrollments.sh &lt;enrollments.txt</kbd>
+3860538
+3860539
+3860544
+</pre>
+
+Your answer must be a shell pipeline. You may not use `while`, `for` or other loops.
+You may not use Perl or JavaScript.  You may use the usual Unix filters.
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest female_enrollments</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">98%</span>
+        
+        of <span class="autotest_results_emphasis">83</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">female_enrollments.sh</span>
+            so far,
+        
+        
+            passed the autotest test.
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab10_female_enrollments female_enrollments.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>female_enrollments.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+
+egrep <span class="token string">'F$'</span><span class="token operator">|</span>cut <span class="token operator">-</span>d\<span class="token operator">|</span> <span class="token operator">-</span>f2<span class="token operator">|</span>sort<span class="token operator">|</span>uniq</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: remove_repeats
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+<p>
+Write a program which takes 0 or more arguments and prints some of
+those arguments.
+</p><p>
+The first occurrence and only the first occurrence of any argument should be printed.
+</p><p>
+The arguments should be printed on a single line.  A single space should separate
+each argument.
+</p><p>
+Your program  can <b>NOT</b> assume the arguments with be in any particular order.
+</p><p>
+Make your program behave <b>exactly</b> as indicated by the examples
+below.
+</p><p>
+It must produce <b>exactly</b> the same output as below,
+except you may print an extra space at the end of the line if you wish.
+</p><p>
+Your program must be either  Shell, Perl or Javascript..
+</p><p>
+Name your program <b>remove_repeats.sh</b> <b>remove_repeats.pl</b> or <b>remove_repeats.js</b>
+</p><p>
+In the examples below replace  <b>remove_repeats.pl</b> with  <b>remove_repeats.sh</b> or <b>remove_repeats.js</b>
+you attempt this question in  Shell, Perl or Javascript.
+
+For example:
+
+</p><pre class="command_line"><kbd class="shell">remove_repeats.pl </kbd>
+
+<kbd class="shell">remove_repeats.pl bird</kbd>
+bird
+<kbd class="shell">remove_repeats.pl bird cow fish</kbd>
+bird cow fish
+<kbd class="shell">remove_repeats.pl echo echo echo</kbd>
+echo
+<kbd class="shell">remove_repeats.pl bird cow fish bird cow fish bird</kbd>
+bird cow fish
+<kbd class="shell">remove_repeats.pl how much wood would a woodchuck chuck</kbd>
+how much wood would a woodchuck chuck
+<kbd class="shell">remove_repeats.pl a a a a b a</kbd>
+a b
+<kbd class="shell">remove_repeats.pl a b c d c b a</kbd>
+a b c d
+<kbd class="shell">remove_repeats.pl d c b d c a a d</kbd>
+d c b a
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest remove_repeats</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">95%</span>
+        
+        of <span class="autotest_results_emphasis">96</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">remove_repeats.*</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>10</i>
+                
+                    </li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>11</i>
+                
+                    </li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>12</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>2</i>
+                
+                    </li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>3</i>
+                
+                    </li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>4</i>
+                
+                    </li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>5</i>
+                
+                    </li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>6</i>
+                
+                    </li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>7</i>
+                
+                    </li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>8</i>
+                
+                    </li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>9</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab10_remove_repeats remove_repeats.*</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>remove_repeats.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+foreach $arg <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    next <span class="token keyword">if</span> $seen<span class="token punctuation">{</span>$arg<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    print <span class="token string">"$arg "</span><span class="token punctuation">;</span>
+    $seen<span class="token punctuation">{</span>$arg<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+print <span class="token string">"\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+                    Alternative solution for <code>remove_repeats.pl</code>
+                    
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl
+my <span class="token operator">%</span>seen<span class="token punctuation">;</span>
+print <span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span><span class="token function">grep</span><span class="token punctuation">(</span><span class="token operator">!</span>$seen<span class="token punctuation">{</span>$_<span class="token punctuation">}</span><span class="token operator">++</span><span class="token punctuation">,</span> @ARGV<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+                
+            </div>
+            
+        
+            
+            <div class="answer">
+                Sample solution for <code>remove_repeats.c</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#include <span class="token operator">&lt;</span>stdio<span class="token punctuation">.</span>h<span class="token operator">&gt;</span>
+#include <span class="token operator">&lt;</span>string<span class="token punctuation">.</span>h<span class="token operator">&gt;</span>
+
+int
+<span class="token function">main</span><span class="token punctuation">(</span>int argc<span class="token punctuation">,</span> char<span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    int i<span class="token punctuation">,</span> j<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> argc<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>j<span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s "</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+            
+            <div class="answer">
+                Sample solution for <code>remove_repeats.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">var seen  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	var arg <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>seen<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		process<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>arg <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		seen<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+process<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+            
+            <div class="answer">
+                Sample solution for <code>remove_repeats.v1.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl
+my <span class="token operator">%</span>seen<span class="token punctuation">;</span>
+print <span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span><span class="token function">grep</span><span class="token punctuation">(</span><span class="token operator">!</span>$seen<span class="token punctuation">{</span>$_<span class="token punctuation">}</span><span class="token operator">++</span><span class="token punctuation">,</span> @ARGV<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+            
+            <div class="answer">
+                Sample solution for <code>remove_repeats.py</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>python3
+import sys
+seen <span class="token operator">=</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> arg <span class="token keyword">in</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> arg not <span class="token keyword">in</span> seen<span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>arg<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
+        seen<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: text_round
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write a program that copies its standard input to standard output
+but maps all numbers to their nearest whole number equivalent.
+For example, <b>0.667</b> would be mapped to <b>1</b>,
+<b>99.5</b> would be mapped to <b>100</b>, <b>16.35</b> would be
+mapped to <b>16</b>, and so on.
+All other text in the input should be transferred to the output
+unchanged.
+<p>
+A <i>number</i> is defined as a string containing
+some digit characters with an optional decimal point (<b>'.'</b>)
+followed by zero or more additional digit characters.
+</p><p>
+For example <b>0</b>, <b>100</b>, <b>3.14159</b>, <b>1000.0</b>,
+<b>0.999</b> and <b>12345.</b> are all valid numbers.
+</p><p>
+For example, given this input:
+</p><p>
+</p><pre class="command_line">I spent $15.50 for 3.3kg of apples yesterday.
+Pi is approximately 3.141592653589793
+2000 is a leap year, 2001 is not.
+</pre>
+<p>
+your program should produce this output:
+
+</p><pre class="command_line">I spent $16 for 3kg of apples yesterday.
+Pi is approximately 3
+2000 is a leap year, 2001 is not.
+</pre>
+
+Your program must be either Shell, Perl or Javascript.
+<p>
+Name your program <b>text_round.sh</b> <b>text_round.pl</b> or <b>text_round.js</b>.
+</p><p>
+In the examples below replace  <b>text_round.pl</b> with  <b>text_round.sh</b> or <b>text_round.js</b>
+you attempt this question in Shell, Perl or Javascript.
+</p><p>
+</p><p>
+For example:
+
+</p><pre class="command_line"><kbd class="shell">cat text_round_input.txt</kbd>
+I spent $15.50 for 3.3kg of apples yesterday.
+Pi is approximately 3.141592653589793
+2000 is a leap year, 2001 is not.
+<kbd class="shell">text_round.pl &lt;text_round_input.txt</kbd>
+I spent $16 for 3kg of apples yesterday.
+Pi is approximately 3
+2000 is a leap year, 2001 is not.
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest text_round</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">89%</span>
+        
+        of <span class="autotest_results_emphasis">90</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">text_round.*</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>2</i>
+                
+                    </li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>3</i>
+                
+                    </li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>4</i>
+                
+                    </li><li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>5</i>
+                
+                    </li><li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>6</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab10_text_round text_round.*</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>text_round.v2.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>wp
+s<span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span>\<span class="token punctuation">.</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token function">int</span><span class="token punctuation">(</span>$<span class="token operator">&amp;</span><span class="token operator">+</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">/</span>eg<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+            
+            <div class="answer">
+                Sample solution for <code>text_round.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    my @numbers <span class="token operator">=</span> $line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span>\<span class="token punctuation">.</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span>g<span class="token punctuation">;</span>
+    foreach $number <span class="token punctuation">(</span>@numbers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $rounded_number <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span>$number <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>\b$number\b<span class="token operator">/</span>$rounded_number<span class="token operator">/</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    print $line<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+                    Alternative solution for <code>text_round.pl</code>
+                    
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span>\<span class="token punctuation">.</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $number <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+        $number <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">;</span>
+        my $rounded_number <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>$number <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span>\<span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            $rounded_number<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>$number<span class="token operator">/</span>$rounded_number<span class="token operator">/</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    print $line<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+                
+                    Alternative solution for <code>text_round.pl</code>
+                    
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>wp
+s<span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span>\<span class="token punctuation">.</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token function">int</span><span class="token punctuation">(</span>$<span class="token operator">&amp;</span><span class="token operator">+</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">/</span>eg<span class="token punctuation">;</span></code></pre>
+
+
+
+
+                
+            </div>
+            
+        
+            
+            <div class="answer">
+                Sample solution for <code>text_round.v1.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span>\<span class="token punctuation">.</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $number <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+        $number <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">;</span>
+        my $rounded_number <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>$number <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span>\<span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            $rounded_number<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>$number<span class="token operator">/</span>$rounded_number<span class="token operator">/</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    print $line<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: reference
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+<p>
+Lines of the form <b>#</b><b>n</b> (where <b>n</b> is an
+integer value), should be replaced this by the <b>n</b>'th line of input.
+</p><p>
+This transformation only applies to lines which start with a # character, followed by the digits of a positive integer
+and then the newline character.  No other characters appear on such lines.
+</p><p>
+You may assume:
+</p><p>
+Lines are numbered starting from 1,
+</p><p>
+There are no more than 100 lines in the input,
+</p><p>
+No line is more than 80 characters long,
+</p><p>
+All <b>n</b> values are valid input line numbers,
+</p><p>
+No <b>n</b> values refer to other #<b>n</b> lines.
+</p><p>
+Your program must be either  Shell, Perl or Javascript.
+</p><p>
+Name your program <b>reference.sh</b> <b>reference.pl</b> or <b>reference.js</b>.
+</p><p>
+In the examples below replace  <b>reference.pl</b> with  <b>reference.sh</b> or <b>reference.js</b>.
+you attempt this question in  Shell, Perl or Javascript.
+p&gt;
+For example:
+
+</p><pre class="command_line"><kbd class="shell">cat reference_input.txt</kbd>
+line A
+line B
+line C
+#7
+line D
+#2
+line E
+<kbd class="shell">reference.pl &lt;reference_input.txt</kbd>
+line A
+line B
+line C
+line E
+line D
+line B
+line E
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest reference</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">86</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">reference.*</span>
+            so far,
+        
+        
+            passed the autotest test.
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab10_reference reference.*</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>reference.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+@a <span class="token operator">=</span> <span class="token operator">&lt;</span>STDIN<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+foreach $i <span class="token punctuation">(</span><span class="token number">0.</span><span class="token punctuation">.</span>$#a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$a<span class="token punctuation">[</span>$i<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token operator">^</span>#<span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $a<span class="token punctuation">[</span>$i<span class="token punctuation">]</span> <span class="token operator">=</span> $a<span class="token punctuation">[</span>$<span class="token number">1</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+print @a<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+                    Alternative solution for <code>reference.pl</code>
+                    
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+@a <span class="token operator">=</span> <span class="token operator">&lt;</span>STDIN<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token operator">/</span><span class="token operator">^</span>#<span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span> and $_ <span class="token operator">=</span> $a<span class="token punctuation">[</span>$<span class="token number">1</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> foreach @a<span class="token punctuation">;</span>
+print @a<span class="token punctuation">;</span></code></pre>
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 05 Laboratory Sample Solutions
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 05 Laboratory Sample Solutions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 05 Laboratory Sample Solutions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 05 Laboratory Sample Solutions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 05 Laboratory Sample Solutions_files/popper.min.js"></script>
+<script src="./COMP2041 Week 05 Laboratory Sample Solutions_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 05 Laboratory Sample Solutions_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 05 Laboratory Sample Solutions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 05 Laboratory Sample Solutions_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 05 Laboratory Sample Solutions_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 05 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laboratory <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Solutions <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/questions">Exercises</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Sample Solutions</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Objectives
+            </h3>
+        </div>
+        <div class="card-body">
+
+<ul>
+
+<li>Practising manipulating files with Perl &amp; Shell</li>
+
+<li>Understanding Perl &amp; Shell strenths &amp; weaknesses</li>
+
+<li>Exploring code useful for assignment 1</li>
+
+</ul>
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Preparation
+            </h3>
+        </div>
+        <div class="card-body">
+
+Before the lab you should re-read the relevant lecture slides and their accompanying examples.
+
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Getting Started
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+Create a new directory for this lab called <code>lab05</code> and change to this directory with these comamnds:
+
+<pre class="command_line"><kbd class="shell">mkdir lab05</kbd>
+<kbd class="shell">cd lab05</kbd>
+</pre>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Backing Up a File
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write a Shell program, <b>backup.sh</b> which takes 1 argument, the name of a file.
+<p>
+Your program should create a backup copy of this file.
+</p><p>
+If the file is named <b>example.txt</b> the backup  should be called  <b>.example.txt.0</b> but you should
+not overwrite any previous backup copies.
+</p><p>
+So if <b>.example.txt.0</b> exists,  the backup copy should be called <b>.example.txt.1</b> and if <b>.example.txt.1</b> also exists it should be called <b>.example.txt.2</b> and so on.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">seq 1 3 &gt;n.txt</kbd>
+<kbd class="shell">cat n.txt</kbd>
+1
+2
+3
+<kbd class="shell">backup.sh n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.0'
+<kbd class="shell">cat .n.txt.0</kbd>
+1
+2
+3
+<kbd class="shell">backup.sh n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.1'
+<kbd class="shell">backup.sh n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.2'
+<kbd class="shell">backup.sh n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.3'
+<kbd class="shell">ls .n.txt.*</kbd>
+.n.txt.0
+.n.txt.1
+.n.txt.2
+.n.txt.3
+</pre>
+
+Your answer must be Shell. You can
+ not use other languages such as Perl, Python or C.
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest shell_backup</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">502</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">backup.sh</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>autotest0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>autotest1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>autotest2</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab05_shell_backup backup.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>backup.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
+
+# backup a file given as a command line argument
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+<span class="token keyword">for</span> file <span class="token keyword">in</span> <span class="token string">"$@"</span>
+<span class="token keyword">do</span>
+
+    # go through <span class="token punctuation">.</span>$file<span class="token punctuation">.</span><span class="token number">0</span> <span class="token punctuation">.</span>$file<span class="token punctuation">.</span><span class="token number">1</span> <span class="token punctuation">.</span>$file<span class="token punctuation">.</span><span class="token number">2</span> <span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    # looking <span class="token keyword">for</span> one that doesn't exist
+
+    suffix<span class="token operator">=</span><span class="token number">0</span>
+    <span class="token keyword">while</span> test <span class="token operator">-</span>r <span class="token string">".$file.$suffix"</span>
+    <span class="token keyword">do</span>
+        suffix<span class="token operator">=</span>$<span class="token punctuation">(</span><span class="token punctuation">(</span>suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    done
+
+    # make the backup
+
+    <span class="token keyword">if</span> cp <span class="token string">"$file"</span> <span class="token string">".$file.$suffix"</span>
+    then
+        echo <span class="token string">"Backup of '$file' saved as '.$file.$suffix'"</span>
+    <span class="token keyword">else</span>
+        echo <span class="token string">"Backup of '$file' failed"</span>
+        exit <span class="token number">1</span>
+    fi
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: A Perl Program to Back Up a File
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Rewrite your shell script from the last exercise as a Perl program, <b>backup.pl</b> which takes 1 argument, the name of a file.
+<p>
+Your program should create a backup copy of this file.
+</p><p>
+If the file is named <b>example.txt</b> the backup  should be called  <b>.example.txt.0</b> but you should
+not overwrite any previous backup copies.
+</p><p>
+So if <b>.example.txt.0</b> exists,  the backup copy should be called <b>.example.txt.1</b> and if <b>.example.txt.1</b> also exists it should be called <b>.example.txt.2</b> and so on.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">seq 1 3 &gt;n.txt</kbd>
+<kbd class="shell">cat n.txt</kbd>
+1
+2
+3
+<kbd class="shell">backup.pl n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.0'
+<kbd class="shell">cat .n.txt.0</kbd>
+1
+2
+3
+<kbd class="shell">backup.pl n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.1'
+<kbd class="shell">backup.pl n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.2'
+<kbd class="shell">backup.pl n.txt</kbd>
+Backup of 'n.txt' saved as '.n.txt.3'
+<kbd class="shell">ls .n.txt.*</kbd>
+.n.txt.0
+.n.txt.1
+.n.txt.2
+.n.txt.3
+</pre>
+
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+<p>
+You may not run external programs, e.g. via system or backquotes.  for example, you can't run <code>cp</code>.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+
+
+
+</p><p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest perl_backup</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">489</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">backup.pl</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>autotest0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>autotest1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>autotest2</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab05_perl_backup backup.pl</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>backup.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# backup a file given as a command line argument
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+sub main <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> $file <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">backup_file</span><span class="token punctuation">(</span>$file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# find an unused name <span class="token keyword">for</span> a backup copy
+# and copy the file to that name
+
+sub backup_file <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$file<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+
+    my $suffix <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    # go through <span class="token punctuation">.</span>$file<span class="token punctuation">.</span><span class="token number">0</span> <span class="token punctuation">.</span>$file<span class="token punctuation">.</span><span class="token number">1</span> <span class="token punctuation">.</span>$file<span class="token punctuation">.</span><span class="token number">2</span> <span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    # looking <span class="token keyword">for</span> one that doesn't exist
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">-</span>r <span class="token string">".$file.$suffix"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $suffix <span class="token operator">=</span>$suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    # make the backup
+
+    <span class="token function">copy_file</span><span class="token punctuation">(</span>$file<span class="token punctuation">,</span>  <span class="token string">".$file.$suffix"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Backup of '$file' saved as '.$file.$suffix'\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+# could use File<span class="token punctuation">:</span><span class="token punctuation">:</span>Copy instead of writing our own <span class="token keyword">function</span>
+
+sub copy_file <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$source<span class="token punctuation">,</span> $destination<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+
+    open my $<span class="token keyword">in</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $source or die <span class="token string">"Cannot open $source: $!"</span><span class="token punctuation">;</span>
+    open my $out<span class="token punctuation">,</span> <span class="token string">'&gt;'</span><span class="token punctuation">,</span> $destination or die <span class="token string">"Cannot open $destination: $!"</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$<span class="token keyword">in</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        print $out $line<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    close $<span class="token keyword">in</span><span class="token punctuation">;</span>
+    close $out<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Shell Programs to Back Up a Directory
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write Shell scripts <b>snapshot-save.sh</b> &amp; <b>snapshot-load.sh</b> which saves &amp; restore backups of all the files in the current directory.
+<p>
+These  scripts should be in Posix-compatible Shell, use:
+
+</p><pre class="command_line">#!/bin/dash
+</pre>
+
+<h3>snapshot-save.sh</h3>
+
+If <b>snapshot-save.sh</b> should save copies of all files in the
+current directory.
+<p>
+<b>snapshot-save.sh</b> should first create a directory named  <b>.snapshot.0</b> to store the backup copies of the files.
+</p><p>
+But if <b>.snapshot.0</b> already exists,  the backup directory should be called <b>.snapshot.1</b> and if <b>.snapshot.1</b> also exists it should be called <b>.snapshot.2</b> and so on.
+</p><p>
+<b>snapshot-save.sh</b> should ignore files with names starting with .
+</p><p>
+<b>snapshot-save.sh</b> should also ignore itself and snapshot-load.sh (not backup snapshot-save.sh and snapshot-load.sh).
+
+</p><h3>snapshot-load.sh <i>n</i></h3>
+
+If <b>snapshot-load.sh </b> is called with a first argument of  <b><i>n</i></b> it should restore (copy back) the files from snapshot  <b>.snapshot.<i>n</i></b>.
+<p>
+Before doing this it should copy the current version of all files in a new <b>.snapshot</b> directory, (hint run <b>snapshot-save.sh</b>)
+</p><p>
+This is to make sure the user doesn't accidentally lose some work when restoring files.  It is always done even if the user wouldn't lose work.
+
+</p><h3>Examples</h3>
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">ls .snapshot.*/*</kbd>
+ls: cannot access .snapshot.*/*: No such file or directory
+<kbd class="shell">echo hello &gt;a.txt</kbd>
+<kbd class="shell">snapshot-save.sh</kbd>
+Creating snapshot 0
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+<kbd class="shell">echo word &gt;a.txt</kbd>
+<kbd class="shell">snapshot-load.sh 0</kbd>
+Creating snapshot 1
+Restoring snapshot 0
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+.snapshot.1/a.txt
+<kbd class="shell">cat a.txt</kbd>
+hello
+</pre>
+
+and
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">echo hello0 &gt;a.txt</kbd>
+<kbd class="shell">echo world0 &gt;b.txt</kbd>
+<kbd class="shell">snapshot-save.sh</kbd>
+Creating snapshot 0
+<kbd class="shell">echo hello1 &gt;a.txt</kbd>
+<kbd class="shell">echo world1 &gt;b.txt</kbd>
+<kbd class="shell">snapshot-save.sh</kbd>
+Creating snapshot 1
+<kbd class="shell">echo hello2 &gt;a.txt</kbd>
+<kbd class="shell">echo world2 &gt;b.txt</kbd>
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+.snapshot.0/b.txt
+.snapshot.1/a.txt
+.snapshot.1/b.txt
+<kbd class="shell">snapshot-load.sh 0</kbd>
+Creating snapshot 2
+Restoring snapshot 0
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello0
+b.txt:world0
+<kbd class="shell">snapshot-load.sh 1</kbd>
+Creating snapshot 3
+Restoring snapshot 1
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello1
+b.txt:world1
+<kbd class="shell">snapshot-load.sh 2</kbd>
+Creating snapshot 4
+Restoring snapshot 2
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello2
+b.txt:world2
+<kbd class="shell">snapshot-load.sh 0</kbd>
+Creating snapshot 5
+Restoring snapshot 0
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello0
+b.txt:world0
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+.snapshot.0/b.txt
+.snapshot.1/a.txt
+.snapshot.1/b.txt
+.snapshot.2/a.txt
+.snapshot.2/b.txt
+.snapshot.3/a.txt
+.snapshot.3/b.txt
+.snapshot.4/a.txt
+.snapshot.4/b.txt
+.snapshot.5/a.txt
+.snapshot.5/b.txt
+</pre>
+
+Your answer must be Posix-compatible Shell only.  You can not use Bash ,Perl, Python or C.
+<p>
+No error checking is necessary.
+
+
+
+
+
+
+
+
+</p><p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest shell_snapshot</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab05_shell_snapshot snapshot-save.sh snapshot-load.sh</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>snapshot-save.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>dash
+
+<span class="token keyword">if</span> test $# <span class="token operator">!=</span> <span class="token number">0</span>
+then
+    echo <span class="token string">"Usage: $0"</span> <span class="token number">1</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span><span class="token number">2</span>
+    exit <span class="token number">1</span>
+fi
+
+
+suffix<span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">while</span> test <span class="token operator">-</span>e <span class="token string">".snapshot.$suffix"</span>
+<span class="token keyword">do</span>
+    suffix<span class="token operator">=</span>$<span class="token punctuation">(</span><span class="token punctuation">(</span>suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+done
+
+echo <span class="token string">"Creating snapshot $suffix"</span>
+
+snapshot_directory<span class="token operator">=</span><span class="token string">".snapshot.$suffix"</span>
+mkdir $snapshot_directory <span class="token operator">||</span> exit <span class="token number">1</span>
+
+<span class="token keyword">for</span> file <span class="token keyword">in</span> <span class="token operator">*</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">if</span> test <span class="token operator">-</span>f <span class="token string">"$file"</span> <span class="token operator">-</span>a <span class="token string">"$file"</span> <span class="token operator">!=</span> snapshot<span class="token operator">-</span>save<span class="token punctuation">.</span>sh <span class="token operator">-</span>a <span class="token string">"$file"</span> <span class="token operator">!=</span> snapshot<span class="token operator">-</span>load<span class="token punctuation">.</span>sh
+    then
+        cp <span class="token operator">-</span>p <span class="token string">"$file"</span> <span class="token string">"$snapshot_directory"</span>
+    fi
+done</code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>snapshot-load.sh</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>dash
+
+<span class="token keyword">if</span> test $# <span class="token operator">!=</span> <span class="token number">1</span>
+then
+    echo <span class="token string">"Usage: $0 &lt;snapshot-number&gt;"</span> <span class="token number">1</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span><span class="token number">2</span>
+    exit <span class="token number">1</span>
+fi
+
+suffix<span class="token operator">=</span>$<span class="token number">1</span>
+
+snapshot_directory<span class="token operator">=</span><span class="token string">".snapshot.$suffix"</span>
+
+<span class="token keyword">if</span> test <span class="token operator">!</span> <span class="token operator">-</span>d $snapshot_directory
+then
+    echo <span class="token string">"Unknown snapshot $suffix"</span> <span class="token number">1</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span><span class="token number">2</span>
+    exit <span class="token number">1</span>
+fi
+
+snapshot<span class="token operator">-</span>save<span class="token punctuation">.</span>sh
+
+echo <span class="token string">"Restoring snapshot $suffix"</span>
+
+cp <span class="token operator">-</span>p $snapshot_directory<span class="token comment">/* .</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: A Perl Program to Back Up a Directory
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Write a Perl program, <b>snapshot.pl</b> which saves or restores backups of all the files in the current directory.
+<p>
+<b>snapshot.pl</b> will be called with a first argument of either <b>load</b> or <b>save</b>.
+
+</p><h3>snapshot.pl save</h3>
+
+If <b>snapshot.pl</b> is called with a first argument of <b>save</b> it should save copies of all files in the
+current directory.
+<p>
+<b>snapshot.pl</b> should first create a directory named  <b>.snapshot.0</b> to store the backup copies of the files.
+</p><p>
+But if <b>.snapshot.0</b> already exists,  the backup directory should be called <b>.snapshot.1</b> and if <b>.snapshot.1</b> also exists it should be called <b>.snapshot.2</b> and so on.
+</p><p>
+<b>snapshot.pl</b> should ignore files with names starting with .
+</p><p>
+<b>snapshot.pl</b> should also ignore itself (not backup snapshot.pl).
+
+<b>Hint</b>: Perl's <code>glob</code> and <code>mkdir</code> functions are useful.
+
+</p><h3>snapshot.pl load <i>n</i></h3>
+
+If <b>snapshot.pl</b> is called with a first argument of <b>load</b> and a second argument of <b><i>n</i></b> it should restore (copy back) the files from snapshot  <b>.snapshot.<i>n</i></b>.
+<p>
+Before doing this it should copy the current version of all files in a new <b>.snapshot</b> directory, in other words do the same as a <b>save</b> operation.
+</p><p>
+This is to make sure the user doesn't accidentally lose some work when restoring files.  It is always done even if the user wouldn't lose work.
+
+</p><h3>Examples</h3>
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">ls .snapshot.*/*</kbd>
+ls: cannot access .snapshot.*/*: No such file or directory
+<kbd class="shell">echo hello &gt;a.txt</kbd>
+<kbd class="shell">snapshot.pl save</kbd>
+Creating snapshot 0
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+<kbd class="shell">echo word &gt;a.txt</kbd>
+<kbd class="shell">snapshot.pl load 0</kbd>
+Creating snapshot 1
+Restoring snapshot 0
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+.snapshot.1/a.txt
+<kbd class="shell">cat a.txt</kbd>
+hello
+</pre>
+
+and
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">echo hello0 &gt;a.txt</kbd>
+<kbd class="shell">echo world0 &gt;b.txt</kbd>
+<kbd class="shell">snapshot.pl save</kbd>
+Creating snapshot 0
+<kbd class="shell">echo hello1 &gt;a.txt</kbd>
+<kbd class="shell">echo world1 &gt;b.txt</kbd>
+<kbd class="shell">snapshot.pl save</kbd>
+Creating snapshot 1
+<kbd class="shell">echo hello2 &gt;a.txt</kbd>
+<kbd class="shell">echo world2 &gt;b.txt</kbd>
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+.snapshot.0/b.txt
+.snapshot.1/a.txt
+.snapshot.1/b.txt
+<kbd class="shell">snapshot.pl load 0</kbd>
+Creating snapshot 2
+Restoring snapshot 0
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello0
+b.txt:world0
+<kbd class="shell">snapshot.pl load 1</kbd>
+Creating snapshot 3
+Restoring snapshot 1
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello1
+b.txt:world1
+<kbd class="shell">snapshot.pl load 2</kbd>
+Creating snapshot 4
+Restoring snapshot 2
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello2
+b.txt:world2
+<kbd class="shell">snapshot.pl load 0</kbd>
+Creating snapshot 5
+Restoring snapshot 0
+<kbd class="shell">grep . ?.txt</kbd>
+a.txt:hello0
+b.txt:world0
+<kbd class="shell">ls .snapshot.*/*</kbd>
+.snapshot.0/a.txt
+.snapshot.0/b.txt
+.snapshot.1/a.txt
+.snapshot.1/b.txt
+.snapshot.2/a.txt
+.snapshot.2/b.txt
+.snapshot.3/a.txt
+.snapshot.3/b.txt
+.snapshot.4/a.txt
+.snapshot.4/b.txt
+.snapshot.5/a.txt
+.snapshot.5/b.txt
+</pre>
+
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+<p>
+You may not run external programs, e.g. via system or backquotes.  for example, you can't run <code>cp</code>.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+
+
+
+</p><p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest perl_snapshot</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">96%</span>
+        
+        of <span class="autotest_results_emphasis">444</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">snapshot.pl</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>2</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab05_perl_snapshot snapshot.pl</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>snapshot.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# backup a file given as a command line argument
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+sub <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>@ARGV <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> eq <span class="token string">"save"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">save_snapshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> elsif <span class="token punctuation">(</span>@ARGV <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> eq <span class="token string">"load"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">save_snapshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">load_snapshot</span><span class="token punctuation">(</span>$ARGV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">usage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+sub usage <span class="token punctuation">{</span>
+    print <span class="token operator">&lt;</span><span class="token operator">&lt;</span>eof<span class="token punctuation">;</span><span class="token punctuation">;</span>
+Usage snapshot<span class="token punctuation">.</span>pl <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span>
+Commands<span class="token punctuation">:</span>
+save       Creates a snapshot of the current directory
+load n     Loads the n'th snapshot into the current directory
+eof
+<span class="token punctuation">}</span>
+
+# copy all files <span class="token keyword">in</span> the current directory <span class="token punctuation">(</span>unless they start with <span class="token punctuation">.</span><span class="token punctuation">)</span>
+# to the snapshort directory
+
+sub save_snapshot <span class="token punctuation">{</span>
+    my $snapshot_directory <span class="token operator">=</span> <span class="token function">create_new_snapshot_directory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> $file <span class="token punctuation">(</span>glob  <span class="token string">"*"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        next <span class="token keyword">if</span> $file eq <span class="token string">"snapshot.pl"</span><span class="token punctuation">;</span>
+        <span class="token function">copy_file</span><span class="token punctuation">(</span>$file<span class="token punctuation">,</span> <span class="token string">"$snapshot_directory/$file"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# copy all files from the snapshort directory to the current directory
+
+sub load_snapshot <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$suffix<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+    my $snapshot_directory <span class="token operator">=</span> <span class="token string">".snapshot.$suffix"</span><span class="token punctuation">;</span>
+
+    die <span class="token string">"Unknown snapshot $suffix"</span> <span class="token keyword">if</span> <span class="token operator">!</span> <span class="token operator">-</span>d $snapshot_directory<span class="token punctuation">;</span>
+
+    print <span class="token string">"Restoring snapshot $suffix\n"</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> $snapshot_file <span class="token punctuation">(</span>glob <span class="token string">"$snapshot_directory/*"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $file <span class="token operator">=</span> $snapshot_file<span class="token punctuation">;</span>
+        $file <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span><span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token operator">/</span><span class="token comment">//;</span>
+        <span class="token function">copy_file</span><span class="token punctuation">(</span>$snapshot_file<span class="token punctuation">,</span> $file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# find an unused name <span class="token keyword">for</span> a snapshot directory
+# create a directory of that name<span class="token punctuation">,</span> and <span class="token keyword">return</span> it
+
+sub create_new_snapshot_directory <span class="token punctuation">{</span>
+    my $suffix <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $snapshot_directory <span class="token operator">=</span> <span class="token string">".snapshot.$suffix"</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">-</span>d $snapshot_directory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            mkdir $snapshot_directory or die <span class="token string">"can not create $snapshot_directory: $!\n"</span><span class="token punctuation">;</span>
+            print <span class="token string">"Creating snapshot $suffix\n"</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> $snapshot_directory<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        $suffix <span class="token operator">=</span> $suffix <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# could use File<span class="token punctuation">:</span><span class="token punctuation">:</span>Copy instead of writing our own <span class="token keyword">function</span>
+
+sub copy_file <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$source<span class="token punctuation">,</span> $destination<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+
+    open my $<span class="token keyword">in</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $source or die <span class="token string">"Cannot open $source: $!"</span><span class="token punctuation">;</span>
+    open my $out<span class="token punctuation">,</span> <span class="token string">'&gt;'</span><span class="token punctuation">,</span> $destination or die <span class="token string">"Cannot open $destination: $!"</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$<span class="token keyword">in</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        print $out $line<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    close $<span class="token keyword">in</span><span class="token punctuation">;</span>
+    close $out<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Challenge Exercise: A Perl Program that Prints Perl
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+Write a Perl program  <b>perl_print.pl</b>  which is given a single argument.
+It should output a Perl program which when run, prints this string.  For example:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./perl_print.pl 'Perl that prints Perl - yay' |perl</kbd>
+Perl that prints Perl - yay
+</pre>
+
+You can assume the string contains only ASCII characters.
+You can not make other assumptions about the characters in the string.
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest perl_print</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">62%</span>
+        
+        of <span class="autotest_results_emphasis">157</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">perl_print.pl</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">81%</span>
+                    
+                    passed test <i>0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">80%</span>
+                    
+                    passed test <i>1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">80%</span>
+                    
+                    passed test <i>2</i>
+                
+                    </li><li><span class="autotest_results_emphasis">73%</span>
+                    
+                    passed test <i>3</i>
+                
+                    </li><li><span class="autotest_results_emphasis">71%</span>
+                    
+                    passed test <i>4</i>
+                
+                    </li><li><span class="autotest_results_emphasis">71%</span>
+                    
+                    passed test <i>5</i>
+                
+                    </li><li><span class="autotest_results_emphasis">71%</span>
+                    
+                    passed test <i>6</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab05_perl_print perl_print.pl</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>perl_print.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# Output a Perl program which when run will print the
+# string supplied as a commandline argument
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+print <span class="token string">"print \""</span><span class="token punctuation">;</span>
+
+foreach $argument <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> $c <span class="token punctuation">(</span>split <span class="token comment">//, $argument) {</span>
+        # translate everything but word characters to a hexadecimal escape
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>$c <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span>\w<span class="token operator">/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            print $c<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            printf <span class="token string">"\\x%02x"</span><span class="token punctuation">,</span> <span class="token function">ord</span><span class="token punctuation">(</span>$c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+print <span class="token string">"\\n\";\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercises make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Wednesday 10 July 21:59:59</b>
+
+
+to submit your work.
+</p><p>
+You cannot obtain marks by e-mailing lab work to tutors or lecturers.
+</p><p>
+You check the files you have submitted <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">here</a>
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+</p><h4>Lab Marks</h4>
+<p>
+When all components of a lab  are automarked you should be able to view the
+the marks <a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre class="command_line"><kbd class="shell">2041 classrun -sturec</kbd>
+</pre>
+<p>
+The lab exercises for each week are worth in total 1.2 marks.
+</p><p>
+Usually each lab exercise will be worth the same - for example if there are 5 lab exercises each will be worth 0.4 marks.
+</p><p>
+Except challenge exercises (see below) will never total more than 20% of each week's lab mark.
+</p><p>
+All of your lab marks for weeks 1-10, will be summed to give you a mark out of 12.
+</p><p>
+If their sum exceeds 9 - your total mark will be capped at 9.
+
+</p><h4>Running Autotests On your Own Computer</h4>
+
+An experimental version of autotest exists which may allow you to run autotest on your own computer.
+<p>
+If you are running Linux,  Windows Subsystem for Linux or OSX.  These commands might let you run autotests at home.
+
+</p><pre class="command_line"><kbd class="shell">sudo wget https://cgi.cse.unsw.edu.au/~cs2041/19T2/resources/home_autotest -O/usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">sudo chmod 755 /usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">2041_autotest shell_snapshot</kbd>
+</pre>
+
+Autotest itself needs Python 3.6 (or later) installed.
+<p>
+Particular autotests may require other software install, e.g.  autotests of perl programs require Perl installed (of course).
+</p><p>
+The legit autotests need  python3.7, git &amp; binfmt-support installed.
+</p><p>
+The program embeds the autotests themselves, so you'll need to re-download if autotests are changed, added, fixed, ...
+</p><p>
+If it breaks on your computer post on the class forum  and we'll fix if we can, but this is very definitely experimental.
+
+</p></div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

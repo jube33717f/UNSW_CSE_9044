@@ -1,0 +1,30 @@
+#!/bin/dash
+
+a=`echo "$1"|cut -d":" -f 1|sed 's/\s//g'`
+b=`echo "$1"|cut -d":" -f 2|sed 's/\s//g'`
+#echo ",$a,$b,"
+if test -z "$a"
+then
+   if test -e ".legit/index/$b"
+   then
+       text=`cat .legit/index/"$b"`   
+       echo "$text"
+   else
+       echo "legit-show: error: '$b' not found in index"
+   fi
+else
+   if test -e ".legit/$a"
+   then
+       if test -e ".legit/$a/$b"
+       then
+            text=`cat .legit/"$a"/"$b"`
+            echo "$text"
+       else 
+            echo "legit-show: error: '$b' not found in commit $a"
+       fi
+   else
+       echo "legit-show: error: unknown commit '$a'"
+   fi
+fi
+
+

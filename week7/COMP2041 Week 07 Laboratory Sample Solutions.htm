@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 07 Laboratory Sample Solutions
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 07 Laboratory Sample Solutions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 07 Laboratory Sample Solutions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 07 Laboratory Sample Solutions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 07 Laboratory Sample Solutions_files/popper.min.js"></script>
+<script src="./COMP2041 Week 07 Laboratory Sample Solutions_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 07 Laboratory Sample Solutions_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 07 Laboratory Sample Solutions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 07 Laboratory Sample Solutions_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 07 Laboratory Sample Solutions_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 07 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/01/answers">Week 01</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/02/answers">Week 02</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laboratory <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/07/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Solutions <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/questions">Exercises</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/answers">Sample Solutions</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Objectives
+            </h3>
+        </div>
+        <div class="card-body">
+
+<ul>
+
+<li>Javascript - A New Language</li>
+
+</ul>
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Preparation
+            </h3>
+        </div>
+        <div class="card-body">
+
+Before the lab you should re-read the relevant lecture slides and their accompanying examples.
+
+
+</div>
+    </div>
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Getting Started
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+Create a new directory for this lab called <code>lab07</code> and change to this directory with these comamnds:
+
+<pre class="command_line"><kbd class="shell">mkdir lab07</kbd>
+<kbd class="shell">cd lab07</kbd>
+</pre>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Say Hello to  Javascript
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+<p>
+</p><p>
+</p><h4>Running JS</h4>
+<p>
+In this course we focus on running JS in the browser, but for this first lab we just
+want to get some feeling for the syntax of JS. As such we will be using <a>node</a> to
+run all of your code, which is a command line version of the JavaScript engine run in Google Chrome.
+
+</p><p>
+For these activities you may need to get command line arguments or print to the console.
+Some sample code is provided below on how you can do this through node, do note that reading command line arguments
+is a feature unavailable when running JS in the browser.
+
+</p><pre class="program">// node script.js one two
+const one = process.argv[2]; // will be "one"
+const two = process.argv[3]; // will be "two"
+console.log("Hello") // prints "Hello" to the terminal
+</pre>
+
+<h4>Completing Your First JavaScript program</h4>
+<p>
+
+Create a program in a file called <b>hello_world.js</b> to prepend a command line
+argument provided string with "Hello " and print the result. For example
+
+</p><pre class="command_line"><kbd class="shell">node hello_world.js world</kbd>
+Hello world
+<kbd class="shell">node hello_world.js Andrew!</kbd>
+Hello Andrew!
+</pre>
+
+<p>
+</p><p>
+</p><h4>Working from Home</h4>
+
+<p>
+You can complete all the Javascript exercises in your own computer.
+</p><p>
+You'll first need to install <b>node</b> on your computer.
+You can find installation instructions here: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a><!--<p-->
+</p><p>
+If you have problem installing  <b>node</b> ask in the <a href="https://piazza.com/class/jwbtmnlav8f1vi">course forum</a>.
+</p><p>
+</p><p>You run the same commands on your own computer:</p>
+
+<pre class="command_line"><kbd class="shell">node hello_world.js world</kbd>
+Hello world
+<kbd class="shell">node hello_world.js Andrew!</kbd>
+Hello Andrew!
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_hello_world</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">98%</span>
+        
+        of <span class="autotest_results_emphasis">477</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">hello_world.js</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>2</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>3</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab07_js_hello_world hello_world.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>hello_world.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// Say Hello to Javascript</span>
+
+<span class="token comment">// get the first command-line argument</span>
+
+<span class="token comment">// process.argv[0] will be "node"</span>
+<span class="token comment">// process,argv[1] will be "hello_world.js"</span>
+<span class="token comment">// process,argv[2] will be the first command line argument</span>
+<span class="token comment">//                 or Undefined if there is none</span>
+
+name <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+message <span class="token operator">=</span> <span class="token string">'Hello '</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
+
+<span class="token comment">// or message = `Hello ${name}`;</span>
+<span class="token comment">// or message = "Hello ".concat(name);</span>
+<span class="token comment">// or ...</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Say Hello to  HTML
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+<p>
+</p><p>
+</p><h4>First Site</h4>
+<p>
+Create a basic HTML file called <code>index.html</code> to give the world a bit of information about you.
+Your site should:
+
+</p><ol>
+    <li>Display your Name</li>
+    <li>Display your degree (if you don't wish to share this info, make a degree up, such as Bachelor of napping)</li>
+    <li>Display your favourite programming langauge</li>
+    <li>Display a picture (can be of anything)</li>
+    <li>Have a title, you can give it whatever title you like</li>
+</ol>
+
+<p>
+Once you have all the elements add some css in a file called <code>styles.css</code>,
+you can go crazy here if you like but at a minimum:
+
+</p><ol>
+    <li>Give the image some sort of border</li>
+    <li>Change the font family of the page</li>
+    <li>Change the background of the page, either give it a color or a background image</li>
+</ol>
+
+<p>
+Once you are done link your styles.css to your index.html, you can preview your site as 
+you build it by visiting the location of the file in the browser of your choice.
+For example if you saved your index.html and styles.css at <code>/home/andrew/files/site</code>
+you can visit <code>file:///home/andrew/files/site/index.html</code> to see the page.
+
+</p><p>
+The last step is to get this website live to the world! CSE gives you the ability to have a 
+personal website, simply copy yout index.html and styles.css into your home directory under 
+<code> public_html</code>, update the permissions and then visit <code>http://cgi.cse.unsw.edu.au/~z9999999/</code> where z9999999 is your zid.
+
+</p><pre class="command_line"><kbd class="shell">mkdir -p ~/public_html</kbd>
+<kbd class="shell">chmod 755 ~/public_html</kbd>
+<kbd class="shell">cp index.html styles.css ~/public_html</kbd>
+<kbd class="shell">chmod 644 ~/public_html/styles.css ~/public_html/index.html</kbd>
+</pre>
+
+<p>
+See <a href="http://cgi.cse.unsw.edu.au/~z5059449/">Zain's site</a> for a simple example.
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+</p><p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab07_js_first_site/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 23 July 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab07_js_first_site index.html styles.css</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Debugging Javascript
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Download the following file, <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_variables/variables.js">variables.js</a>
+
+<pre class="command_line"><kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_variables/variables.js</kbd>
+</pre>
+
+<p>
+It contains a function <b>doubleIfEven</b> which takes a single number <b>n</b> as argument.
+</p><p>
+If <b>n</b> is even, <b>doubleIfEven</b> should return double <b>n</b>
+</p><p>
+If  <b>n</b> is odd, <b>doubleIfEven</b> should return <b>n</b>
+</p><p>
+However the code in <b>variables.js</b> has bugs:
+
+</p><pre class="command_line"><kbd class="shell">node variables.js 3</kbd>
+false <i>// should be 3</i>
+<kbd class="shell">node variables.js 2</kbd>
+2 <i>// should be 4</i>
+</pre>
+
+Your task is to fix the bugs.
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_variables</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">470</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">variables.js</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>1</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>2</i>
+                
+                    </li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>3</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab07_js_variables variables.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>variables.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token keyword">function</span> <span class="token function">doubleIfEven</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  let x <span class="token operator">=</span> n<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">even</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">double</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">even</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  let x <span class="token operator">=</span> a<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> x <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token keyword">else</span> x <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Get command line argument and run function</span>
+
+const input <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>input <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>`input not supplied`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>let num of input<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">doubleIfEven</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Javascript Sports
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+This <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_count_sport_stats/count_sport_stats.zip">zip file</a> contains
+some starter code and sample sport statistic data you can work with for this activity.
+
+Your task is to write the JavaScript function <b>countStats</b> in count_sport_stats.js
+which given a list of career statistics for a team of rugby players returns the total number
+of matches they have played and the total number of tries they have scored.
+<p>
+<b>countStats</b> will be given a list in this format:
+
+</p><pre class="program">[
+    {
+        "id": 112814,
+        "matches": "123",
+        "tries": "11"
+    }
+]
+</pre>
+
+<b>countStats</b> should return an object of the form:
+
+<pre class="program">{
+    "matches": m,
+    "tries": t
+}
+</pre>
+
+Where <em>m</em> is the sum of all matches for all games
+and <em>t</em> is the sum of all tries for all games.
+<p>
+For example, given this input
+
+</p><pre class="program">[
+    {"id": 1,"matches": "123", "tries": "11"},
+    {"id": 2,"matches": "1",   "tries": "1"},
+    {"id": 3,"matches": "2",   "tries": "5"}
+]
+</pre>
+
+<b>countStats</b> should return
+
+<pre class="program">{
+    matches: 126,
+    tries: 17
+}
+</pre>
+
+<p>
+To get started extract the files
+</p><pre class="command_line"><kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_count_sport_stats/count_sport_stats.zip</kbd>
+<kbd class="shell">unzip count_sport_stats.zip</kbd>
+<kbd class="shell">cd count_sport_stats</kbd>
+</pre>
+<p>
+You can then test your code as such
+
+</p><pre class="command_line"><kbd class="shell">node count_sport_stats.js stats.json</kbd>
+{ matches: 1725, tries: 165 }
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_count_sport_stats</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">98%</span>
+        
+        of <span class="autotest_results_emphasis">458</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">count_sport_stats.js</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>1</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab07_js_count_sport_stats count_sport_stats.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>count_sport_stats.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// a functional programmming style solution using reduce</span>
+
+<span class="token keyword">function</span> <span class="token function">countStats</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> list<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span> curr<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      matches<span class="token punctuation">:</span> <span class="token operator">+</span>curr<span class="token punctuation">.</span>matches <span class="token operator">+</span> acc<span class="token punctuation">.</span>matches<span class="token punctuation">,</span>
+      tries<span class="token punctuation">:</span> <span class="token operator">+</span>curr<span class="token punctuation">.</span>tries <span class="token operator">+</span> acc<span class="token punctuation">.</span>tries
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+       matches<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+       tries<span class="token punctuation">:</span> <span class="token number">0</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+const json <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>json <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>`input not supplied`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// include the json file via node's module system</span>
+const stats <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>json<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">countStats</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span>results<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+                    Alternative solution for <code>count_sport_stats.js</code>
+                    
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// an iterative solution</span>
+
+<span class="token keyword">function</span> <span class="token function">countStats</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	var total_matches <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  var total_tries <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// The + is needed to convert the string to an intger</span>
+    total_tries <span class="token operator">+</span><span class="token operator">=</span> <span class="token operator">+</span>list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>tries<span class="token punctuation">;</span>
+    total_matches <span class="token operator">+</span><span class="token operator">=</span> <span class="token operator">+</span>list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>matches<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token punctuation">{</span>
+    matches<span class="token punctuation">:</span> total_matches<span class="token punctuation">,</span>
+    tries<span class="token punctuation">:</span> total_tries
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+const json <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>json <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>`input not supplied`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// include the json file via node's module system</span>
+const stats <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>json<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">countStats</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span>results<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Exercise: Javascript Sports 2
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+This <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_join_sport_stats/join_sport_stats.zip">zip file</a> contains
+some starter code and sample sport statistic data you can work with for this activity.
+
+Write a JavaScript function <b>makeTeamList</b> which takes 3 arguments:
+a list of career statistics for a team of rugby players, a list of player names, and a list of team names.
+<p>
+<b>makeTeamList</b>'s first argument will describe the team with an object in this format:
+
+</p><pre class="program">{
+    "players": [
+        {
+            "id": 112814,
+            "matches": "123",
+            "tries": "11"
+        }
+    ],
+    "team": {
+        "id": 10,
+        "coach": "John Simmons"
+    }
+}
+</pre>
+
+<b>makeTeamList</b>'s second argument will be a list of player names in this format:
+
+<pre class="program">[
+    {
+        "id": 112814,
+        "name": "Greg Growden"
+    }
+]
+</pre>
+
+<b>makeTeamList</b>'s thirds argument will be a list of team names in this format:
+
+<pre class="program">[
+    {
+        "id": 10,
+        "team": "NSW Waratahs"
+    }
+]
+</pre>
+
+<b>makeTeamList</b>  should returns a 'team sheet' that lists the team, coach, players in that order in the following  format:
+
+<pre class="program">[
+    "Team Name, coached by CoachName",
+    "1. PlayerName",
+    "2. PlayerName"
+    ....
+]
+</pre>
+
+Each element should be a string.
+<p>
+The players should be ordered by the number of matches they have played, from most to least.
+</p><p>
+For example, given these 3 arguments as input
+
+</p><pre class="program">{
+    "players": [
+        {"id": 1,"matches": "123", "tries": "11"},
+        {"id": 2,"matches": "1",   "tries": "1"},
+        {"id": 3,"matches": "2",   "tries": "5"}
+    ],
+    "team": {
+        "id": 10,
+        "coach": "John Simmons"
+    }
+}
+</pre>
+
+<pre class="program">[
+    {"id": 1, "name": "John Fake"},
+    {"id": 2, "name": "Jimmy Alsofake"},
+    {"id": 3, "name": "Jason Fakest"}
+]
+</pre>
+
+<pre class="program">[
+    {"id": 10, "team": "Greenbay Packers"}
+]
+</pre>
+
+<b>makeTeamList</b>  should return a list containing exactly these strings:
+
+<pre class="program">[
+    "Greenbay Packers, coached by John Simmons",
+    "1. John Fake",
+    "2. Jason Fakest",
+    "3. Jimmy Alsofake"
+]
+</pre>
+
+<p>
+To get started extract the files
+</p><pre class="command_line"><kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_join_sport_stats/join_sport_stats.zip</kbd>
+<kbd class="shell">unzip join_sport_stats.zip</kbd>
+</pre>
+<p>
+You can then test your code as such
+
+</p><pre class="command_line"><kbd class="shell">cd join_sport_stats</kbd>
+<kbd class="shell">node join_sport_stats.js team.json names.json teams.json</kbd>
+[ 'NSW Warratahs, coached by Barry Cassidy',
+  '1. Ronaldo',
+  '2. Buffalo Bill',
+  '3. Jesse James',
+  '4. Cleopatra I',
+  '5. Marc Antony' ]
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_join_sport_stats</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">98%</span>
+        
+        of <span class="autotest_results_emphasis">416</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">join_sport_stats.js</span>
+            so far,
+        
+        
+            passed the autotest test.
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab07_js_join_sport_stats join_sport_stats.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>join_sport_stats.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token keyword">function</span> <span class="token function">makeTeamList</span><span class="token punctuation">(</span>teamData<span class="token punctuation">,</span> namesData<span class="token punctuation">,</span> teamsData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Take it step by step.</span>
+    let <span class="token punctuation">{</span> players<span class="token punctuation">,</span> team <span class="token punctuation">}</span> <span class="token operator">=</span> teamData<span class="token punctuation">;</span>
+    const names <span class="token operator">=</span> namesData<span class="token punctuation">;</span>
+    const teams <span class="token operator">=</span> teamsData<span class="token punctuation">;</span>
+
+    <span class="token comment">// do the first join</span>
+    const playerMap <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>players<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>names<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> current<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        const <span class="token punctuation">{</span> id<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>rest <span class="token punctuation">}</span> <span class="token operator">=</span> current<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            map<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>map<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>rest<span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            map<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>rest <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    const teamName <span class="token operator">=</span> teams<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> t<span class="token punctuation">.</span>id <span class="token operator">===</span> team<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span>team
+
+    players <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>playerMap<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">,</span> matches <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+            name<span class="token punctuation">,</span>
+            matches<span class="token punctuation">:</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>matches<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> b<span class="token punctuation">.</span>matches <span class="token operator">-</span> a<span class="token punctuation">.</span>matches<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> `$<span class="token punctuation">{</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">.</span> $<span class="token punctuation">{</span>player<span class="token punctuation">.</span>name<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>`$<span class="token punctuation">{</span>teamName<span class="token punctuation">}</span><span class="token punctuation">,</span> coached by $<span class="token punctuation">{</span>team<span class="token punctuation">.</span>coach<span class="token punctuation">}</span>`<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>players<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+const teamJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+const namesJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+const teamsJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>teamJson <span class="token operator">===</span> undefined <span class="token operator">||</span> namesJson <span class="token operator">===</span> undefined <span class="token operator">||</span> teamsJson <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>`input not supplied`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// some sample data</span>
+const team  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>teamJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const names  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>namesJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const teams  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>teamsJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">makeTeamList</span><span class="token punctuation">(</span>team<span class="token punctuation">,</span> names<span class="token punctuation">.</span>names<span class="token punctuation">,</span> teams<span class="token punctuation">.</span>teams<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+                    Alternative solution for <code>join_sport_stats.js</code>
+                    
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// an iterative solution</span>
+
+<span class="token keyword">function</span> <span class="token function">makeTeamList</span><span class="token punctuation">(</span>teamData<span class="token punctuation">,</span> namesData<span class="token punctuation">,</span> teamsData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	const team_name <span class="token operator">=</span> <span class="token function">get_team_name</span><span class="token punctuation">(</span>teamData<span class="token punctuation">.</span>team<span class="token punctuation">.</span>id<span class="token punctuation">,</span> teamsData<span class="token punctuation">)</span>
+
+    const team_details <span class="token operator">=</span> team_name <span class="token operator">+</span> <span class="token string">", coached by "</span> <span class="token operator">+</span> teamData<span class="token punctuation">.</span>team<span class="token punctuation">.</span>coach<span class="token punctuation">;</span>
+    let team_sheet <span class="token operator">=</span> <span class="token punctuation">[</span>team_details<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    const players <span class="token operator">=</span> teamData<span class="token punctuation">.</span>players<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> b<span class="token punctuation">.</span>matches <span class="token operator">-</span> a<span class="token punctuation">.</span>matches<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> players<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	const player_name <span class="token operator">=</span> <span class="token function">get_player_name</span><span class="token punctuation">(</span>players<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> namesData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	team_sheet<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">". "</span> <span class="token operator">+</span> player_name<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> team_sheet
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">get_team_name</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> teamsData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> teamsData<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">==</span> teamsData<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> teamsData<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>team<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">get_player_name</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> namesData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> namesData<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">==</span> namesData<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> player_name <span class="token operator">=</span> namesData<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+const teamJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+const namesJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+const teamsJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>teamJson <span class="token operator">===</span> undefined <span class="token operator">||</span> namesJson <span class="token operator">===</span> undefined <span class="token operator">||</span> teamsJson <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>`input not supplied`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// some sample data</span>
+const team  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>teamJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const names  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>namesJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const teams  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>teamsJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">makeTeamList</span><span class="token punctuation">(</span>team<span class="token punctuation">,</span> names<span class="token punctuation">.</span>names<span class="token punctuation">,</span> teams<span class="token punctuation">.</span>teams<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Challenge Exercise: What Have You Drunk?
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+Download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_objects/objects.zip">objects.zip</a>
+and extract it.
+
+<pre class="command_line"><kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_objects/objects.zip</kbd>
+<kbd class="shell">unzip objects.zip</kbd>
+<kbd class="shell">cd objects</kbd>
+</pre>
+
+In <b>objects/objects.js</b> there is part of the code for a <b>Person</b> object,
+<p>
+This object tracks how the person spending on drinks in UNIbar.
+</p><p>
+Finish up the missing functions to keep track of drink orders.
+</p><p>
+</p><p>
+Firstly you need to write the function <b>buyDrink</b> which is given as argument a drink object, for example:
+</p><p>
+</p><pre class="program">{
+     name: "beer",
+     cost: 8.50,
+     alcohol: true
+ }
+</pre>
+<p>
+<b>buyDrink</b> should add the cost of the drink to the person's tab (total drinks bill) if the person is
+</p><ol>
+   <li> old enough to drink (over 18 if the drink is alcohol)</li>
+   <li> buying the drink will not push their tab over $1000</li>
+ </ol>
+
+If these conditions don't hold the function should do nothing.
+<p>
+You also need to write write a function <b>getReceipt</b> which returns a summary
+of all drinks a person bought, grouped by name, as a object. For example:
+
+</p><pre class="program">[
+    {
+        name: "beer",
+        count: 3,
+        total: 25.50
+    },
+    {
+        name: "cola",
+        count: 1,
+        total: 2.50
+    }
+]
+</pre>
+
+<p>
+You can test your code as such, note that the script simply takes in a persons name,
+their age and a file of the drinks they want to order.
+
+</p><pre class="command_line"><kbd class="shell">node objects.js Andrew 21 drinks.json</kbd>
+[ { name: 'cola', count: 2, total: 7 },
+  { name: 'beer', count: 1, total: 5.5 },
+  { name: 'fanta', count: 1, total: 3.5 } ]
+<kbd class="shell">node objects.js Lisa 21 drinks.json</kbd>
+[ { name: 'cola', count: 2, total: 7 },
+  { name: 'fanta', count: 1, total: 3.5 } ]
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_objects</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">91%</span>
+        
+        of <span class="autotest_results_emphasis">125</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">objects.js</span>
+            so far,
+        
+        
+            passed all autotest tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>0</i>
+                
+                    </li><li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>1</i>
+                
+                </li></ul>
+                </div>
+            
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab07_js_objects objects.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>objects.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">/*
+ * Fill out the Person prototype
+ * function "buyDrink" which given a drink object which looks like:
+ * {
+ *     name: "beer",
+ *     cost: 8.50,
+ *     alcohol: true
+ * }
+ * will add the cost to the person expences if the person
+ * is
+ *    1. old enough to drink (if the drink is alcohol)
+ *    2. buying the drink will not push their tab over $1000
+ *
+ * in addition write a function "getReceipt" which returns a list as such
+ * [
+ *    {
+ *        name: beer,
+ *        count: 3,
+ *        total: 25.50
+ *    }
+ * ]
+ *
+ * which summaries all drinks a person bought by name in order
+ * of when they were bought (duplicate buys are stacked)
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    this<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>tab <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>historyLen <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>canDrink <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> this<span class="token punctuation">.</span>age <span class="token operator">&gt;=</span> <span class="token number">18</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>canSpend <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>cost<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> this<span class="token punctuation">.</span>tab <span class="token operator">+</span> cost <span class="token operator">&lt;=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>buyDrink <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>drink<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>this<span class="token punctuation">.</span><span class="token function">canSpend</span><span class="token punctuation">(</span>drink<span class="token punctuation">.</span>cost<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>drink<span class="token punctuation">.</span>alcohol <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>this<span class="token punctuation">.</span><span class="token function">canDrink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>drink<span class="token punctuation">.</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>drink<span class="token punctuation">.</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+    this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>drink<span class="token punctuation">.</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span>total<span class="token operator">+</span><span class="token operator">=</span>drink<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>drink<span class="token punctuation">.</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> drink<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+      count<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      total<span class="token punctuation">:</span> drink<span class="token punctuation">.</span>cost<span class="token punctuation">,</span>
+      order<span class="token punctuation">:</span> this<span class="token punctuation">.</span>historyLen<span class="token operator">++</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  this<span class="token punctuation">.</span>tab <span class="token operator">+</span><span class="token operator">=</span> drink<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getReceipt <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  let all <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>this<span class="token punctuation">.</span>history<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  all <span class="token operator">=</span> all<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span>this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span>order <span class="token operator">-</span> this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">.</span>order<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  let r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>let drink of all<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    let d <span class="token operator">=</span> this<span class="token punctuation">.</span>history<span class="token punctuation">[</span>drink<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    delete d<span class="token punctuation">.</span>order<span class="token punctuation">;</span>
+    r<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+const name <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+const age <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+const drinksJson <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">===</span> undefined <span class="token operator">||</span> age <span class="token operator">===</span> undefined <span class="token operator">||</span> drinksJson <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>`input not supplied`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+const drinks <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>`<span class="token punctuation">.</span><span class="token operator">/</span>$<span class="token punctuation">{</span>drinksJson<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>let drink of drinks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  p<span class="token punctuation">.</span><span class="token function">buyDrink</span><span class="token punctuation">(</span>drink<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getReceipt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+ 
+
+
+    
+    
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Challenge Exercise: Javascript Piping
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+<p>Write a function called buildPipe that returns a function
+ which runs all of it's input functions in a pipeline</p>
+ <p> Consider the following code </p>
+ <pre class="program"> let timesTwo = (a) =&gt; a*2;
+ let timesThree = (a) =&gt; a*3;
+ let minusTwo = (a) =&gt; a - 2;
+ let pipeline = buildPipe(timesTwo, timesThree, minusTwo);
+</pre>
+<p> In this case pipeline(x) is the same as minusTwo(timesThree(timesTwo(x))) </p>
+<pre class="program">pipeline(6) == 34
+</pre>
+
+<p>
+  To begin download and unzip the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_piping/piping.zip">starter code</a>
+</p><p>
+</p><pre class="command_line"><kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_piping/piping.zip</kbd>
+<kbd class="shell">unzip piping.zip</kbd>
+</pre>
+
+You test your code with the basic supplied functions by running
+
+<pre class="command_line"><kbd class="shell">cd piping</kbd>
+<kbd class="shell">node test.js</kbd>
+34
+32
+</pre>
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can use <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_piping</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Autotest Results</h4>
+        <span class="autotest_results_emphasis">95%</span>
+        
+        of <span class="autotest_results_emphasis">80</span> students
+        
+            who have autotested
+            <span class="autotest_results_emphasis">piping.js</span>
+            so far,
+        
+        
+            passed the autotest test.
+        
+    </div>
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+<pre class="command_line"><kbd class="shell">give cs2041 lab07_js_piping piping.js</kbd>
+</pre>
+
+
+
+
+
+    
+        
+        
+            
+            <div class="answer">
+                Sample solution for <code>piping.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">/*
+ * Write a function called buildPipe that returns a function
+ * which runs all of it's input functions in a pipeline
+ * let timesTwo = (a) =&gt; a*2;
+ * let timesThree = (a) =&gt; a*3;
+ * let minusTwo = (a) =&gt; a - 2;
+ * let pipeline = buildPipe(timesTwo, timesThree, minusTwo);
+ *
+ * pipeline(6) == 34
+ *
+ * pipeline(x) in this case is the same as minusTwo(timesThree(timesTwo(x)))
+ *
+ * test with `node test.js`
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">buildPipe</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>ops<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const _pipe <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token function">a</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> ops<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>_pipe<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Alternative recursive solution:
+
+function buildPipe(f, ...fs) {
+    if (fs.length &gt; 0) return x =&gt; buildPipe(...fs)(f(x));
+    return x =&gt; f(x);
+}
+*/</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> buildPipe<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+                
+            </div>
+            
+        
+    
+
+
+</div>
+    </div>
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercises make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Tuesday 23 July 17:59:59</b>
+
+
+to submit your work.
+</p><p>
+You cannot obtain marks by e-mailing lab work to tutors or lecturers.
+</p><p>
+You check the files you have submitted <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">here</a>
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+</p><h4>Lab Marks</h4>
+<p>
+When all components of a lab  are automarked you should be able to view the
+the marks <a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre class="command_line"><kbd class="shell">2041 classrun -sturec</kbd>
+</pre>
+<p>
+The lab exercises for each week are worth in total 1.2 marks.
+</p><p>
+Usually each lab exercise will be worth the same - for example if there are 5 lab exercises each will be worth 0.4 marks.
+</p><p>
+Except challenge exercises (see below) will never total more than 20% of each week's lab mark.
+</p><p>
+All of your lab marks for weeks 1-10, will be summed to give you a mark out of 12.
+</p><p>
+If their sum exceeds 9 - your total mark will be capped at 9.
+
+</p><h4>Running Autotests On your Own Computer</h4>
+
+An experimental version of autotest exists which may allow you to run autotest on your own computer.
+<p>
+If you are running Linux,  Windows Subsystem for Linux or OSX.  These commands might let you run autotests at home.
+
+</p><pre class="command_line"><kbd class="shell">sudo wget https://cgi.cse.unsw.edu.au/~cs2041/19T2/resources/home_autotest -O/usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">sudo chmod 755 /usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">2041_autotest shell_snapshot</kbd>
+</pre>
+
+Autotest itself needs Python 3.6 (or later) installed.
+<p>
+Particular autotests may require other software install, e.g.  autotests of perl programs require Perl installed (of course).
+</p><p>
+The legit autotests need  python3.7, git &amp; binfmt-support installed.
+</p><p>
+The program embeds the autotests themselves, so you'll need to re-download if autotests are changed, added, fixed, ...
+</p><p>
+If it breaks on your computer post on the class forum  and we'll fix if we can, but this is very definitely experimental.
+
+</p></div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

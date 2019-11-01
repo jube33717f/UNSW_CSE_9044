@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 09 Weekly Test Sample Answers
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 09 Weekly Test Sample Answers_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 09 Weekly Test Sample Answers_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 09 Weekly Test Sample Answers_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 09 Weekly Test Sample Answers_files/popper.min.js"></script>
+<script src="./COMP2041 Week 09 Weekly Test Sample Answers_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 09 Weekly Test Sample Answers_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 09 Weekly Test Sample Answers_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 09 Weekly Test Sample Answers_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 09 Weekly Test Sample Answers_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 09 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Weekly Test <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Answers <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/questions">Questions</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers">Sample Answers</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+<p>
+You must time the test yourself and ensure you comply with the conditions below.
+
+</p><ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+</li><li> You may complete this test at any time before <b>Thursday 08 August 21:59:59</b>
+</li><li> The maximum time allowed for this test is 1 hour + 5 minutes reading time.
+</li><li> You may first use 5 minutes to read the questions (no typing)
+</li><li> You then must complete the test within 1 hour and submit your answers with give.
+</li><li> You must complete the questions alone - you can not get help in any way from any person.
+</li><li> You can not access your previous answers to lab or tut questions.
+</li><li> You can not access web pages or use the internet in any way.
+</li><li> You can not access books, notes or other written or online materials.
+</li><li> You can not access your own files, programs, code ...
+</li><li> You can not access COMP2041 course materials except for language documentation linked below.
+</li></ul>
+
+
+<hr>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/wsu-js-cheat-sheet.pdf">Javascript quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/python_cheatsheet.pdf">Python quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/c-reference.pdf">C quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/doc/python-3.6.6-docs-html/index.html">full Python 3.6 documentation</a>
+</li></ul>
+<hr>
+
+You may also access manual entries (the man command)
+
+
+
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Return the sum of a list
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+Your task is to write a Javascript function <b>sum</b>  which takes as its first argument a list of strings.
+<p>
+Each string will contain only digits ([0-9]).
+</p><p>
+Your function <b>sum</b> should return the sum of the integers.
+
+</p><p>
+For example given this list:
+
+</p><pre class="program">["17", "10", "17"]
+</pre>
+
+Your function <b>sum</b>  should return 42.
+<p>
+<b>sum.js</b> contains a starting point which you should use. 
+
+
+Download sum.js <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_sum/sum.js">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/js_sum/sum.js .</kbd>
+</pre>
+
+
+<p>
+<b>test.js</b> contains code which will given will call your function and print the result.
+
+
+
+Download test.js <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_sum/test.js">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/js_sum/test.js .</kbd>
+</pre>
+
+
+<p>
+For example:
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">node test.js 1 2 3</kbd>
+6
+<kbd class="shell">node test.js 5 5 5</kbd>
+15
+<kbd class="shell">node test.js 6 5 18 3 2 1</kbd>
+35
+<kbd class="shell">node test.js 42</kbd>
+42
+<kbd class="shell">node test.js</kbd>
+0
+</pre>
+
+<p>
+You can assume all strings in the list are valid positive integers.
+</p><p>
+Your answer must be Javascript only.  You can not use other languages such as Shell, Perl, Python or C.
+</p><p>
+You may not run external programs, e.g. via child_process or spawn.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_sum</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test09_js_sum sum.js</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>sum.js</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// a functional programmming style solution</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// the unary + forces conversion to an integer (parseInt could also be used)</span>
+  <span class="token keyword">return</span> list<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a <span class="token operator">+</span> <span class="token operator">+</span>b<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> sum<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>sum.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// an iterative solution</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  var total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// the unary + forces conversion to an integer (parseInt could also be used)</span>
+    total <span class="token operator">+</span><span class="token operator">=</span> <span class="token operator">+</span>list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> total<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> sum<span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Counting A Whale Species in Javascript
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+Your task is to write a Javascript function <b>species_count</b>  which takes as its first argument a whale species and its second argument a list of whale observations, and counts the number of whales of that species in the list.
+<p>
+The list will be in this format:
+
+
+</p><pre class="program">[
+    {
+        "date": "09/09/18",
+        "how_many": 11,
+        "species": "Orca"
+    },
+    {
+        "date": "04/11/17",
+        "how_many": 41,
+        "species": "Long-finned pilot whale"
+    },
+    {
+        "date": "17/03/18",
+        "how_many": 30,
+        "species": "Southern right whale"
+    },
+    {
+        "date": "17/08/18",
+        "how_many": 31,
+        "species": "Orca"
+    },
+]
+</pre>
+
+If <b>species_count</b>  was given "Orca" as its first argument and the above list as its second argument , it should return 42.
+<p>
+<b>species_count.js</b> contains a starting point which you should use. 
+
+
+Download species_count.js <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_species_count/species_count.js">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/js_species_count/species_count.js .</kbd>
+</pre>
+
+
+<p>
+<b>test.js</b> contains code which will given a whale species, and a JSON file containing a list of whale observations
+will read the JSON, call your function and print the result.
+
+
+
+Download test.js <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_species_count/test.js">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/js_species_count/test.js .</kbd>
+</pre>
+
+
+<p>
+Note your Javascript function <b>species_count</b>  does not have to read a file.  <b>test.js</b> reads the file and passes the list it reads as <b>species_count</b>'s second argument.
+</p><p>
+<b>whales.json</b> contains an example list of whale observations.
+
+
+
+Download whales.json <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_species_count/whales.json">here</a>, or copy it to your CSE
+account using the following command:
+
+</p><pre class="command_line"><kbd class="shell">cp -n /web/cs2041/19T2/activities/js_species_count/whales.json .</kbd>
+</pre>
+
+
+<p>
+Here is how to test your function using <b>test.js</b> and <b>whales.json</b>
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">node test.js Orca whales.json</kbd>
+117
+<kbd class="shell">node test.js 'Striped dolphin' whales.json</kbd>
+19
+<kbd class="shell">node test.js 'Southern right whale' whales.json</kbd>
+64
+<kbd class="shell">node test.js 'Whale Shark' whales.json</kbd>
+0
+</pre>
+<p>
+Your function does not have to handle differences in case or white-space.
+</p><p>
+Your answer must be Javsacript only.  You can not use other languages such as Shell, Perl, Python or C.
+</p><p>
+You may not run external programs, e.g. via child_process or spawn.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest js_species_count</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test09_js_species_count species_count.js</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>species_count.js</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// a functional programmming style solution</span>
+
+<span class="token keyword">function</span> <span class="token function">species_count</span><span class="token punctuation">(</span>target_species<span class="token punctuation">,</span> whale_list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const target_whale_observations <span class="token operator">=</span> whale_list<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>observation <span class="token operator">=</span><span class="token operator">&gt;</span> observation<span class="token punctuation">.</span>species <span class="token operator">==</span> target_species<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const target_whale_counts <span class="token operator">=</span> target_whale_observations<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>observation <span class="token operator">=</span><span class="token operator">&gt;</span> observation<span class="token punctuation">.</span>how_many<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const target_whale_total <span class="token operator">=</span> target_whale_counts<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a <span class="token operator">+</span> b<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> target_whale_total<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> species_count<span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>species_count.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// terse functional programmming style solution</span>
+
+<span class="token keyword">function</span> <span class="token function">species_count</span><span class="token punctuation">(</span>target_species<span class="token punctuation">,</span> whale_list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> whale_list<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+    observation <span class="token operator">=</span><span class="token operator">&gt;</span> observation<span class="token punctuation">.</span>species <span class="token operator">==</span> target_species <span class="token operator">?</span> observation<span class="token punctuation">.</span>how_many <span class="token punctuation">:</span> <span class="token number">0</span>
+  <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a <span class="token operator">+</span> b<span class="token punctuation">,</span> <span class="token number">0</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> species_count<span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+                Alternative solution for <code>species_count.js</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token comment">// an iterative solution</span>
+
+<span class="token keyword">function</span> <span class="token function">species_count</span><span class="token punctuation">(</span>target_species<span class="token punctuation">,</span> whale_list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  var n_whales <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> whale_list<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>whale_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>species <span class="token operator">==</span> target_species<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// The + ensures conversion to an intger</span>
+      n_whales <span class="token operator">+</span><span class="token operator">=</span> <span class="token operator">+</span>whale_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>how_many<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> n_whales<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> species_count<span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Counting A Whale Species in Perl
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+Your task is to write a Perl program  <b>json_count.pl</b> which takes as its first argument a whale species and its second argument a file containing a list of whale observations, and prints the number of whales of that species in the file.
+<p>
+The file will be in this format:
+
+
+</p><pre class="program">[
+    {
+        "date": "09/09/18",
+        "how_many": 11,
+        "species": "Orca"
+    },
+    {
+        "date": "04/11/17",
+        "how_many": 41,
+        "species": "Long-finned pilot whale"
+    },
+    {
+        "date": "17/03/18",
+        "how_many": 30,
+        "species": "Southern right whale"
+    },
+    {
+        "date": "17/08/18",
+        "how_many": 31,
+        "species": "Orca"
+    },
+]
+</pre>
+
+If  <b>json_count.pl</b> was given "Orca" as its first argument and  the above file as its second argument , it should print 42.
+<p>
+For example:
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./json_count.pl Orca whales.json</kbd>
+117
+<kbd class="shell">./json_count.pl 'Striped dolphin' whales.json</kbd>
+19
+<kbd class="shell">./json_count.pl 'Southern right whale' whales.json</kbd>
+64
+<kbd class="shell">./json_count.pl 'Whale Shark' whales.json</kbd>
+0
+</pre>
+
+<p>
+You can assume the formating of the file is the same as the example above.  Your program does not have to handle the many other ways a JSON file might be formatted.
+</p><p>
+You can assume the "date", "how_many" and "species" fields in whale observations are always in the same order as the above example.
+</p><p>
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+</p><p>
+You may not run external programs, e.g. via system or backquotes.
+</p><p>
+You may  use any Perl module installed on CSE systems.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest json_count</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test09_json_count json_count.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>json_count.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# Count  observations of a whale species <span class="token keyword">in</span> a file
+# andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au <span class="token keyword">for</span> a COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> exercise
+
+die <span class="token string">"Usage: $0 &lt;whale species&gt; &lt;file&gt;\n"</span> <span class="token keyword">if</span> @ARGV <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+$target_species <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+$filename <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+my $n_whales <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+open my $f<span class="token punctuation">,</span> $filename or die <span class="token string">"Can not open $filename\n"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token string">"how_many"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $how_many <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> elsif <span class="token punctuation">(</span>$line <span class="token operator">=</span><span class="token operator">~</span> <span class="token operator">/</span><span class="token string">"species"</span><span class="token punctuation">:</span> <span class="token string">"(.*)"</span><span class="token operator">/</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        my $species <span class="token operator">=</span> $<span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>$species eq $target_species<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            $n_whales <span class="token operator">+</span><span class="token operator">=</span> $how_many<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+close $f<span class="token punctuation">;</span>
+
+print <span class="token string">"$n_whales\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>json_count.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+#Count  observations of a whale species <span class="token keyword">in</span>  <span class="token number">1</span> or more files
+# andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au <span class="token keyword">for</span> a COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> exercise
+# terse less readable version
+
+die <span class="token string">"Usage: $0 &lt;whale species&gt; &lt;files&gt;\n"</span> <span class="token keyword">if</span> @ARGV <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+$target_species <span class="token operator">=</span> shift @ARGV<span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $how_many <span class="token operator">=</span> $<span class="token number">1</span> <span class="token keyword">if</span> <span class="token operator">/</span><span class="token string">"how_many"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">/</span>i<span class="token punctuation">;</span>
+    $n_whales <span class="token operator">+</span><span class="token operator">=</span> $how_many <span class="token keyword">if</span> <span class="token operator">/</span><span class="token string">"species"</span><span class="token punctuation">:</span> <span class="token string">"$target_species"</span><span class="token operator">/</span>i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+print <span class="token string">"$n_whales\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercise make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+
+Remember you have until
+<b>Thursday 08 August 21:59:59</b>
+to complete this test.
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+
+
+</p></div>
+    </div>
+
+
+
+The test exercises for each week are worth in total 1 mark.
+<p>
+The best 6 of your 8 test marks for weeks 3-10 will be summed to give you a mark out of 6.
+
+
+
+</p></div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

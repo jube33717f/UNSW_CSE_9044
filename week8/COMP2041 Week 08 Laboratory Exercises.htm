@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/questions -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<title>
+
+COMP2041 Week 08 Laboratory Exercises
+
+</title>
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link crossorigin="anonymous" href="./COMP2041 Week 08 Laboratory Exercises_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+<link href="./COMP2041 Week 08 Laboratory Exercises_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+<script src="./COMP2041 Week 08 Laboratory Exercises_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 08 Laboratory Exercises_files/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="./COMP2041 Week 08 Laboratory Exercises_files/bootstrap.min.js"></script>
+<script src="./COMP2041 Week 08 Laboratory Exercises_files/course.js" type="text/javascript"></script>
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 08 Laboratory Exercises_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script defer="" src="./COMP2041 Week 08 Laboratory Exercises_files/prism.js" type="text/javascript"></script>
+<script async="" src="./COMP2041 Week 08 Laboratory Exercises_files/ei.js"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" rel="canonical">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+<div class="row" id="heading">
+<div class="col-3 text-left">
+<a class="heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" id="left_heading_link" target="_blank">COMP(2041|9044) 19T2</a>
+</div>
+<div class="col-6 text-center">
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="week-selector" type="button">
+        Week 08 <span class="caret"></span>
+</button>
+<div aria-labelledby="week-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/01/questions">Week 01</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/02/questions">Week 02</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/03/questions">Week 03</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/04/questions">Week 04</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/questions">Week 05</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/questions">Week 06</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/questions">Week 07</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/questions">Week 08</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/09/questions">Week 09</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/10/questions">Week 10</a>
+</div>
+</span>
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="tlb-selector" type="button">
+        Laboratory <span class="caret"></span>
+</button>
+<div aria-labelledby="tlb-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/questions">Tutorial</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/questions">Laboratory</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/08/questions">Weekly Test</a>
+</div>
+</span>
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="qa-selector" type="button">
+        Exercises <span class="caret"></span>
+</button>
+<div aria-labelledby="qa-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/questions">Exercises</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/08/answers">Sample Solutions</a>
+</div>
+</span>
+</div>
+<div class="col-3 text-right">
+<a class="heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" id="right_heading_link" target="_blank">COMP(2041|9044) 19T2</a>
+</div>
+</div>
+<div class="tutlab lab">
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Objectives
+            </h3>
+</div>
+<div class="card-body">
+<ul>
+<li>Javascript Strikes Back</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Preparation
+            </h3>
+</div>
+<div class="card-body">
+
+Before the lab you should re-read the relevant lecture slides and their accompanying examples.
+
+
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Getting Started
+            </h3>
+</div>
+<div class="card-body">
+
+
+
+Create a new directory for this lab called <code>lab08</code> and change to this directory with these comamnds:
+
+<pre class="command_line"><kbd class="shell">mkdir lab08</kbd>
+<kbd class="shell">cd lab08</kbd>
+</pre>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Exercise: Counter
+            </h3>
+</div>
+<div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_counter/counter.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_counter/counter.zip</kbd>
+</pre>
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_counter/counter.zip">counter.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd counter</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd counter</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>counter.js</b>.  You need to edit  <b>counter.js</b>
+<pre class="command_line"><kbd class="shell">vi counter.js</kbd>
+</pre>
+
+Your task is to add JavaScript to <b>counter.js</b> so that the current time is shown on the web page.
+<p>
+Your Javascript should put the current time in the <b>output</b> div.
+</p><p>
+The time should be updated every second.
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+</p><p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab08_js_counter/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 30 July 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab08_js_counter counter.js</kbd>
+</pre>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Exercise: Toggle
+            </h3>
+</div>
+<div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_toggle/toggle.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_toggle/toggle.zip</kbd>
+</pre>
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_toggle/toggle.zip">toggle.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd toggle</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd toggle</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>toggle.js</b>.  You need to edit  <b>toggle.js</b>
+<pre class="command_line"><kbd class="shell">vi toggle.js</kbd>
+</pre>
+<p>Your task is to modify the code in <b>toggle.js</b> so that it adds and removes the class 'hide' from the <code>output</code> element every 2 seconds. </p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab08_js_toggle/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 30 July 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab08_js_toggle toggle.js</kbd>
+</pre>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Exercise: Collapse
+            </h3>
+</div>
+<div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_collapse/collapse.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_collapse/collapse.zip</kbd>
+</pre>
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_collapse/collapse.zip">collapse.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd collapse</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd collapse</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>collapse.js</b>.  You need to edit  <b>collapse.js</b>
+<pre class="command_line"><kbd class="shell">vi collapse.js</kbd>
+</pre>
+<p>Your task is to modify the code in <b>collapse.js</b></p>
+<p> I frankly don't like UNSW handbook so I've made my own to outline all the COMP courses there are for me. But the page is a bit cluttered.</p>
+<p>Write some JS that makes the "extra info" section of each information element disappear on the click of the "up" arrow button on the top right of each element.</p>
+<p> Once collapsed the item doesn't need to reexpand just yet.</p>
+<p><b>Optional Challange:</b> Finish this exercise using only a single click event listener and 0 changes to the HTML.</p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab08_js_collapse/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 30 July 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab08_js_collapse collapse.js</kbd>
+</pre>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Exercise: Expand
+            </h3>
+</div>
+<div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_expand/expand.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_expand/expand.zip</kbd>
+</pre>
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_expand/expand.zip">expand.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd expand</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd expand</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>expand.js</b>.  You need to edit  <b>expand.js</b>
+<pre class="command_line"><kbd class="shell">vi expand.js</kbd>
+</pre>
+<p>Your task is to modify the code in <b>expand.js</b>
+</p><p>Extend the collapse code to change the icon from an "up" arrow to a down arrow once the <code>div</code> is collapsed. The button should then expand the <code>div</code> when clicked on and revert the icon.</p>
+<p><b>Optional Challenge:</b> Finish this exercise using only a single click event listener and 0 changes to the HTML.</p>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab08_js_expand/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 30 July 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab08_js_expand expand.js</kbd>
+</pre>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Challenge Exercise: js_adventure_script
+            </h3>
+</div>
+<div class="card-body">
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+If you are working at CSE, explode the <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_adventure_script/adventure_script.zip">zip file</a> containing the files for this activity:
+
+<pre class="command_line"><kbd class="shell">unzip /web/cs2041/19T2/activities/js_adventure_script/adventure_script.zip</kbd>
+</pre>
+<p>
+If you are working on your computer, download <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//activities/js_adventure_script/adventure_script.zip">adventure_script.zip</a> and unzip it .
+</p>
+
+Then in one window use Python to start a HTTP server for the exercises
+
+<pre class="command_line"><kbd class="shell">cd adventure_script</kbd>
+<kbd class="shell">python3 -m http.server</kbd>
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</pre>
+
+If you access the URL printed by Python you will see instructions for the exercise.
+<p>
+Remember to refresh the web page in your browser (<code>control-R</code> inchrome and firefox)
+when you make a change to the Javascript so it gets loaded.
+You can stop the server by pressing <code> control-c </code>
+</p><p>
+
+    
+
+
+You do not change <b>index.html</b> but you should read its source:
+
+</p><pre class="command_line"><kbd class="shell">cd adventure_script</kbd>
+<kbd class="shell">more index.html</kbd>
+</pre>
+
+Notice  <b>index.html</b> loads  <b>adventure_script.js</b>.  You need to edit  <b>adventure_script.js</b>
+<pre class="command_line"><kbd class="shell">vi adventure_script.js</kbd>
+</pre>
+<p>Your task is to modify the code in <b>adventure.js</b></p>
+<p> There is the basic framework for a simple game, fill out the following functions: </p>
+<ol>
+<li> Make the player (the ghost) move left and right via the left and right arrow keys. </li>
+<li> Have the 'z' key toggle the player between walk and sprint mode (slow and fast movement). </li>
+<li> Have the 'x' key shoot a fireball towards the right of the screen. There is a provided image in <code>imgs/</code>.
+     To make things simple the player can only have 1 fireball on the screen at any one time. </li>
+</ol>
+
+
+
+
+
+
+
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/peer_assess/lab08_js_adventure_script/">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any other COMP(2041|9044) student before Tuesday 30 July 17:59:59.
+Note, you must also submit the work with give.
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When you are finished working on this exercise you must submit
+    your work by running <b>give</b>:
+
+
+
+</p><pre class="command_line"><kbd class="shell">give cs2041 lab08_js_adventure_script adventure.js</kbd>
+</pre>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">
+                Submission
+            </h3>
+</div>
+<div class="card-body">
+
+
+When you are finished each exercises make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Tuesday 30 July 17:59:59</b>
+
+
+to submit your work.
+</p><p>
+You cannot obtain marks by e-mailing lab work to tutors or lecturers.
+</p><p>
+You check the files you have submitted <a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">here</a>
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+</p><h4>Lab Marks</h4>
+<p>
+When all components of a lab  are automarked you should be able to view the
+the marks <a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+or by running this command on a CSE machine:
+
+</p><pre class="command_line"><kbd class="shell">2041 classrun -sturec</kbd>
+</pre>
+<p>
+The lab exercises for each week are worth in total 1.2 marks.
+</p><p>
+Usually each lab exercise will be worth the same - for example if there are 5 lab exercises each will be worth 0.4 marks.
+</p><p>
+Except challenge exercises (see below) will never total more than 20% of each week's lab mark.
+</p><p>
+All of your lab marks for weeks 1-10, will be summed to give you a mark out of 12.
+</p><p>
+If their sum exceeds 9 - your total mark will be capped at 9.
+
+</p><h4>Running Autotests On your Own Computer</h4>
+
+An experimental version of autotest exists which may allow you to run autotest on your own computer.
+<p>
+If you are running Linux,  Windows Subsystem for Linux or OSX.  These commands might let you run autotests at home.
+
+</p><pre class="command_line"><kbd class="shell">sudo wget https://cgi.cse.unsw.edu.au/~cs2041/19T2/resources/home_autotest -O/usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">sudo chmod 755 /usr/local/bin/2041_autotest</kbd>
+<kbd class="shell">2041_autotest shell_snapshot</kbd>
+</pre>
+
+Autotest itself needs Python 3.6 (or later) installed.
+<p>
+Particular autotests may require other software install, e.g.  autotests of perl programs require Perl installed (of course).
+</p><p>
+The legit autotests need  python3.7, git &amp; binfmt-support installed.
+</p><p>
+The program embeds the autotests themselves, so you'll need to re-download if autotests are changed, added, fixed, ...
+</p><p>
+If it breaks on your computer post on the class forum  and we'll fix if we can, but this is very definitely experimental.
+
+</p></div>
+</div>
+</div>
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+<small>CRICOS Provider 00098G</small>
+</p>
+</footer>
+
+</body></html>

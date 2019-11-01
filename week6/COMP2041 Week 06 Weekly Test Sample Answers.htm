@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 06 Weekly Test Sample Answers
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 06 Weekly Test Sample Answers_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 06 Weekly Test Sample Answers_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 06 Weekly Test Sample Answers_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 06 Weekly Test Sample Answers_files/popper.min.js"></script>
+<script src="./COMP2041 Week 06 Weekly Test Sample Answers_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 06 Weekly Test Sample Answers_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 06 Weekly Test Sample Answers_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 06 Weekly Test Sample Answers_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 06 Weekly Test Sample Answers_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 06 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Weekly Test <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/06/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/06/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Answers <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/questions">Questions</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/answers">Sample Answers</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+<p>
+You must time the test yourself and ensure you comply with the conditions below.
+
+</p><ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+</li><li> You may complete this test at any time before <b>Sunday 21 July 21:59:59</b>
+</li><li> The maximum time allowed for this test is 1 hour + 5 minutes reading time.
+</li><li> You may first use 5 minutes to read the questions (no typing)
+</li><li> You then must complete the test within 1 hour and submit your answers with give.
+</li><li> You must complete the questions alone - you can not get help in any way from any person.
+</li><li> You can not access your previous answers to lab or tut questions.
+</li><li> You can not access web pages or use the internet in any way.
+</li><li> You can not access books, notes or other written or online materials.
+</li><li> You can not access your own files, programs, code ...
+</li><li> You can not access COMP2041 course materials except for language documentation linked below.
+</li></ul>
+
+
+<hr>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/wsu-js-cheat-sheet.pdf">Javascript quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/python_cheatsheet.pdf">Python quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/c-reference.pdf">C quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/doc/python-3.6.6-docs-html/index.html">full Python 3.6 documentation</a>
+</li></ul>
+<hr>
+
+You may also access manual entries (the man command)
+
+
+
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Unique Echo
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+Write a Perl program <b>uniq_echo.pl</b> that prints its command-line argument to
+standard output, similar to <b>echo</b> command in Shell, except only the first occurrence
+of any argument should be printed,  Repeat occurrences should not be printed.
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./uniq_echo.pl echo echo echo</kbd>
+echo
+<kbd class="shell">./uniq_echo.pl bird cow bird cow fish bird cow fish bird</kbd>
+bird cow fish
+<kbd class="shell">./uniq_echo.pl how much wood would a woodchuck chuck</kbd>
+how much wood would a woodchuck chuck
+<kbd class="shell">./uniq_echo.pl d c b d c a a d</kbd>
+d c b a
+<kbd class="shell">./uniq_echo.pl</kbd>
+
+</pre>
+
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+<p>
+You may not run external programs, e.g. via system or backquotes.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest uniq_echo</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test06_uniq_echo uniq_echo.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>uniq_echo.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# print command line arguments unless they are a repeat
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+foreach $argument <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    next <span class="token keyword">if</span> $arguments_seen<span class="token punctuation">{</span>$argument<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    print <span class="token string">" "</span> <span class="token keyword">if</span> <span class="token operator">%</span>arguments_seen<span class="token punctuation">;</span>
+    print $argument<span class="token punctuation">;</span>
+    $arguments_seen<span class="token punctuation">{</span>$argument<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+print <span class="token string">"\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>uniq_echo.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# print command line arguments unless they are a repeat
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+# more concise less readable version
+
+my <span class="token operator">%</span>seen<span class="token punctuation">;</span> # avoid warning
+print <span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span> <span class="token function">grep</span><span class="token punctuation">(</span><span class="token operator">!</span>$seen<span class="token punctuation">{</span>$_<span class="token punctuation">}</span><span class="token operator">++</span><span class="token punctuation">,</span> @ARGV<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"\n"</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Snap N
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+Write a Perl program  which reads lines from its input until it
+reads an line that has been entered <i>n</i> times.
+<p>
+Your program should then print "Snap: " followed by the line.
+</p><p>
+Your program  will be given <i>n</i> as a command  line argument.
+Your program should print nothing if the end-of-input is reached
+before any line is repeated <i>n</i> times.
+</p><p>
+You can assume the lines are ASCII, you should not assume anything else about the lines.
+</p><p>
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+</p><p>
+You may not run external programs, e.g. via system or backquotes.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./snap_n.pl 2</kbd>
+<kbd>hi
+how
+are
+you
+hi
+</kbd>Snap: hi
+</pre>
+
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./snap_n.pl 2</kbd>
+<kbd>hi
+hi hi
+hi hi hi
+hi hi hi hi
+hi hi
+</kbd>Snap: hi hi
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./snap_n.pl 4</kbd>
+<kbd>Hello World
+Line 2
+Hello World
+Line 3
+Hello World
+Line 4
+Hello World
+</kbd>Snap: Hello World
+</pre>
+
+No error checking is necessary.
+
+
+
+
+
+
+
+
+<p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest snap_n</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test06_snap_n snap_n.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>snap_n.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# Stop after a line oN STDIN is seen n times<span class="token punctuation">,</span> n is supplied as a command line argument
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+die <span class="token string">"Usage: $0 &lt;n&gt;"</span> <span class="token keyword">if</span> @ARGV <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+my $snap_after_n_repeats <span class="token operator">=</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+my <span class="token operator">%</span>line_repeats<span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>STDIN<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $line_repeats<span class="token punctuation">{</span>$line<span class="token punctuation">}</span><span class="token operator">++</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$line_repeats<span class="token punctuation">{</span>$line<span class="token punctuation">}</span> <span class="token operator">&gt;=</span> $snap_after_n_repeats<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        print <span class="token string">"Snap: $line"</span><span class="token punctuation">;</span>
+        last<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Print the lines of A File Sorted on Length
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+Write a Perl program, <code>sort_file_lines.pl</code> which is given one argument, a file name.
+<p>
+Your program should print the lines of the file in order of length, shortest to longest.
+</p><p>
+Lines of equal length should be sorted alphabetically.
+</p><p>
+You can asusme the lines in the file contain ASCII.  Yoy should not assume anything else about the lines in the file.
+</p><p>
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+</p><p>
+You may not run external programs, e.g. via system or backquotes.
+</p><p>
+No error checking is necessary.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">cat file.txt</kbd>
+tiny
+short line
+medium line
+longgggggg line
+a equal line
+b equal line
+c equal line
+even longggggggggggggggggggggggggggggggggggggggggggerr
+<kbd class="shell">sort_file_lines.pl file.txt</kbd>
+tiny
+short line
+medium line
+a equal line
+b equal line
+c equal line
+longgggggg line
+even longggggggggggggggggggggggggggggggggggggggggggerr
+</pre>
+
+
+
+
+
+
+<p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest sort_file_lines</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test06_sort_file_lines sort_file_lines.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>sort_file_lines.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# print the lines of a files sorted on length<span class="token punctuation">,</span> shortest to longest
+# <span class="token keyword">if</span> lines are of equal length they sorted alphabetically
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+sub compare <span class="token punctuation">{</span>
+    my $a_length <span class="token operator">=</span> length $a<span class="token punctuation">;</span>
+    my $b_length <span class="token operator">=</span> length $b<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$a_length <span class="token operator">==</span> $b_length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> $a cmp $b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> $a_length <span class="token operator">&lt;=</span><span class="token operator">&gt;</span> $b_length<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+die <span class="token string">"Usage $0: &lt;file&gt;\n"</span> <span class="token keyword">if</span> @ARGV <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+open my $f<span class="token punctuation">,</span> <span class="token string">"&lt;"</span><span class="token punctuation">,</span> $ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> or die <span class="token string">"$0: can not open $ARGV[0]: $!\n"</span><span class="token punctuation">;</span>
+@lines <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+close $f<span class="token punctuation">;</span>
+
+@sorted_lines <span class="token operator">=</span> sort compare @lines<span class="token punctuation">;</span>
+
+print @sorted_lines<span class="token punctuation">;</span>
+
+exit <span class="token number">0</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>sort_file_lines.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# print the lines of a files sorted on length<span class="token punctuation">,</span> shortest to longest
+# <span class="token keyword">if</span> lines are of equal length they sorted alphabetically
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+# more concise but less readable solution
+
+print sort <span class="token punctuation">{</span>length $a <span class="token operator">&lt;=</span><span class="token operator">&gt;</span> length $b <span class="token operator">||</span> $a cmp $b<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercise make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+
+Remember you have until
+<b>Sunday 21 July 21:59:59</b>
+to complete this test.
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+
+
+</p></div>
+    </div>
+
+
+
+The test exercises for each week are worth in total 1 mark.
+<p>
+The best 6 of your 8 test marks for weeks 3-10 will be summed to give you a mark out of 6.
+
+
+
+</p></div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>

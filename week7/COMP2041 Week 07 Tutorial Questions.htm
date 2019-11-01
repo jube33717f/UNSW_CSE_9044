@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/questions -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<title>
+
+COMP2041 Week 07 Tutorial Questions
+
+</title>
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link crossorigin="anonymous" href="./COMP2041 Week 07 Tutorial Questions_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+<link href="./COMP2041 Week 07 Tutorial Questions_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+<script src="./COMP2041 Week 07 Tutorial Questions_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 07 Tutorial Questions_files/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="./COMP2041 Week 07 Tutorial Questions_files/bootstrap.min.js"></script>
+<script src="./COMP2041 Week 07 Tutorial Questions_files/course.js" type="text/javascript"></script>
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 07 Tutorial Questions_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script defer="" src="./COMP2041 Week 07 Tutorial Questions_files/prism.js" type="text/javascript"></script>
+<script async="" src="./COMP2041 Week 07 Tutorial Questions_files/ei.js"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" rel="canonical">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+<div class="row" id="heading">
+<div class="col-3 text-left">
+<a class="heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" id="left_heading_link" target="_blank">COMP(2041|9044) 19T2</a>
+</div>
+<div class="col-6 text-center">
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="week-selector" type="button">
+        Week 07 <span class="caret"></span>
+</button>
+<div aria-labelledby="week-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/01/questions">Week 01</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/02/questions">Week 02</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/03/questions">Week 03</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/04/questions">Week 04</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/questions">Week 05</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/06/questions">Week 06</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/questions">Week 07</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/08/questions">Week 08</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/09/questions">Week 09</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/10/questions">Week 10</a>
+</div>
+</span>
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="tlb-selector" type="button">
+        Tutorial <span class="caret"></span>
+</button>
+<div aria-labelledby="tlb-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/questions">Tutorial</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/07/questions">Laboratory</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/07/questions">Weekly Test</a>
+</div>
+</span>
+<span class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-lg btn-link dropdown-toggle heading_button" data-toggle="dropdown" id="qa-selector" type="button">
+        Questions <span class="caret"></span>
+</button>
+<div aria-labelledby="qa-selector" class="dropdown-menu">
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/questions">Questions</a>
+<a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/07/answers">Sample Answers</a>
+</div>
+</span>
+</div>
+<div class="col-3 text-right">
+<a class="heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/" id="right_heading_link" target="_blank">COMP(2041|9044) 19T2</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<li>
+What are the MDN docs? Why are they useful?
+
+<div></div>
+</li><li>
+Why should you not mimic the functionality of `img` `button` etc. with `divs`?
+<div></div>
+</li><li>
+Sam placed the following bit of HTML on their website then visited the site, what will they see?
+
+<pre class="program">&lt;p dfsd="1"&gt;&lt;/p&gt;
+</pre>
+<div></div>
+</li><li>
+What is the `DOCTYPE html` at the top of a HTML file?
+
+<div></div>
+</li><li>
+Write a CSS statement to make all `h1` elements red and bolded.
+
+<div></div>
+</li><li>
+Why would you want to use CSS classes as opposed to direct tag selectors?
+
+<div></div>
+</li><li>
+What happens when we define the same CSS rule twice like this:
+<pre class="program">p {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+</pre>
+<div></div>
+</li><li>
+What is the purpose of the `sources`, `network` and `console` tab on dev tools?
+
+<div></div>
+</li><li>
+Where can I go for more info on CSS, positioning and website layout?
+
+<div></div>
+</li><li>
+What does it mean when we say Javascript is single threaded
+<div></div>
+</li><li>
+What is Automatic Semicolon Injection in JS?
+<div></div>
+</li><li>
+Why do we avoid using `var` or simply declaring a variable with `x=1`?
+<div></div>
+</li><li>
+What is an arrow function (otherwise known as an anonymous function or a lambda) and how does the syntax work?
+
+<div></div>
+</li><li>
+What is the difference between <code>for(x in items)</code> and <code>for(x of items)</code>
+<div></div>
+</li><li>
+What is the issue with the below code?
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">import <span class="token punctuation">{</span> sum <span class="token punctuation">}</span> from <span class="token string">'package'</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>`<span class="token number">2</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">=</span> $<span class="token punctuation">{</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">}</span>`<span class="token punctuation">)</span></code></pre>
+<pre class="program language-clike"><code class=" language-clike"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span></code></pre>
+<div></div>
+</li><li>
+How and where is JavaScript run?
+
+<div></div>
+</li><li>
+
+Can JavaScript on a website I visit remove all my files?
+
+<div></div>
+</li><li>
+
+What is Node.js?
+
+<div></div>
+</li><li>
+<p>
+Given a dataset that looks similar to the below. How might you
+go about finding the average age of men, with first name's starting with 'A'.
+Hint: you might want to think about using some combination of map, filter, reduce.
+</p>
+<pre class="program language-clike"><code class=" language-clike"><span class="token comment">// let's note the power with cleaning some user data.</span>
+const users <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Jeff'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">52</span><span class="token punctuation">,</span>
+    gender<span class="token punctuation">:</span> <span class="token string">'male'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Andy'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
+    gender<span class="token punctuation">:</span> <span class="token string">'male'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Sarah'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+    gender<span class="token punctuation">:</span> <span class="token string">'female'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Phoebe'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">21</span><span class="token punctuation">,</span>
+    gender<span class="token punctuation">:</span> <span class="token string">'female'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Doris'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">81</span><span class="token punctuation">,</span>
+    gender<span class="token punctuation">:</span> <span class="token string">'female'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<div></div>
+</li><li>
+<p>
+Understanding 'this' in JavaScript can be a real problem for beginners.
+Work through the below code and see if you can identify what 'this'
+will be in each expression and how it will be evaluated.
+</p>
+<pre class="program language-clike"><code class=" language-clike"><span class="token comment">// this can be confusing</span>
+const o <span class="token operator">=</span> <span class="token punctuation">{</span>
+   bb<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+   <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>this<span class="token punctuation">.</span>bb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// What does this print out</span>
+o<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// What does this line do</span>
+let a <span class="token operator">=</span> o<span class="token punctuation">.</span>f<span class="token punctuation">;</span>
+
+<span class="token comment">// What would this print out</span>
+<span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+const oo <span class="token operator">=</span> <span class="token punctuation">{</span>bb<span class="token punctuation">:</span> <span class="token string">'Barry'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// What does call do and what will it print out?</span>
+a<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>oo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// What does bind do, is f() the same as a()?</span>
+const f <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>oo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// what does this print out</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<div></div>
+</li><li>
+<p>
+JavaScript recently added support for
+classes to the language. Consider the code below.
+which uses the traditional object creation syntax.
+</p>
+<p>
+Can you explain the prototype?
+</p>
+<pre class="program language-clike"><code class=" language-clike"><span class="token comment">// note the use of this in this special constructor</span>
+<span class="token comment">// also note the caps (a convention for constructor functions)</span>
+<span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   this<span class="token punctuation">.</span>firstName <span class="token operator">=</span> firstName<span class="token punctuation">;</span>
+   this<span class="token punctuation">.</span>lastName  <span class="token operator">=</span> lastName<span class="token punctuation">;</span>
+   this<span class="token punctuation">.</span>age       <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getFullName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> `$<span class="token punctuation">{</span>this<span class="token punctuation">.</span>firstName<span class="token punctuation">}</span> $<span class="token punctuation">{</span>this<span class="token punctuation">.</span>lastName<span class="token punctuation">}</span>`<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>canDrinkAlcohol <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> this<span class="token punctuation">.</span>age <span class="token operator">&gt;=</span> <span class="token number">18</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// now if we call the constructor function we get this</span>
+const jeff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Jeff'</span><span class="token punctuation">,</span> <span class="token string">'Goldblum'</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// =&gt; Person { firstName: 'Jeff', lastName: 'Goldblum', age: 50 }</span>
+
+jeff<span class="token punctuation">.</span><span class="token function">getFullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Jeff Goldblum'</span></code></pre>
+<p>
+How might you translate the above to a class?
+</p>
+<div></div>
+</li><li>
+
+Write a function that given a array of strings representing a shopping cart
+prints out each item in alphabetical order with a count of how many times
+the item appeared in the array.
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">const cart <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Apple'</span><span class="token punctuation">,</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span> <span class="token string">'Strawberry'</span><span class="token punctuation">,</span> <span class="token string">'Orange'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token function">countCart</span><span class="token punctuation">(</span>cart<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// above would print</span>
+<span class="token comment">// Apple 2</span>
+<span class="token comment">// Orange 2</span>
+<span class="token comment">// Strawberry 1</span></code></pre>
+<div></div>
+</li><li>
+
+The above function was unchanged but the input array was changed to be a array
+of objects.
+
+
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">const cart <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span>
+    cost<span class="token punctuation">:</span> <span class="token number">2.30</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span>
+    cost<span class="token punctuation">:</span> <span class="token number">4.50</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span>
+    cost<span class="token punctuation">:</span> <span class="token number">2.30</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Strawberry'</span><span class="token punctuation">,</span>
+    cost<span class="token punctuation">:</span> <span class="token number">6.70</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span>
+    cost<span class="token punctuation">:</span> <span class="token number">4.50</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token function">countCart</span><span class="token punctuation">(</span>cart<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+What would the function output?
+
+<div></div>
+</li><li>
+
+Rewrite the above function to work with an array of objects and print out the total
+cost of each item rather then just the count, i.e for the above example the output would be
+
+<pre class="program">  Apple 4.6
+  Orange 9
+  Strawberry 6.7
+</pre>
+<div></div>
+</li><li>
+
+Write a function that takes in an array identical to above and returns a total
+cost for all items but do not use <i>any</i> explict loops (for while etc.).
+
+<div></div>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+
+    I wrote a program which given a string returns a
+    integer representing the number of seconds a user wants a time to be set for as
+    shown below.
+    
+    <pre>      set timer for 5 minutes  --&gt; 300
+      set a timer for 10m      --&gt; 600
+      timer 8minutes           --&gt; 480
+      new timer 60seconds      --&gt; 60
+      timer for 60s            --&gt; 60
+      banoodles                --&gt; undefined
+    </pre>
+    
+    Here is the program
+    
+    
+
+
+
+
+    
+        
+    
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike"><span class="token keyword">function</span> <span class="token function">extractTime</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  let r <span class="token operator">=</span> <span class="token operator">/</span><span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span>\s<span class="token operator">+</span><span class="token punctuation">(</span><span class="token punctuation">[</span>ms<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span>g<span class="token punctuation">;</span>
+  r <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  let <span class="token punctuation">[</span>num<span class="token punctuation">,</span>unit<span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>unit <span class="token operator">===</span> <span class="token string">"m"</span><span class="token punctuation">)</span> num <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">extractTime</span><span class="token punctuation">(</span><span class="token string">"set timer for 5 minutes"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">extractTime</span><span class="token punctuation">(</span><span class="token string">"set a timer for 10m"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">extractTime</span><span class="token punctuation">(</span><span class="token string">"timer 8minutes"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">extractTime</span><span class="token punctuation">(</span><span class="token string">"new timer 60seconds"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">extractTime</span><span class="token punctuation">(</span><span class="token string">"timer for 60s"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+    
+    But it doesn't work, fix the code so it works.
+    
+    <div></div>
+</li><li>
+
+Create a function that takes in no arguments, and
+when called the first time emits 0, then 1, then 2,
+... etc, etc, etc. Each additional call should output
+a higher number. Hint: Think about how you might
+construct a function to do this. Maybe another
+helper function might come in handy.
+
+<div></div>
+</li><li>
+
+
+JavaScript offers some quite powerful functional tools.
+Consider the example below and note the use of small,
+stateless functions to solve a larger multi-faceted problem and walk through
+how it works.
+
+<div></div>
+</li>
+</ol>
+</div>
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+<small>CRICOS Provider 00098G</small>
+</p>
+</footer>
+
+</body></html>

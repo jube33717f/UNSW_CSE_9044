@@ -1,0 +1,9 @@
+30/07/19     13.00   17.00  start coding subset0
+31/07/19     10.00   15.00  push initial version of subset0   
+04/08/19     12.00   17.00  start coding subset1, complete login & singup
+05/08/19     13.30   16.00  push new version of subset1
+06/08/19     13.30   18.00  start coding subset2，complete comment & upvotes & delete votes
+07/08/19     12.40   18.00  push initial version of subset2, complete subset2 except Pagination
+08/08/19     13.00   22.00  initial version of subset3
+09/08/19     16.00   21.00  all content of subset0-3
+10/08/19     13.00   16.00  new version of subset0-3

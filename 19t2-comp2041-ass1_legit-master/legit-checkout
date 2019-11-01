@@ -1,0 +1,87 @@
+#!/usr/bin/perl -w
+
+
+use File::Copy;
+
+
+if(-d ".legit/branch/$ARGV[0]"){
+    if(! -d ".legit/master"){
+        mkdir ".legit/master";
+        foreach $file(glob "*"){
+            if( $file ne "legit-*" ){
+                copy("$file",".legit/master/$file");
+            }
+        }
+
+    }
+    if(-e ".legit/text.txt"){
+        open(F,'<',".legit/text.txt");
+        $dir=<F>;
+        #print "$dir";
+        close(F);
+        if(! -d ".legit/$dir"){ 
+            mkdir ".legit/$dir";
+        }
+        foreach $file(glob "*"){
+            if( $file ne "legit-*"){
+                #print "$file";
+                copy("$file",".legit/$dir/$file");
+                unlink "$file";
+            }
+        }
+        if(-d ".legit/$ARGV[0]"){
+            foreach $file(glob ".legit/$ARGV[0]/*"){
+                $file =~ s/.legit\/$ARGV[0]\///g;
+                if( $file ne "legit-*"){
+                    copy(".legit/$ARGV[0]/$file","$file");
+                    unlink ".legit/$ARGV[0]/$file";
+                }
+            }
+        }
+        unlink ".legit/text.txt";
+    }else{
+        
+        foreach $file(glob "*"){
+            if( $file ne "legit-*"){
+                #print "$file";
+                copy("$file",".legit/master/$file");
+                #unlink "$file";
+            }
+        }
+        if(-d ".legit/$ARGV[0]"){
+            foreach $file(glob "*"){
+                if( $file ne "legit-*"){
+                #print "$file";
+                    copy("$file",".legit/master/$file");
+                    if($ARGV[0] ne "master"){
+                        unlink "$file";
+                    }
+                
+                }
+            }
+
+            foreach $file(glob ".legit/$ARGV[0]/*"){
+                #print "here";
+                $file =~ s/.legit\/$ARGV[0]\///g;
+                if( $file ne "legit-*"){
+                    copy(".legit/$ARGV[0]/$file","$file");
+                    unlink ".legit/$ARGV[0]/$file";
+                }
+            }
+        }
+
+
+    }
+
+
+    if($ARGV[0] ne "master"){
+        open(DATA,'>',".legit/text.txt");
+        print DATA "$ARGV[0]";
+        close(DATA);  
+    }
+
+
+    print "Switched to branch '$ARGV[0]'\n";
+}else{
+    print "legit-checkout: error: unknown branch '$ARGV[0]'\n";
+}

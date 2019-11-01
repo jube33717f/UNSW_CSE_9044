@@ -1,0 +1,92 @@
+#!/bin/dash
+
+
+ro=`ls ".legit/repo"|wc -l`
+cd ".legit/repo"
+if [ "$ro" -ne 0 ]
+then
+    for file in *
+    do
+        if test -e "../index/$file"
+        then
+            if test -e "../../$file"
+            then
+                if cmp -s "../../$file" "$file"
+                then
+                    if cmp -s "../index/$file" "$file"
+                    then
+                        echo "$file - same as repo"
+                    fi
+                else
+                    if cmp -s "../index/$file" "../../$file"
+                    then
+                        echo "$file - file changed, changes staged for commit"
+                    else
+                        if cmp -s "../index/$file" "../repo/$file" 
+                        then
+                            echo "$file - file changed, changes not staged for commit"
+                        else
+                            echo "$file - file changed, different changes staged for commit"
+                        fi
+                    fi
+                fi
+            else
+                echo "$file - file deleted"
+            fi
+        else
+            if test -e "../../$file"
+            then
+                echo "$file - untracked"
+            else
+                echo "$file - deleted"
+            fi
+        fi
+    done
+fi
+
+row=`ls "../.."|wc -l`
+cd "../.."
+if [ "$row" -ne 0 ]
+then
+    for file in *
+    do
+        if ! test -e ".legit/repo/$file"
+        then
+            if test -e ".legit/index/$file"
+            then
+
+                echo "$file - added to index"
+            else
+
+                echo "$file - untracked"
+            fi
+        fi
+    done
+fi
+
+
+
+
+
+
+
+
+
+#i=0
+#for file in *
+#do
+    #files[$i]=$file
+    #i=`expr $i + 1`
+#done
+
+#cd".legit/repo"
+#for file in *
+#do
+   # if ! test -e
+   # then
+   #     files[$i]=$file
+   #     i=`expr $i + 1`
+   # fi
+#done
+#sorted=($(printf '%s\n' "$files[@]}"|sort))
+

@@ -1,0 +1,10 @@
+ date        start    stop     activity                                              comments
+5/7/19       14:00   17:00   understand git  
+6/7/19       14:00   19:00   coding subset0                  implented partially subset0 basic commit functionally
+7/7/19       11:00   17:00   coding subset0                  implented subset0 basic commit functionally
+8/7/19       15:30   18:00   debugging subset0               found bug in command-line arguments
+9/7/19       16:00   22:00   try to code subset1             difficult to deal with different situation and the difference between dash and bash
+10/7/19      13:00   17:00   coding subset1 legit-rm         the auto test subset1_14 after legit-rm a and legit-rm b,they in working pl are both different with index one and repo one,wonder why one echo diff with index and the other echo diff with repo
+11/7/19      11:00   13:00   debugging and coding subset1    implented subset1 basic commit functionally
+12/7/18      21:00   24:00   subset2_17 coding
+13/7/18      11:00   16:00   subset2_19 coding                

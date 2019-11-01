@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers -->
+<html lang="en" class="gr__cgi_cse_unsw_edu_au"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+
+COMP2041 Week 05 Weekly Test Sample Answers
+
+</title>
+
+
+
+
+<!-- <link href="/~cs2041/19T2/flask.cgi/static/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="./COMP2041 Week 05 Weekly Test Sample Answers_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./COMP2041 Week 05 Weekly Test Sample Answers_files/course.css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="/~cs2041/19T2/flask.cgi/static/bootstrap.min.js"></script> -->
+
+<script src="./COMP2041 Week 05 Weekly Test Sample Answers_files/jquery-3.3.1.min.js"></script>
+<script src="./COMP2041 Week 05 Weekly Test Sample Answers_files/popper.min.js"></script>
+<script src="./COMP2041 Week 05 Weekly Test Sample Answers_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./COMP2041 Week 05 Weekly Test Sample Answers_files/course.js"></script>
+
+<!-- prism code-highligting -->
+<link href="./COMP2041 Week 05 Weekly Test Sample Answers_files/prism.css" rel="stylesheet">
+<!-- defer loading of prism.js script until DOM is loaded, as per PR #26 and https://stackoverflow.com/a/24070373 -->
+<script type="text/javascript" src="./COMP2041 Week 05 Weekly Test Sample Answers_files/prism.js" defer=""></script>
+<script async="" src="./COMP2041 Week 05 Weekly Test Sample Answers_files/ei.js"></script>
+
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">
+</head>
+<body class="container" data-gr-c-s-loaded="true">
+
+
+
+
+<div id="heading" class="row">
+
+
+<div class="col-3 text-left">
+<a class="heading_link" target="_blank" id="left_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+<div class="col-6 text-center">
+
+
+
+    
+
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="week-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Week 05 <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="week-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/03/answers">Week 03</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/04/answers">Week 04</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Week 05</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/06/answers">Week 06</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/07/answers">Week 07</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/08/answers">Week 08</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/09/answers">Week 09</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/10/answers">Week 10</a>
+    </div>
+</span>
+
+
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="tlb-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Weekly Test <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="tlb-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/tut/05/answers">Tutorial</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/lab/05/answers">Laboratory</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Weekly Test</a>
+    </div>
+</span>
+
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+<span class="dropdown">
+    <button class="btn btn-lg btn-link dropdown-toggle heading_button" type="button" id="qa-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sample Answers <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="qa-selector">
+    
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/questions">Questions</a>
+        <a class="dropdown-item" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/test/05/answers">Sample Answers</a>
+    </div>
+</span>
+
+
+</div>
+
+<div class="col-3 text-right">
+<a class="heading_link" target="_blank" id="right_heading_link" href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/">COMP(2041|9044) 19T2</a>
+</div>
+
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+<p>
+You must time the test yourself and ensure you comply with the conditions below.
+
+</p><ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+</li><li> You may complete this test at any time before <b>Tuesday 16 July 21:59:59</b>
+</li><li> The maximum time allowed for this test is 1 hour + 5 minutes reading time.
+</li><li> You may first use 5 minutes to read the questions (no typing)
+</li><li> You then must complete the test within 1 hour and submit your answers with give.
+</li><li> You must complete the questions alone - you can not get help in any way from any person.
+</li><li> You can not access your previous answers to lab or tut questions.
+</li><li> You can not access web pages or use the internet in any way.
+</li><li> You can not access books, notes or other written or online materials.
+</li><li> You can not access your own files, programs, code ...
+</li><li> You can not access COMP2041 course materials except for language documentation linked below.
+</li></ul>
+
+
+<hr>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/wsu-js-cheat-sheet.pdf">Javascript quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/python_cheatsheet.pdf">Python quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2//resources/c-reference.pdf">C quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041/doc/python-3.6.6-docs-html/index.html">full Python 3.6 documentation</a>
+</li></ul>
+<hr>
+
+You may also access manual entries (the man command)
+
+
+
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Sort Words Line by Line
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+Write a Perl program <b>sort_words.pl</b> that reads lines of text from its standard input
+and prints them to its standard output with the words on each line rearranged to be in sorted (alphabetic) order.
+<p>
+You can assume that a word is any sequence of non-whitespace characters.
+</p><p>
+You should print the words separated by a single space character.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./sort_words.pl</kbd>
+<kbd>I shall be telling this with a sigh
+Somewhere     ages and ages hence
+Two roads diverged in a   wood and I
+I took   the one   less traveled by
+And that has made all the difference
+</kbd><span class="eof"></span>
+I a be shall sigh telling this with
+Somewhere ages ages and hence
+I Two a and diverged in roads wood
+I by less one the took traveled
+And all difference has made that the
+</pre>
+
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+<p>
+You may not run external programs, e.g. via system or backquotes.
+</p><p>
+You can assume your input is ASCII.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest sort_words</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test05_sort_words sort_words.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>sort_words.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# sort words on each line of STDIN
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>$line <span class="token operator">=</span> <span class="token operator">&lt;</span>STDIN<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    my @words <span class="token operator">=</span> split <span class="token operator">/</span>\s<span class="token operator">+</span><span class="token operator">/</span><span class="token punctuation">,</span> $line<span class="token punctuation">;</span>
+    my @sorted_words <span class="token operator">=</span> sort @words<span class="token punctuation">;</span>
+    print <span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span> @sorted_words<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>sort_words.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# sort words on each line of STDIN
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+# concise less<span class="token operator">-</span>readable version
+
+print <span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span> sort split<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"\n"</span> <span class="token keyword">while</span> <span class="token operator">&lt;</span>STDIN<span class="token operator">&gt;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Replace the digits in A File 
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+
+Write a Perl program <code>replace_digits.pl</code> that take a single argument a filename.
+<p>
+It should replace all digits (0-9 characters) in the files with the character '#'.
+</p><p>
+Your program should not should produce any output.
+</p><p>
+Your program should only change the file.
+</p><p>
+For example
+
+</p><pre class="command_line"><kbd class="shell">cat file.txt</kbd>
+I can think of 100's, no 1000,000s
+of other things I'd rather
+be doing than these 3 questions.
+<kbd class="shell">./replace_digits.pl file.txt</kbd>
+<kbd class="shell">cat file.txt</kbd>
+I can think of ###'s, no ####,###s
+of other things I'd rather
+be doing than these # questions.
+</pre>
+
+<b>Hint</b>: don't try read and writing the file at the same time - it won't work - read all all the file, then write the file.
+<p>
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+</p><p>
+You may not run external programs, e.g. via system or backquotes.
+</p><p>
+You can assume the file contains ASCII and is less than 1 megabyte.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest replace_digits</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test05_replace_digits replace_digits.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>replace_digits.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# replaced digits <span class="token keyword">in</span> specified files with #s
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+foreach $file <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    open my $f<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $file or die <span class="token string">"Can not open $file: $!"</span><span class="token punctuation">;</span>
+    @lines <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    close $f<span class="token punctuation">;</span>
+
+    foreach $line <span class="token punctuation">(</span>@lines<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $line <span class="token operator">=</span><span class="token operator">~</span> s<span class="token operator">/</span>\d<span class="token operator">/</span>#<span class="token operator">/</span>g<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    open my $g<span class="token punctuation">,</span> <span class="token string">'&gt;'</span><span class="token punctuation">,</span> $file or die <span class="token string">"Can not open $file: $!"</span><span class="token punctuation">;</span>
+    print $g @lines<span class="token punctuation">;</span>
+    close $g<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>replace_digits.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>pi
+
+# replaced digits <span class="token keyword">in</span> specified files with #s
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+# using <span class="token operator">-</span>p and <span class="token operator">-</span>i command line option
+
+s<span class="token operator">/</span>\d<span class="token operator">/</span>#<span class="token operator">/</span>g</code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+         
+
+
+    
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Test if Files are Identical
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+
+Write a Perl program, <b>identical_files.pl</b> which takes 2 or more filenames are argument.
+<p>
+Your program should then check if each file has exactly the same contents ad
+the other files given as arguments.
+</p><p>
+If all files are identical (the same), it should print exactly the message in the example below.
+</p><p>
+Otherwise it should print a message indicating the first file which is different
+to a previous file on the command line.
+Again print exactly the message as in the example below.
+</p><p>
+For example if create some files for testing:
+
+</p><pre class="command_line"><kbd class="shell">seq 40 42 &gt;fortytwo.txt</kbd>
+<kbd class="shell">cat fortytwo.txt</kbd>
+40
+41
+42
+<kbd class="shell">cp fortytwo.txt 42.txt</kbd>
+<kbd class="shell">cp fortytwo.txt 42a.txt</kbd>
+<kbd class="shell">seq 1 5 &gt;five.txt</kbd>
+<kbd class="shell">cat five.txt</kbd>
+1
+2
+3
+4
+5
+<kbd class="shell">cp five.txt 5.txt</kbd>
+</pre>
+
+Then this is how <b>identical_files.pl</b> should behave:
+
+
+    
+        
+    
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;"><kbd class="shell">./identical_files.pl five.txt 5.txt</kbd>
+All files are identical
+<kbd class="shell">./identical_files.pl fortytwo.txt 42.txt 42a.txt</kbd>
+All files are identical
+<kbd class="shell">./identical_files.pl 5.txt 42.txt 42a.txt five.text</kbd>
+42.txt is not identical
+<kbd class="shell">./identical_files.pl</kbd>
+Usage: ./identical_files.pl &lt;files&gt;
+</pre>
+
+Your answer must be Perl only.  You can not use other languages such as Shell, Python or C.
+<p>
+You may not run external programs, e.g. via system or backquotes.
+</p><p>
+You can assume files contain ASCII and are less than 1 megabyte.
+</p><p>
+No error checking is necessary.
+
+
+
+
+
+</p><p>
+When you think your program is working you can  <code>autotest</code> to run some simple automated tests:
+
+</p><pre class="command_line"><kbd class="shell">2041 autotest identical_files</kbd>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When you are finished working  on this exercise you must submit
+your work by running <b>give</b>:
+
+<pre class="command_line"><kbd class="shell">give cs2041 test05_identical_files identical_files.pl</kbd>
+</pre>
+
+
+
+    
+        
+        <div class="answer">
+            Sample solution for <code>identical_files.pl</code>
+            
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# test <span class="token keyword">if</span> files all contain identical contents
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+
+die <span class="token string">"Usage: $0 &lt;files&gt;\n"</span> <span class="token keyword">if</span> <span class="token operator">!</span>@ARGV<span class="token punctuation">;</span>
+
+sub read_file <span class="token punctuation">{</span>
+    my <span class="token punctuation">(</span>$file<span class="token punctuation">)</span> <span class="token operator">=</span> @_<span class="token punctuation">;</span>
+    open my $f<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $file or die <span class="token string">"$0: can not open file $file: $!\n"</span><span class="token punctuation">;</span>
+    my @lines <span class="token operator">=</span> <span class="token operator">&lt;</span>$f<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    close $f<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> join <span class="token string">""</span><span class="token punctuation">,</span> @lines<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+$first_file_contents <span class="token operator">=</span> <span class="token function">read_file</span><span class="token punctuation">(</span>$ARGV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> $file <span class="token punctuation">(</span>@ARGV<span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span>$#ARGV<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">read_file</span><span class="token punctuation">(</span>$file<span class="token punctuation">)</span> ne $first_file_contents<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        print <span class="token string">"$file is not identical\n"</span><span class="token punctuation">;</span>
+        exit <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+print <span class="token string">"All files are identical\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+
+            
+                Alternative solution for <code>identical_files.pl</code>
+                
+
+
+
+
+
+
+    
+        <pre class="program language-clike"><code class=" language-clike">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>perl <span class="token operator">-</span>w
+
+# test <span class="token keyword">if</span> files all contain identical contents
+# written by andrewt@unsw<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>au as COMP<span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token number">041</span> sample solution
+# concise less<span class="token operator">-</span>readable version  <span class="token punctuation">(</span>note Perl close file when open next file<span class="token punctuation">)</span>
+
+foreach $file <span class="token punctuation">(</span>@ARGV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    open F<span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> $file or die <span class="token string">"$0: can not open file $file: $!\n"</span><span class="token punctuation">;</span>
+    $contents <span class="token operator">=</span> join <span class="token string">""</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>F<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>defined $first_file_contents<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        $first_file_contents <span class="token operator">=</span> $contents<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> elsif <span class="token punctuation">(</span>$first_file_contents ne $contents<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        print <span class="token string">"$file is not identical\n"</span><span class="token punctuation">;</span>
+        exit <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+print <span class="token string">"All files are identical\n"</span><span class="token punctuation">;</span></code></pre>
+
+
+
+
+            
+        </div>
+    
+
+
+</div>
+    </div>
+    
+
+
+
+
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Submission
+            </h3>
+        </div>
+        <div class="card-body">
+
+
+When you are finished each exercise make sure you submit your work by running <b>give</b>.
+<p>
+You can run <b>give</b> multiple times.
+Only your last submission will be marked.
+</p><p>
+Don't submit any exercises you haven't attempted.
+</p><p>
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+
+Remember you have until
+<b>Tuesday 16 July 21:59:59</b>
+to complete this test.
+</p><p>
+Automarking will be run by the lecturer several days after the submission deadline
+for the test, using test cases that you haven't seen:
+different to the test cases <code><kbd>autotest</kbd></code> runs for
+you.
+</p><p>
+(Hint: do your own testing as well as running
+<code><kbd>autotest</kbd></code>)
+</p><p>
+After automarking is run by the lecturer you can
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/19T2/student/">view it here</a>
+the resulting mark will also be available via
+<a href="https://cgi.cse.unsw.edu.au/~give/Student/sturec.php">via give's web interface</a>
+</p><p>
+
+
+</p></div>
+    </div>
+
+
+
+The test exercises for each week are worth in total 1 mark.
+<p>
+The best 6 of your 8 test marks for weeks 3-10 will be summed to give you a mark out of 6.
+
+
+
+</p></div>
+
+
+
+
+
+<footer class="mt-3 container text-center no-print">
+<p class="text-muted">
+<strong>COMP(2041|9044) 19T2: Software Construction</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">cs2041@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+
+</footer>
+
+
+
+
+
+</body></html>
